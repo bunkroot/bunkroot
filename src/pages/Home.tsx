@@ -5,6 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+// Import featured experience images
+import beachMeditation from "@/assets/experience-beach-meditation.jpg";
+import treasureHunt from "@/assets/experience-treasure-hunt.jpg";
+import kayak from "@/assets/experience-kayak.jpg";
+import mysteryIsland from "@/assets/experience-mystery-island.jpg";
+
 const Home = () => {
   const categories = [
     { name: "Thrill", emoji: "⚡" },
@@ -12,6 +18,41 @@ const Home = () => {
     { name: "Culture", emoji: "🎭" },
     { name: "Connection", emoji: "🤝" },
     { name: "Strange", emoji: "🌀" },
+  ];
+
+  const featuredExperiences = [
+    {
+      id: 1,
+      title: "Beach Meditation at Dawn",
+      category: "Calm",
+      price: "₹350",
+      duration: "2 hours",
+      image: beachMeditation,
+    },
+    {
+      id: 3,
+      title: "Treasure Hunt in Old City",
+      category: "Culture",
+      price: "₹600",
+      duration: "2.5 hours",
+      image: treasureHunt,
+    },
+    {
+      id: 4,
+      title: "Kayak & Chill",
+      category: "Thrill",
+      price: "₹800",
+      duration: "3 hours",
+      image: kayak,
+    },
+    {
+      id: 7,
+      title: "Mystery Island Escape",
+      category: "Thrill",
+      price: "₹1,500",
+      duration: "6 hours",
+      image: mysteryIsland,
+    },
   ];
 
   return (
@@ -117,6 +158,97 @@ const Home = () => {
                   </motion.div>
                 </Link>
               ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Featured Experiences Section */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex justify-between items-end mb-16">
+              <div>
+                <h2 className="text-6xl md:text-8xl font-display font-bold mb-4">
+                  FEATURED
+                  <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
+                    ESCAPES
+                  </span>
+                </h2>
+                <p className="text-xl text-muted-foreground">
+                  Break the routine. Start here.
+                </p>
+              </div>
+              <Link to="/explore">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="hidden md:flex border-2 border-accent text-accent hover:bg-accent hover:text-black font-bold px-8 transition-all"
+                >
+                  SEE ALL EXPERIENCES →
+                </Button>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {featuredExperiences.map((experience, index) => (
+                <motion.div
+                  key={experience.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className="group cursor-pointer"
+                >
+                  <Link to="/explore">
+                    <div className="relative h-80 overflow-hidden rounded-lg border-2 border-border group-hover:border-accent transition-all">
+                      <img 
+                        src={experience.image} 
+                        alt={experience.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+                      
+                      {/* Category Badge */}
+                      <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-wider">
+                        {experience.category}
+                      </Badge>
+                      
+                      {/* Content */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 className="text-xl font-bold mb-2 leading-tight group-hover:text-[hsl(var(--neon-start))] transition-colors">
+                          {experience.title}
+                        </h3>
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-muted-foreground">{experience.duration}</span>
+                          <span className="text-[hsl(var(--neon-start))] font-bold text-lg">{experience.price}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Mobile See All Button */}
+            <div className="mt-12 text-center md:hidden">
+              <Link to="/explore">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold w-full"
+                >
+                  SEE ALL EXPERIENCES →
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
