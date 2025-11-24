@@ -15,7 +15,7 @@
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 98%;
     
-    --primary: 83 100% 75%;
+    --primary: 86 100% 50%;
     --primary-foreground: 0 0% 0%;
     
     --secondary: 0 0% 8%;
@@ -24,7 +24,7 @@
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
     
-    --accent: 83 100% 75%;
+    --accent: 86 100% 50%;
     --accent-foreground: 0 0% 0%;
     
     --destructive: 0 84% 60%;
@@ -32,23 +32,24 @@
     
     --border: 0 0% 12%;
     --input: 0 0% 12%;
-    --ring: 83 100% 75%;
+    --ring: 86 100% 50%;
     
     --radius: 0.75rem;
     
-    /* Adventure neon colors */
-    --neon-start: 83 100% 75%;
-    --neon-end: 74 100% 80%;
+    /* Adventure neon colors - 180deg gradient #ccff00 to #8fff00 */
+    --neon-start: 72 100% 50%;
+    --neon-end: 86 100% 50%;
+    --gradient-primary: linear-gradient(180deg, hsl(72 100% 50%), hsl(86 100% 50%));
     
     /* Sidebar colors */
     --sidebar-background: 0 0% 3%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 83 100% 75%;
+    --sidebar-primary: 86 100% 50%;
     --sidebar-primary-foreground: 0 0% 0%;
     --sidebar-accent: 0 0% 8%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 12%;
-    --sidebar-ring: 83 100% 75%;
+    --sidebar-ring: 86 100% 50%;
   }
 }
 
