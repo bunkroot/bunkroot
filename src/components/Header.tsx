@@ -9,10 +9,7 @@ const Header = () => {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/explore", label: "Explore" },
-    { path: "/host", label: "Become a Host" },
     { path: "/community", label: "Community" },
-    { path: "/about", label: "About" },
-    { path: "/contact", label: "Contact" },
   ];
 
   return (
@@ -42,6 +39,11 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-4">
+            <Link to="/host" className="hidden md:inline-flex">
+              <Button variant="outline" size="sm">
+                Become a Host
+              </Button>
+            </Link>
             <Button variant="outline" size="sm" className="hidden md:inline-flex">
               Sign In
             </Button>
