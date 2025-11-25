@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Input } from "@/components/ui/input";
@@ -192,130 +193,61 @@ const Explore = () => {
               ))}
             </div>
             
-            {/* Abstract Grid Layout */}
-            <div className="space-y-8">
-              {filteredExperiences.map((experience, index) => {
-                // Alternate between different abstract layouts
-                const isOdd = index % 2 === 0;
-                const layoutVariant = index % 3;
-                
-                return (
-                  <motion.div
-                    key={experience.id}
-                    initial={{ opacity: 0, x: isOdd ? -50 : 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className={`relative ${
-                      layoutVariant === 0 ? 'grid grid-cols-1 lg:grid-cols-5 gap-6' :
-                      layoutVariant === 1 ? 'grid grid-cols-1 lg:grid-cols-3 gap-8' :
-                      'flex flex-col lg:flex-row gap-6'
-                    }`}
-                  >
-                    {/* Image Section with Abstract Shape */}
-                    <motion.div 
-                      className={`relative overflow-hidden group ${
-                        layoutVariant === 0 ? 'lg:col-span-3' :
-                        layoutVariant === 1 ? 'lg:col-span-2' :
-                        'lg:w-2/3'
-                      }`}
-                      whileHover={{ scale: 0.98 }}
-                      style={{
-                        clipPath: layoutVariant === 0 ? 'polygon(0 0, 100% 0, 95% 100%, 0 100%)' :
-                                  layoutVariant === 1 ? 'polygon(5% 0, 100% 0, 100% 100%, 0 100%)' :
-                                  'none'
-                      }}
-                    >
-                      <div className="relative h-[400px] lg:h-[500px]">
+            {/* Simplified Card Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredExperiences.map((experience, index) => (
+                <motion.div
+                  key={experience.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Link to={`/experience/${experience.id}`}>
+                    <div className="group relative overflow-hidden rounded-lg border-2 border-border hover:border-accent transition-all duration-300 cursor-pointer">
+                      {/* Image */}
+                      <div className="relative h-80 overflow-hidden">
                         <img 
                           src={experience.image} 
                           alt={experience.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
-                        {/* Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                         
                         {/* Category Badge */}
-                        <Badge className="absolute top-6 left-6 bg-black/80 text-accent border border-accent/50 px-6 py-2 text-sm uppercase tracking-widest">
+                        <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
                           {experience.category}
                         </Badge>
                         
                         {/* Emotion Tag */}
-                        <div className="absolute bottom-6 left-6 text-muted-foreground text-sm uppercase tracking-wide">
+                        <div className="absolute top-4 right-4 text-xs text-muted-foreground uppercase tracking-wide bg-black/60 px-3 py-1 rounded">
                           {experience.emotion}
                         </div>
-                      </div>
-                    </motion.div>
-                    
-                    {/* Content Section */}
-                    <div className={`flex flex-col justify-between bg-card/50 backdrop-blur-sm border-2 border-border p-8 ${
-                      layoutVariant === 0 ? 'lg:col-span-2' :
-                      layoutVariant === 1 ? 'lg:col-span-1' :
-                      'lg:w-1/3'
-                    }`}>
-                      <div>
-                        <h2 className="text-4xl font-display font-bold mb-4 leading-tight">
-                          {experience.title}
-                        </h2>
-                        
-                        <p className="text-muted-foreground mb-6 leading-relaxed">
-                          {experience.description}
-                        </p>
-                        
-                        {/* Details Grid */}
-                        <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
-                          <div>
-                            <div className="text-muted-foreground uppercase tracking-wide text-xs mb-1">Duration</div>
-                            <div className="font-semibold">{experience.duration}</div>
-                          </div>
-                          <div>
-                            <div className="text-muted-foreground uppercase tracking-wide text-xs mb-1">Time</div>
-                            <div className="font-semibold">{experience.time}</div>
-                          </div>
-                          <div>
-                            <div className="text-muted-foreground uppercase tracking-wide text-xs mb-1">Group Size</div>
-                            <div className="font-semibold">{experience.groupSize}</div>
-                          </div>
-                          <div>
-                            <div className="text-muted-foreground uppercase tracking-wide text-xs mb-1">Location</div>
-                            <div className="font-semibold">{experience.location}</div>
+
+                        {/* Title and Price Overlay */}
+                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                          <h3 className="text-2xl font-display font-bold mb-2 text-white leading-tight">
+                            {experience.title}
+                          </h3>
+                          <div className="flex items-end justify-between">
+                            <div>
+                              <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">From</div>
+                              <div className="text-2xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
+                                {experience.price}
+                              </div>
+                            </div>
+                            <Button 
+                              size="sm"
+                              className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold opacity-0 group-hover:opacity-100 transition-opacity"
+                            >
+                              View Details
+                            </Button>
                           </div>
                         </div>
-                        
-                        {/* Highlights */}
-                        <div className="mb-6">
-                          <div className="text-xs uppercase tracking-wide text-muted-foreground mb-3">What Makes It Special</div>
-                          <div className="flex flex-wrap gap-2">
-                            {experience.highlights.map((highlight, idx) => (
-                              <span 
-                                key={idx}
-                                className="text-xs px-3 py-1 bg-accent/10 text-accent border border-accent/30 rounded-full"
-                              >
-                                {highlight}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Price and CTA */}
-                      <div className="flex items-center justify-between pt-6 border-t border-border">
-                        <div>
-                          <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">From</div>
-                          <div className="text-3xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
-                            {experience.price}
-                          </div>
-                        </div>
-                        <Button 
-                          size="lg"
-                          className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold hover:opacity-90"
-                        >
-                          Book Now
-                        </Button>
                       </div>
                     </div>
-                  </motion.div>
-                );
-              })}
+                  </Link>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
