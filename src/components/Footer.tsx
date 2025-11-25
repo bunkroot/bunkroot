@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/bunkroot-logo.png";
 
@@ -37,17 +36,19 @@ const Footer = () => {
           
           <div>
             <h4 className="font-bold mb-4 text-accent">Stay Connected</h4>
-            <p className="text-sm text-muted-foreground mb-4">Get updates on new experiences</p>
-            <div className="flex gap-2">
-              <Input 
-                type="email" 
-                placeholder="Your email" 
-                className="bg-background"
-              />
-              <Button size="sm" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold">
-                Join
-              </Button>
-            </div>
+            <p className="text-sm text-muted-foreground mb-4">Join our community on WhatsApp</p>
+            <Button 
+              asChild 
+              className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold w-full"
+            >
+              <a 
+                href="https://wa.me/917907536782" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Join WhatsApp Group
+              </a>
+            </Button>
           </div>
         </div>
         
