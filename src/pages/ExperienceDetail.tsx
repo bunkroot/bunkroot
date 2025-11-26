@@ -227,35 +227,35 @@ const ExperienceDetail = () => {
         </motion.div>
 
         {/* Abstract Content Layout */}
-        <div className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="container mx-auto px-4 py-16 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Left Column - Experience Details */}
             <motion.div 
-              className="lg:col-span-2 space-y-12"
+              className="lg:col-span-2 space-y-8 lg:space-y-12"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
               {/* Quick Info */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div className="bg-card border-2 border-border p-6 rounded-lg">
-                  <Clock className="w-6 h-6 text-accent mb-3" />
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-2">Duration</div>
-                  <div className="text-lg font-bold">{experience.duration}</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
+                  <Clock className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Duration</div>
+                  <div className="text-sm md:text-lg font-bold break-words">{experience.duration}</div>
                 </div>
-                <div className="bg-card border-2 border-border p-6 rounded-lg">
-                  <Users className="w-6 h-6 text-accent mb-3" />
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-2">Group Size</div>
-                  <div className="text-lg font-bold">{experience.groupSize}</div>
+                <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
+                  <Users className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Group Size</div>
+                  <div className="text-sm md:text-lg font-bold break-words">{experience.groupSize}</div>
                 </div>
-                <div className="bg-card border-2 border-border p-6 rounded-lg">
-                  <MapPin className="w-6 h-6 text-accent mb-3" />
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-2">Location</div>
-                  <div className="text-lg font-bold">{experience.location}</div>
+                <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
+                  <MapPin className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Location</div>
+                  <div className="text-sm md:text-lg font-bold break-words">{experience.location}</div>
                 </div>
-                <div className="bg-card border-2 border-border p-6 rounded-lg">
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-2">Spots Left</div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
+                <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Spots Left</div>
+                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
                     {experience.spotsRemaining}
                   </div>
                 </div>
@@ -283,9 +283,9 @@ const ExperienceDetail = () => {
               </div>
 
               {/* What to Bring */}
-              <div className="bg-card/50 border-2 border-border p-8 rounded-lg">
-                <h3 className="text-2xl font-display font-bold mb-6">What to Bring</h3>
-                <div className="flex flex-wrap gap-3">
+              <div className="bg-card/50 border-2 border-border p-6 md:p-8 rounded-lg">
+                <h3 className="text-xl md:text-2xl font-display font-bold mb-4 md:mb-6">What to Bring</h3>
+                <div className="flex flex-wrap gap-2 md:gap-3">
                   {experience.whatToBring.map((item, idx) => (
                     <Badge key={idx} variant="outline" className="px-4 py-2 text-sm border-2">
                       {item}
@@ -315,11 +315,11 @@ const ExperienceDetail = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <div className="sticky top-24 bg-card border-2 border-border rounded-lg p-8 space-y-6">
+              <div className="sticky top-24 bg-card border-2 border-border rounded-lg p-6 md:p-8 space-y-4 md:space-y-6 overflow-hidden">
                 {/* Price */}
-                <div className="border-b border-border pb-6">
+                <div className="border-b border-border pb-4 md:pb-6">
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mb-2">From</div>
-                  <div className="text-5xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
+                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent break-words">
                     {experience.price}
                   </div>
                   <div className="text-sm text-muted-foreground mt-1">per person</div>
