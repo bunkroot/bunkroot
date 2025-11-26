@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/bunkroot-logo.png";
-
 const Footer = () => {
-  return (
-    <footer className="bg-card border-t border-border">
+  return <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -29,7 +27,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link to="/about" className="text-muted-foreground hover:text-accent transition-colors">About Us</Link></li>
               <li><Link to="/host" className="text-muted-foreground hover:text-accent transition-colors">Become a Host</Link></li>
-              <li><Link to="/community" className="text-muted-foreground hover:text-accent transition-colors">Community</Link></li>
+              
               <li><Link to="/contact" className="text-muted-foreground hover:text-accent transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -37,15 +35,8 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4 text-accent">Stay Connected</h4>
             <p className="text-sm text-muted-foreground mb-4">Join our community on WhatsApp</p>
-            <Button 
-              asChild 
-              className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold w-full"
-            >
-              <a 
-                href="https://wa.me/917907536782" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
+            <Button asChild className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold w-full">
+              <a href="https://wa.me/917907536782" target="_blank" rel="noopener noreferrer">
                 Join WhatsApp Group
               </a>
             </Button>
@@ -63,8 +54,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
