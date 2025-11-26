@@ -131,27 +131,27 @@ const Explore = () => {
       <Header />
       
       <div className="pt-32 pb-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             {/* Hero Section */}
-            <div className="mb-16">
-              <h1 className="text-7xl md:text-9xl font-display font-bold mb-6 leading-none">
+            <div className="mb-12 md:mb-16">
+              <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-bold mb-4 md:mb-6 leading-none break-words">
                 ESCAPE<br />
                 <span className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
                   CALICUT
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
                 7 curated escapes. Real locals. Authentic stories. Break the mall-beach-movie loop.
               </p>
             </div>
             
             {/* Search Bar */}
-            <div className="flex flex-col md:flex-row gap-4 mb-12">
+            <div className="flex flex-col md:flex-row gap-3 md:gap-4 mb-8 md:mb-12">
               <Input 
                 placeholder="Search experiences..." 
                 className="flex-1 h-14 text-lg bg-card border-2 border-border focus:border-accent"

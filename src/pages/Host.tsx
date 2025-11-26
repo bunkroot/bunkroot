@@ -12,16 +12,16 @@ const Host = () => {
       <Header />
       
       <div className="pt-32 pb-20">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-4xl overflow-hidden">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-6xl md:text-8xl font-display font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-display font-bold mb-4 md:mb-6 break-words">
               BECOME A HOST
             </h1>
-            <p className="text-xl text-muted-foreground mb-12">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 md:mb-12">
               Got a wild idea? Share your unique experience with the community.
             </p>
             

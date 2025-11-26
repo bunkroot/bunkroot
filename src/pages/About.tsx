@@ -8,13 +8,13 @@ const About = () => {
       <Header />
       
       <div className="pt-32 pb-20">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-4xl overflow-hidden">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-6xl md:text-8xl font-display font-bold mb-12">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-display font-bold mb-8 md:mb-12 break-words">
               OUR STORY
             </h1>
             
