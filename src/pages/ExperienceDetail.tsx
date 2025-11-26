@@ -44,6 +44,14 @@ const ExperienceDetail = () => {
       highlights: ["Golden hour photography", "First light energy", "Community feeling"],
       availableTimes: ["6:00 AM", "6:30 AM"],
       spotsRemaining: 8,
+      timeline: [
+        { time: "6:00 AM", activity: "Meet at Kappad Beach parking", icon: "📍" },
+        { time: "6:10 AM", activity: "Breathing exercises & stretching", icon: "🌬️" },
+        { time: "6:30 AM", activity: "Guided meditation with ocean sounds", icon: "🧘" },
+        { time: "7:15 AM", activity: "Sunrise gratitude practice", icon: "🌅" },
+        { time: "7:30 AM", activity: "Traditional Kerala breakfast", icon: "🥥" },
+        { time: "8:00 AM", activity: "Group photo & departure", icon: "📸" }
+      ],
       fullDescription: "Start your day with the sacred energy of dawn at Kappad Beach. Our experienced meditation guide will lead you through breathing exercises synchronized with the ocean's rhythm, followed by guided visualization and group meditation. As the sun rises, we'll practice gratitude journaling and close with a traditional Kerala breakfast featuring fresh coconut, banana, and homemade snacks.",
       included: ["Professional meditation guide", "Yoga mats provided", "Traditional breakfast", "Photography session", "Beach access"],
       whatToBring: ["Comfortable clothes", "Water bottle", "Towel", "Open mind"]
@@ -63,6 +71,14 @@ const ExperienceDetail = () => {
       highlights: ["Structured vulnerability exercises", "Burn one written fear", "Post-session WhatsApp group"],
       availableTimes: ["7:00 PM", "7:30 PM"],
       spotsRemaining: 5,
+      timeline: [
+        { time: "7:00 PM", activity: "Arrival & welcome tea", icon: "🍵" },
+        { time: "7:15 PM", activity: "Ground rules & circle formation", icon: "⭕" },
+        { time: "7:30 PM", activity: "Vulnerability exercises begin", icon: "💭" },
+        { time: "8:15 PM", activity: "Fear burning ceremony", icon: "🔥" },
+        { time: "8:45 PM", activity: "Closing circle & reflections", icon: "🤝" },
+        { time: "9:15 PM", activity: "WhatsApp group & goodbyes", icon: "💬" }
+      ],
       fullDescription: "Enter a judgment-free zone where vulnerability becomes strength. In the warm glow of candlelight, our trained psychology facilitator guides you through structured exercises designed to create authentic connections. Share fears, burn limiting beliefs in a ceremonial fire, and leave with genuine friendships. This isn't therapy—it's radical honesty with strangers who become friends.",
       included: ["Professional facilitator", "Journaling materials", "Herbal tea & snacks", "Post-session support group", "Private venue"],
       whatToBring: ["One written fear to burn", "Openness", "Respect for others"]
@@ -82,6 +98,14 @@ const ExperienceDetail = () => {
       highlights: ["Team competition", "Malayalam clues", "Heritage passport", "Halwa tasting"],
       availableTimes: ["4:00 PM", "4:30 PM"],
       spotsRemaining: 12,
+      timeline: [
+        { time: "4:00 PM", activity: "Team formation at Mananchira Square", icon: "👥" },
+        { time: "4:15 PM", activity: "Receive first cryptic clue", icon: "🗺️" },
+        { time: "4:30 PM", activity: "Navigate through old bazaar", icon: "🏛️" },
+        { time: "5:15 PM", activity: "Meet local artisans & storytellers", icon: "🎭" },
+        { time: "5:45 PM", activity: "Mishkal Mosque final challenge", icon: "🕌" },
+        { time: "6:15 PM", activity: "Winner announcement & halwa tasting", icon: "🏆" }
+      ],
       fullDescription: "Decode Calicut's secrets through cryptic Malayalam riddles as you race through centuries-old streets. Teams of 4-5 navigate from Mananchira to Mishkal Mosque, meeting local shopkeepers, artisans, and historians who share stories never found in guidebooks. Win by speed and cultural knowledge. Grand prize: a heritage hamper of Calicut specialties.",
       included: ["Game master & guides", "Heritage passport", "Halwa tasting", "Team prizes", "Local storytellers"],
       whatToBring: ["Comfortable walking shoes", "Phone for photos", "Team spirit", "Basic Malayalam helps"]
@@ -101,6 +125,14 @@ const ExperienceDetail = () => {
       highlights: ["Professional photos included", "Float therapy", "Sunset watching"],
       availableTimes: ["4:30 PM", "5:00 PM"],
       spotsRemaining: 6,
+      timeline: [
+        { time: "4:30 PM", activity: "Safety briefing & gear up", icon: "🛟" },
+        { time: "4:45 PM", activity: "Begin kayaking through mangroves", icon: "🚣" },
+        { time: "5:30 PM", activity: "Reach private sandbar", icon: "🏝️" },
+        { time: "5:45 PM", activity: "Float therapy session", icon: "🌊" },
+        { time: "6:30 PM", activity: "Sunset watching & photography", icon: "📷" },
+        { time: "7:00 PM", activity: "Bonfire with snacks & return", icon: "🔥" }
+      ],
       fullDescription: "Paddle through emerald mangroves as golden hour transforms the estuary into liquid gold. After exploring hidden channels, we anchor at a private sandbar for float therapy—lie back and let the salt water hold you as the sky turns pink and orange. End with a bonfire, snacks, and conversations under stars. Professional photographer captures the magic.",
       included: ["Kayak & safety equipment", "Life jackets", "Professional photos", "Bonfire setup", "Snacks & beverages", "Waterproof bags"],
       whatToBring: ["Swimwear", "Change of clothes", "Sunscreen", "Waterproof phone case"]
@@ -120,6 +152,14 @@ const ExperienceDetail = () => {
       highlights: ["Dawn at sea", "Traditional fish-cleaning", "Breakfast you caught", "Uru boat yard visit"],
       availableTimes: ["4:15 AM"],
       spotsRemaining: 4,
+      timeline: [
+        { time: "4:15 AM", activity: "Meet fishermen at Beypore harbor", icon: "⚓" },
+        { time: "4:30 AM", activity: "Sail into the Arabian Sea", icon: "🚤" },
+        { time: "5:00 AM", activity: "Learn net-casting techniques", icon: "🎣" },
+        { time: "6:30 AM", activity: "Traditional fish-cleaning lessons", icon: "🐟" },
+        { time: "8:00 AM", activity: "Cook & eat your catch", icon: "🍳" },
+        { time: "9:30 AM", activity: "Uru boat yard tour & departure", icon: "⛵" }
+      ],
       fullDescription: "Join three generations of Beypore fishermen for their daily routine. Learn to cast traditional nets, understand tide patterns, and hear stories of the sea. Whatever you catch, you'll clean and cook with the family using centuries-old recipes. End with a tour of the legendary Uru boat yard where ships are built without blueprints. This isn't tourism—it's stepping into their world.",
       included: ["Boat ride", "Fishing equipment", "Traditional breakfast", "Boat yard tour", "Local guide", "Safety equipment"],
       whatToBring: ["Warm clothes for early morning", "Sunscreen", "Motion sickness medicine if needed", "Respect for tradition"]
@@ -139,6 +179,14 @@ const ExperienceDetail = () => {
       highlights: ["Yakshi stories", "Theyyam-inspired finale", "Campfire debrief", "Transport included"],
       availableTimes: ["7:00 PM"],
       spotsRemaining: 10,
+      timeline: [
+        { time: "7:00 PM", activity: "Pickup from Calicut city", icon: "🚐" },
+        { time: "7:45 PM", activity: "Arrive at forest entrance", icon: "🌲" },
+        { time: "8:00 PM", activity: "Begin guided horror walk", icon: "👻" },
+        { time: "9:15 PM", activity: "Yakshi encounter in the dark", icon: "😱" },
+        { time: "10:00 PM", activity: "Theyyam-inspired grand finale", icon: "🎭" },
+        { time: "10:30 PM", activity: "Campfire debrief & return journey", icon: "🔥" }
+      ],
       fullDescription: "As darkness falls, enter a forest where Kerala's ancient folklore comes alive. Professional theater actors embody Yakshi, Churel, and other spirits from local legends. Ambient soundscapes and strategic lighting create genuine fear. The Theyyam-inspired finale will leave you breathless. End with a campfire debrief where you'll learn the real stories behind the scares. Transport from Calicut included.",
       included: ["Return transport", "Professional actors", "Safety escorts", "Campfire snacks", "Emergency support"],
       whatToBring: ["Closed shoes", "Phone on silent", "Brave friends", "No children under 16"]
@@ -158,6 +206,14 @@ const ExperienceDetail = () => {
       highlights: ["Destination unknown", "Decode coordinates", "Build emergency shelter", "Cinematic reveal"],
       availableTimes: ["4:00 PM"],
       spotsRemaining: 7,
+      timeline: [
+        { time: "4:00 PM", activity: "Board mystery boat from secret dock", icon: "⛵" },
+        { time: "4:30 PM", activity: "Solve cryptic navigation puzzles", icon: "🧩" },
+        { time: "5:30 PM", activity: "Island reveal & arrival", icon: "🏝️" },
+        { time: "6:00 PM", activity: "Survival challenges begin", icon: "🔥" },
+        { time: "8:00 PM", activity: "Premium seafood feast earned", icon: "🦞" },
+        { time: "9:30 PM", activity: "Return boat journey under stars", icon: "⭐" }
+      ],
       fullDescription: "You'll board a boat without knowing your destination. Solve cryptic puzzles during the journey to decode coordinates. Upon arrival at a secret island, complete survival challenges: build an emergency shelter, start a fire without matches, and navigate by stars. Success earns you a premium seafood feast prepared by local chefs. Fail, and you eat basic rations (just kidding—everyone eats well). The island reveal is cinematic.",
       included: ["Boat transport", "Professional guide", "Challenge equipment", "Premium seafood dinner", "Safety gear", "Drinking water"],
       whatToBring: ["Adventure mindset", "Swimming clothes", "Flashlight", "Team spirit", "Problem-solving skills"]
@@ -304,6 +360,47 @@ const ExperienceDetail = () => {
                       <span className="text-foreground">{highlight}</span>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              {/* Experience Timeline */}
+              <div>
+                <h3 className="text-2xl font-display font-bold mb-6">Experience Timeline</h3>
+                <div className="relative">
+                  {/* Vertical Line */}
+                  <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]" />
+                  
+                  <div className="space-y-6">
+                    {experience.timeline.map((step, idx) => (
+                      <motion.div
+                        key={idx}
+                        className="relative flex gap-6"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.1 }}
+                      >
+                        {/* Icon Circle */}
+                        <div className="relative z-10 flex-shrink-0">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] flex items-center justify-center text-2xl shadow-lg shadow-accent/30">
+                            {step.icon}
+                          </div>
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="flex-1 pb-2">
+                          <div className="bg-card/80 border-2 border-border hover:border-accent/50 rounded-lg p-4 transition-all">
+                            <div className="text-sm font-bold text-accent uppercase tracking-wide mb-1">
+                              {step.time}
+                            </div>
+                            <div className="text-base text-foreground">
+                              {step.activity}
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
