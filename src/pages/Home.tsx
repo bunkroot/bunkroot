@@ -297,7 +297,7 @@ const Home = () => {
               BECOME A HOST
             </h2>
             <Link to="/host">
-              <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-xl px-12 py-8 hover:scale-105 hover:shadow-[0_0_40px_rgba(143,255,0,0.5)] transition-all">Share Your </Button>
+              <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-xl px-12 py-8 hover:scale-105 hover:shadow-[0_0_40px_rgba(143,255,0,0.5)] transition-all">Share Your Idea</Button>
             </Link>
           </motion.div>
         </div>
