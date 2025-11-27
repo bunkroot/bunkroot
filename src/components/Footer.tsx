@@ -36,7 +36,7 @@ const Footer = () => {
             <h4 className="font-bold mb-4 text-accent">Stay Connected</h4>
             <p className="text-sm text-muted-foreground mb-4">Join our community on WhatsApp</p>
             <Button asChild className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold w-full">
-              <a href="https://wa.me/917907536782" target="_blank" rel="noopener noreferrer">
+              <a href="https://chat.whatsapp.com/ERuQGFK0ZZD2G0iNTy8eUn" target="_blank" rel="noopener noreferrer">
                 Join WhatsApp Group
               </a>
             </Button>
