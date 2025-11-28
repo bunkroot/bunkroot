@@ -322,7 +322,7 @@ const ExperienceDetail = () => {
 
               {/* Mobile Booking Widget (before "The Experience" heading) */}
               {isMobile && (
-                <div className="lg:hidden">
+                <div className="md:hidden">
                   <motion.div 
                     className="sticky top-20 z-40 bg-card border-2 border-border rounded-lg overflow-hidden shadow-lg"
                     initial={{ opacity: 0, y: 20 }}
@@ -339,11 +339,6 @@ const ExperienceDetail = () => {
                           <div className="text-2xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
                             {experience.price}
                           </div>
-                        </div>
-                        <div className="h-8 w-px bg-border" />
-                        <div className="text-left">
-                          <div className="text-xs uppercase tracking-wide text-muted-foreground">Spots Left</div>
-                          <div className="text-lg font-bold text-accent">{experience.spotsRemaining}</div>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
@@ -543,9 +538,9 @@ const ExperienceDetail = () => {
               </div>
             </motion.div>
 
-            {/* Right Column - Booking Card (Sticky) - Desktop Only */}
+            {/* Right Column - Booking Card (Sticky) - Tablet & Desktop */}
             <motion.div 
-              className="hidden lg:block lg:col-span-1"
+              className="hidden md:block lg:col-span-1"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
