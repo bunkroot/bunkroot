@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Clock, Users, MapPin, Calendar as CalendarIcon } from "lucide-react";
+import { ArrowLeft, Clock, Users, MapPin, Calendar as CalendarIcon, ChevronDown, ChevronUp } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Import experience images
 import beachMeditation from "@/assets/experience-beach-meditation.jpg";
@@ -22,6 +23,8 @@ import mysteryIsland from "@/assets/experience-mystery-island.jpg";
 
 const ExperienceDetail = () => {
   const { id } = useParams();
+  const isMobile = useIsMobile();
+  const [isBookingExpanded, setIsBookingExpanded] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [name, setName] = useState("");
@@ -317,6 +320,141 @@ const ExperienceDetail = () => {
                 </div>
               </div>
 
+              {/* Mobile Booking Widget (before "The Experience" heading) */}
+              {isMobile && (
+                <div className="lg:hidden">
+                  <motion.div 
+                    className="sticky top-20 z-40 bg-card border-2 border-border rounded-lg overflow-hidden shadow-lg"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    {/* Minimized View */}
+                    <button 
+                      onClick={() => setIsBookingExpanded(!isBookingExpanded)}
+                      className="w-full p-4 flex items-center justify-between hover:bg-accent/5 transition-colors"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div>
+                          <div className="text-xs uppercase tracking-wide text-muted-foreground">From</div>
+                          <div className="text-2xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
+                            {experience.price}
+                          </div>
+                        </div>
+                        <div className="h-8 w-px bg-border" />
+                        <div className="text-left">
+                          <div className="text-xs uppercase tracking-wide text-muted-foreground">Spots Left</div>
+                          <div className="text-lg font-bold text-accent">{experience.spotsRemaining}</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-semibold">Book Now</span>
+                        {isBookingExpanded ? (
+                          <ChevronUp className="w-5 h-5 text-accent" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-accent" />
+                        )}
+                      </div>
+                    </button>
+
+                    {/* Expanded Form */}
+                    <AnimatePresence>
+                      {isBookingExpanded && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="border-t-2 border-border"
+                        >
+                          <div className="p-6 space-y-4 bg-background">
+                            <div>
+                              <Label htmlFor="name-mobile" className="text-sm uppercase tracking-wide mb-2 block">Your Name</Label>
+                              <Input 
+                                id="name-mobile"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                placeholder="Enter your name"
+                                className="bg-card border-2"
+                              />
+                            </div>
+
+                            <div>
+                              <Label htmlFor="phone-mobile" className="text-sm uppercase tracking-wide mb-2 block">Phone Number</Label>
+                              <Input 
+                                id="phone-mobile"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                placeholder="+91 XXXXXXXXXX"
+                                className="bg-card border-2"
+                              />
+                            </div>
+
+                            <div>
+                              <Label htmlFor="guests-mobile" className="text-sm uppercase tracking-wide mb-2 block">Number of Guests</Label>
+                              <Input 
+                                id="guests-mobile"
+                                type="number"
+                                min="1"
+                                max={experience.spotsRemaining}
+                                value={guests}
+                                onChange={(e) => setGuests(e.target.value)}
+                                className="bg-card border-2"
+                              />
+                            </div>
+
+                            <div>
+                              <Label className="text-sm uppercase tracking-wide mb-3 block flex items-center gap-2">
+                                <CalendarIcon className="w-4 h-4" />
+                                Select Date
+                              </Label>
+                              <Calendar
+                                mode="single"
+                                selected={selectedDate}
+                                onSelect={setSelectedDate}
+                                disabled={(date) => date < new Date()}
+                                className="rounded-md border-2 border-border bg-card w-full"
+                              />
+                            </div>
+
+                            <div>
+                              <Label className="text-sm uppercase tracking-wide mb-3 block">Available Times</Label>
+                              <div className="space-y-2">
+                                {experience.availableTimes.map((time) => (
+                                  <Button
+                                    key={time}
+                                    variant={selectedTime === time ? "default" : "outline"}
+                                    className={`w-full justify-start ${
+                                      selectedTime === time 
+                                        ? "bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black" 
+                                        : "border-2"
+                                    }`}
+                                    onClick={() => setSelectedTime(time)}
+                                  >
+                                    {time}
+                                  </Button>
+                                ))}
+                              </div>
+                            </div>
+
+                            <Button 
+                              size="lg"
+                              className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg h-14 hover:opacity-90"
+                              onClick={handleBooking}
+                            >
+                              Book via WhatsApp
+                            </Button>
+
+                            <p className="text-xs text-muted-foreground text-center">
+                              You'll be redirected to WhatsApp to complete your booking
+                            </p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                </div>
+              )}
+
               {/* Full Description */}
               <div>
                 <h2 className="text-4xl font-display font-bold mb-6">The Experience</h2>
@@ -405,9 +543,9 @@ const ExperienceDetail = () => {
               </div>
             </motion.div>
 
-            {/* Right Column - Booking Card (Sticky) */}
+            {/* Right Column - Booking Card (Sticky) - Desktop Only */}
             <motion.div 
-              className="lg:col-span-1"
+              className="hidden lg:block lg:col-span-1"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
