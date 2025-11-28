@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,6 +8,42 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
 const Host = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    experience: "",
+    description: "",
+    category: "",
+    price: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const message = `🌟 NEW HOST APPLICATION 🌟
+
+Name: ${formData.name}
+Email: ${formData.email}
+
+Experience: ${formData.experience}
+
+Description:
+${formData.description}
+
+Category: ${formData.category}
+Price Range: ${formData.price}`;
+
+    const whatsappUrl = `https://wa.me/917907536782?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }));
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -52,20 +89,42 @@ const Host = () => {
               </div>
             </div>
             
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name" className="text-lg font-bold mb-2 block">Your Name</Label>
-                <Input id="name" placeholder="Enter your name" className="h-12" />
+                <Input 
+                  id="name" 
+                  placeholder="Enter your name" 
+                  className="h-12"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               
               <div>
                 <Label htmlFor="email" className="text-lg font-bold mb-2 block">Email</Label>
-                <Input id="email" type="email" placeholder="your@email.com" className="h-12" />
+                <Input 
+                  id="email" 
+                  type="email" 
+                  placeholder="your@email.com" 
+                  className="h-12"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               
               <div>
                 <Label htmlFor="experience" className="text-lg font-bold mb-2 block">What's Your Experience About?</Label>
-                <Input id="experience" placeholder="e.g., Midnight Motorcycle Ride" className="h-12" />
+                <Input 
+                  id="experience" 
+                  placeholder="e.g., Midnight Motorcycle Ride" 
+                  className="h-12"
+                  value={formData.experience}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               
               <div>
@@ -74,17 +133,34 @@ const Host = () => {
                   id="description" 
                   placeholder="Tell us what makes it special..." 
                   className="min-h-32"
+                  value={formData.description}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <Label htmlFor="category" className="text-lg font-bold mb-2 block">Category</Label>
-                  <Input id="category" placeholder="Thrill, Calm, Culture..." className="h-12" />
+                  <Input 
+                    id="category" 
+                    placeholder="Thrill, Calm, Culture..." 
+                    className="h-12"
+                    value={formData.category}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
                 <div>
                   <Label htmlFor="price" className="text-lg font-bold mb-2 block">Price Range</Label>
-                  <Input id="price" placeholder="₹1,000 - ₹5,000" className="h-12" />
+                  <Input 
+                    id="price" 
+                    placeholder="₹1,000 - ₹5,000" 
+                    className="h-12"
+                    value={formData.price}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
               </div>
               
@@ -93,7 +169,7 @@ const Host = () => {
                 size="lg"
                 className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg py-6"
               >
-                Submit Your Experience
+                Submit via WhatsApp
               </Button>
             </form>
           </motion.div>
