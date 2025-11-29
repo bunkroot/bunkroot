@@ -245,7 +245,7 @@ const ExperienceDetail = () => {
       
       <div className="pt-24">
         {/* Back Button */}
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 lg:px-12 py-6">
           <Link to="/explore">
             <Button variant="ghost" size="sm" className="gap-2">
               <ArrowLeft className="w-4 h-4" />
@@ -272,7 +272,7 @@ const ExperienceDetail = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
           
           {/* Floating Info on Image */}
-          <div className="absolute bottom-12 left-0 right-0 container mx-auto px-4">
+          <div className="absolute bottom-12 left-0 right-0 container mx-auto px-4 lg:px-12">
             <Badge className="mb-4 bg-black/80 text-accent border border-accent/50 px-6 py-2 text-sm uppercase tracking-widest">
               {experience.category}
             </Badge>
@@ -286,7 +286,7 @@ const ExperienceDetail = () => {
         </motion.div>
 
         {/* Abstract Content Layout */}
-        <div className="container mx-auto px-4 py-16 max-w-7xl">
+        <div className="container mx-auto px-4 lg:px-12 py-16 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Left Column - Experience Details */}
             <motion.div 
