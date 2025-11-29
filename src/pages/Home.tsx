@@ -89,8 +89,8 @@ const Home = () => {
             }} transition={{
               duration: 1.2,
               ease: "easeOut"
-            }}>Life's
-ROUTINE<br />
+            }}>Life's 
+OUT THERE<br />
                 <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
                   ROUTINE
                 </span>
