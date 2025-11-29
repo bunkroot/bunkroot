@@ -80,7 +80,7 @@ const Home = () => {
             duration: 1,
             ease: "easeOut"
           }}>
-              <motion.h1 className="text-8xl md:text-[12rem] font-display font-bold mb-8 leading-[0.9] tracking-tight" initial={{
+              <motion.h1 initial={{
               opacity: 0,
               scale: 0.9
             }} animate={{
@@ -89,8 +89,8 @@ const Home = () => {
             }} transition={{
               duration: 1.2,
               ease: "easeOut"
-            }}>Life's<br />
-                <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">OUT THERE</span>
+            }} className="text-8xl font-display font-bold mb-8 leading-[0.9] tracking-tight md:text-9xl">Life's<br />
+                <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-9xl">OUT THERE</span>
               </motion.h1>
               
               <motion.div className="flex flex-wrap gap-4 mt-12" initial={{
