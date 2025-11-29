@@ -91,9 +91,7 @@ const Home = () => {
               ease: "easeOut"
             }}>Life's 
 OUT THERE<br />
-                <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
-                  ROUTINE
-                </span>
+                <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">OUT THERE</span>
               </motion.h1>
               
               <motion.div className="flex flex-wrap gap-4 mt-12" initial={{
