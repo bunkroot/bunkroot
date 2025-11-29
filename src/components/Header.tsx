@@ -4,26 +4,21 @@ import { Menu } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/bunkroot-logo.png";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 const Header = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  
-  const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/explore", label: "Explore" },
-    { path: "/contact", label: "Contact" },
-  ];
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+  const navLinks = [{
+    path: "/",
+    label: "Home"
+  }, {
+    path: "/explore",
+    label: "Explore"
+  }, {
+    path: "/contact",
+    label: "Contact"
+  }];
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center">
@@ -31,21 +26,10 @@ const Header = () => {
           </Link>
           
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="relative text-sm font-semibold tracking-wide transition-colors hover:text-accent"
-              >
+            {navLinks.map(link => <Link key={link.path} to={link.path} className="relative text-sm font-semibold tracking-wide transition-colors hover:text-accent">
                 {link.label}
-                {location.pathname === link.path && (
-                  <motion.div
-                    layoutId="activeNav"
-                    className="absolute -bottom-[1.5rem] left-0 right-0 h-0.5 bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]"
-                  />
-                )}
-              </Link>
-            ))}
+                {location.pathname === link.path && <motion.div layoutId="activeNav" className="absolute -bottom-[1.5rem] left-0 right-0 h-0.5 bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]" />}
+              </Link>)}
           </nav>
 
           <div className="flex items-center gap-4">
@@ -54,12 +38,8 @@ const Header = () => {
                 Become a Host
               </Button>
             </Link>
-            <Button variant="outline" size="sm" className="hidden md:inline-flex">
-              Sign In
-            </Button>
-            <Button size="sm" className="hidden md:inline-flex bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold">
-              Sign Up
-            </Button>
+            
+            
 
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -75,16 +55,9 @@ const Header = () => {
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-6 mt-8">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      onClick={() => setIsOpen(false)}
-                      className="text-lg font-semibold tracking-wide transition-colors hover:text-accent"
-                    >
+                  {navLinks.map(link => <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)} className="text-lg font-semibold tracking-wide transition-colors hover:text-accent">
                       {link.label}
-                    </Link>
-                  ))}
+                    </Link>)}
                   <div className="border-t border-border pt-6 flex flex-col gap-3">
                     <Link to="/host" onClick={() => setIsOpen(false)}>
                       <Button variant="outline" className="w-full">
@@ -104,8 +77,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
