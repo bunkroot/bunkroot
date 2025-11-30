@@ -64,9 +64,7 @@ const Header = () => {
                         Become a Host
                       </Button>
                     </Link>
-                    <Button variant="outline" className="w-full">
-                      Sign In
-                    </Button>
+                    
                     
                   </div>
                 </nav>
