@@ -89,15 +89,11 @@ const Home = () => {
             }} transition={{
               duration: 1.2,
               ease: "easeOut"
-            }} className="mb-8 pb-12 md:pb-20">
+            }} className="mb-8">
                 <span className="block text-5xl md:text-7xl font-sans font-semibold mb-2">Life's</span>
-                <span className="block font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
-                  <span className="block">
-                    <span className="inline-block">Out</span>
-                  </span>
-                  <span className="block">
-                    <span className="inline-block translate-y-1 md:translate-y-2 lg:translate-y-3 translate-x-2 md:translate-x-4 lg:translate-x-6 rotate-[6deg] origin-left">There</span>
-                  </span>
+                <span className="flex items-baseline gap-2 md:gap-4 font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
+                  <span>Out</span>
+                  <span className="transform translate-y-2 md:translate-y-4 lg:translate-y-6">There</span>
                 </span>
               </motion.h1>
               
