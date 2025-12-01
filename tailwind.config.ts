@@ -9,6 +9,7 @@ export default {
   	  fontFamily: {
   	    sans: ['Poppins', 'sans-serif'],
   	    display: ['Bebas Neue', 'sans-serif'],
+  	    bahianita: ['Bahianita', 'sans-serif'],
   	  },
   	  colors: {
         border: "hsl(var(--border))",

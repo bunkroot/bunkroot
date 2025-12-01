@@ -89,8 +89,9 @@ const Home = () => {
             }} transition={{
               duration: 1.2,
               ease: "easeOut"
-            }} className="text-8xl font-display font-bold mb-8 leading-[0.9] tracking-tight md:text-9xl">Life's<br />
-                <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-9xl">OUT THERE</span>
+            }} className="leading-[0.9]">
+                <span className="block text-5xl md:text-7xl font-sans font-normal mb-2">life's</span>
+                <span className="block font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">Out There</span>
               </motion.h1>
               
               <motion.div className="flex flex-wrap gap-4 mt-12" initial={{
