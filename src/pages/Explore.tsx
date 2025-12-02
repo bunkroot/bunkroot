@@ -135,6 +135,8 @@ const Explore = () => {
     }
   ];
 
+  const comingSoonIds = [2, 5, 3]; // Candle-light Truth Room, Fishing with Locals, Treasure Hunt
+  
   const filteredExperiences = selectedCategory
     ? experiences.filter(exp => exp.category === selectedCategory)
     : experiences;
@@ -197,59 +199,95 @@ const Explore = () => {
             
             {/* Simplified Card Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredExperiences.map((experience, index) => (
-                <motion.div
-                  key={experience.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <Link to={`/experience/${experience.id}`}>
-                    <div className="group relative overflow-hidden rounded-lg border-2 border-border hover:border-accent transition-all duration-300 cursor-pointer">
-                      {/* Image */}
-                      <div className="relative h-80 overflow-hidden">
-                        <img 
-                          src={experience.image} 
-                          alt={experience.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-                        
-                        {/* Category Badge */}
-                        <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
-                          {experience.category}
-                        </Badge>
-                        
-                        {/* Emotion Tag */}
-                        <div className="absolute top-4 right-4 text-xs text-muted-foreground uppercase tracking-wide bg-black/60 px-3 py-1 rounded">
-                          {experience.emotion}
-                        </div>
+              {filteredExperiences.map((experience, index) => {
+                const isComingSoon = comingSoonIds.includes(experience.id);
+                
+                return (
+                  <motion.div
+                    key={experience.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    {isComingSoon ? (
+                      <div className="group relative overflow-hidden rounded-lg border-2 border-border opacity-75 cursor-not-allowed">
+                        {/* Image */}
+                        <div className="relative h-80 overflow-hidden">
+                          <img 
+                            src={experience.image} 
+                            alt={experience.title}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
+                          
+                          {/* Coming Soon Badge */}
+                          <Badge className="absolute top-4 left-4 bg-accent text-black border-2 border-accent px-6 py-2 text-sm uppercase tracking-widest font-bold">
+                            Coming Soon
+                          </Badge>
+                          
+                          {/* Category Badge */}
+                          <Badge className="absolute top-4 right-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
+                            {experience.category}
+                          </Badge>
 
-                        {/* Title and Price Overlay */}
-                        <div className="absolute bottom-0 left-0 right-0 p-6">
-                          <h3 className="text-2xl font-display font-bold mb-2 text-white leading-tight">
-                            {experience.title}
-                          </h3>
-                          <div className="flex items-end justify-between">
-                            <div>
-                              <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">From</div>
-                              <div className="text-2xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
-                                {experience.price}
-                              </div>
-                            </div>
-                            <Button 
-                              size="sm"
-                              className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold opacity-0 group-hover:opacity-100 transition-opacity"
-                            >
-                              View Details
-                            </Button>
+                          {/* Title Overlay */}
+                          <div className="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 className="text-2xl font-display font-bold mb-2 text-white leading-tight">
+                              {experience.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground">{experience.emotion}</p>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
+                    ) : (
+                      <Link to={`/experience/${experience.id}`}>
+                        <div className="group relative overflow-hidden rounded-lg border-2 border-border hover:border-accent transition-all duration-300 cursor-pointer">
+                          {/* Image */}
+                          <div className="relative h-80 overflow-hidden">
+                            <img 
+                              src={experience.image} 
+                              alt={experience.title}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                            
+                            {/* Category Badge */}
+                            <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
+                              {experience.category}
+                            </Badge>
+                            
+                            {/* Emotion Tag */}
+                            <div className="absolute top-4 right-4 text-xs text-muted-foreground uppercase tracking-wide bg-black/60 px-3 py-1 rounded">
+                              {experience.emotion}
+                            </div>
+
+                            {/* Title and Price Overlay */}
+                            <div className="absolute bottom-0 left-0 right-0 p-6">
+                              <h3 className="text-2xl font-display font-bold mb-2 text-white leading-tight">
+                                {experience.title}
+                              </h3>
+                              <div className="flex items-end justify-between">
+                                <div>
+                                  <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">From</div>
+                                  <div className="text-2xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
+                                    {experience.price}
+                                  </div>
+                                </div>
+                                <Button 
+                                  size="sm"
+                                  className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold opacity-0 group-hover:opacity-100 transition-opacity"
+                                >
+                                  View Details
+                                </Button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    )}
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
         </div>

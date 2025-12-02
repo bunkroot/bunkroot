@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/bunkroot-logo.png";
 const Footer = () => {
   return <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 lg:px-12 xl:px-20 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <img src={logo} alt="BunkRoot" className="h-8 mb-4" />
