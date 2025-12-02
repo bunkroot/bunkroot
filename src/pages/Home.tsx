@@ -94,9 +94,7 @@ const Home = () => {
                 <span className="block font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
                   Out
                 </span>
-                <span className="block font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
-                  There
-                </span>
+                
               </motion.h1>
               
               <motion.div className="flex flex-wrap gap-4 mt-12" initial={{
