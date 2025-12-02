@@ -254,15 +254,12 @@ const ExperienceDetail = () => {
           </Link>
         </div>
 
-        {/* Torn Paper Hero Image */}
+        {/* Hero Image */}
         <motion.div 
           className="relative w-full h-[70vh] overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          style={{
-            clipPath: "polygon(0 0, 100% 0, 100% 92%, 95% 89%, 90% 93%, 85% 88%, 80% 92%, 75% 89%, 70% 93%, 65% 88%, 60% 92%, 55% 89%, 50% 93%, 45% 88%, 40% 92%, 35% 89%, 30% 93%, 25% 88%, 20% 92%, 15% 89%, 10% 93%, 5% 88%, 0 92%)"
-          }}
         >
           <img 
             src={experience.image} 
@@ -435,7 +432,7 @@ const ExperienceDetail = () => {
                               className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg h-14 hover:opacity-90"
                               onClick={handleBooking}
                             >
-                              Book via WhatsApp
+                              Book Now
                             </Button>
 
                             <p className="text-xs text-muted-foreground text-center">
@@ -546,11 +543,11 @@ const ExperienceDetail = () => {
               <div className="sticky top-24 bg-card border-2 border-border rounded-lg p-6 md:p-8 space-y-4 md:space-y-6 overflow-hidden">
                 {/* Price */}
                 <div className="border-b border-border pb-4 md:pb-6">
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-2">From</div>
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent break-words">
+                  <div className="text-xs uppercase tracking-wide text-black mb-2">From</div>
+                  <div className="text-4xl md:text-5xl font-bold text-black break-words">
                     {experience.price}
                   </div>
-                  <div className="text-sm text-muted-foreground mt-1">per person</div>
+                  <div className="text-sm text-black mt-1">per person</div>
                 </div>
 
                 {/* Booking Form */}
@@ -629,7 +626,7 @@ const ExperienceDetail = () => {
                     className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg h-14 hover:opacity-90"
                     onClick={handleBooking}
                   >
-                    Book via WhatsApp
+                    Book Now
                   </Button>
 
                   <p className="text-xs text-muted-foreground text-center">
@@ -639,6 +636,28 @@ const ExperienceDetail = () => {
               </div>
             </motion.div>
           </div>
+
+          {/* Terms and Policies Section */}
+          <motion.div 
+            className="max-w-7xl mx-auto px-4 lg:px-12 pb-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+          >
+            <details className="group">
+              <summary className="cursor-pointer text-xs text-muted-foreground hover:text-accent transition-colors flex items-center gap-2">
+                <span>Terms & Policies</span>
+                <span className="transform group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <div className="mt-4 text-xs text-muted-foreground space-y-2 pl-4">
+                <p><strong>Cancellation Policy:</strong> Full refund if cancelled 48 hours before the experience. 50% refund if cancelled 24-48 hours before. No refund for cancellations within 24 hours.</p>
+                <p><strong>Safety Requirements:</strong> All participants must follow safety guidelines provided by the host. BunkRoot and hosts reserve the right to refuse service to anyone who appears intoxicated or unfit to participate.</p>
+                <p><strong>Age Restrictions:</strong> Some experiences have minimum age requirements. Please check experience details before booking.</p>
+                <p><strong>Weather Policy:</strong> In case of extreme weather conditions, experiences may be rescheduled or cancelled with full refund.</p>
+                <p><strong>Liability:</strong> Participants engage in activities at their own risk. BunkRoot and experience hosts are not liable for injuries or losses during the experience.</p>
+              </div>
+            </details>
+          </motion.div>
         </div>
       </div>
 

@@ -68,7 +68,7 @@ const Home = () => {
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDIpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 lg:px-12 xl:px-20 relative z-10">
           <div className="max-w-5xl">
             <motion.div initial={{
             opacity: 0,
@@ -91,9 +91,9 @@ const Home = () => {
               ease: "easeOut"
             }} className="mb-8">
                 <span className="block text-5xl md:text-7xl font-sans font-semibold mb-2">Life's</span>
-                <span className="flex items-baseline gap-2 md:gap-4 font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] leading-none">
+                <span className="flex items-center justify-center gap-2 md:gap-4 font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] leading-none">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">Out</span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] transform translate-y-2 md:translate-y-4 lg:translate-y-6">There</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">There</span>
                 </span>
               </motion.h1>
               
@@ -235,7 +235,7 @@ const Home = () => {
             }} whileHover={{
               y: -8
             }} className="group cursor-pointer">
-                  <Link to="/explore">
+                  <Link to={`/experience/${experience.id}`}>
                     <div className="relative h-80 overflow-hidden rounded-lg border-2 border-border group-hover:border-accent transition-all">
                       <img src={experience.image} alt={experience.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                       {/* Gradient Overlay */}
