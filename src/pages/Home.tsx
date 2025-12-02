@@ -91,9 +91,11 @@ const Home = () => {
               ease: "easeOut"
             }} className="mb-8">
                 <span className="block text-5xl md:text-7xl font-sans font-semibold mb-2">Life's</span>
-                <span className="flex items-center justify-center gap-2 md:gap-4 font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] leading-none">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">Out</span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">There</span>
+                <span className="block font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
+                  Out
+                </span>
+                <span className="block font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
+                  There
                 </span>
               </motion.h1>
               
