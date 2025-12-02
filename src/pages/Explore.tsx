@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Input } from "@/components/ui/input";
@@ -17,9 +17,22 @@ import hauntedForest from "@/assets/experience-haunted-forest.jpg";
 import mysteryIsland from "@/assets/experience-mystery-island.jpg";
 
 const Explore = () => {
+  const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   
   const categories = ["Thrill", "Calm", "Culture", "Connection"];
+
+  // Read category from URL params on mount
+  useEffect(() => {
+    const categoryParam = searchParams.get("category");
+    if (categoryParam) {
+      // Capitalize first letter to match category names
+      const formattedCategory = categoryParam.charAt(0).toUpperCase() + categoryParam.slice(1);
+      if (categories.includes(formattedCategory)) {
+        setSelectedCategory(formattedCategory);
+      }
+    }
+  }, [searchParams]);
   
   const experiences = [
     {
@@ -151,27 +164,16 @@ const Explore = () => {
             </div>
             
             {/* Search Bar */}
-            <div className="flex flex-col md:flex-row gap-3 md:gap-4 mb-8 md:mb-12">
+            <div className="flex gap-3 md:gap-4 mb-8 md:mb-12">
               <Input 
                 placeholder="Search experiences..." 
                 className="flex-1 h-14 text-lg bg-card border-2 border-border focus:border-accent"
-              />
-              <Input 
-                placeholder="Calicut" 
-                className="md:w-64 h-14 text-lg bg-card border-2 border-border focus:border-accent"
               />
               <Button 
                 size="lg" 
                 className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold h-14 hover:opacity-90"
               >
                 Search
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="h-14 border-2 hover:bg-accent/20"
-              >
-                Surprise Me 🎲
               </Button>
             </div>
             

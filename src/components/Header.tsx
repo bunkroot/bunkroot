@@ -39,7 +39,11 @@ const Header = () => {
               </Button>
             </Link>
             
-            
+            <Link to="/explore" className="hidden md:inline-flex">
+              <Button size="sm" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-semibold">
+                Start Exploring
+              </Button>
+            </Link>
 
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
