@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 
 // Import featured experience images
 import beachMeditation from "@/assets/experience-beach-meditation.jpg";
-import treasureHunt from "@/assets/experience-treasure-hunt.jpg";
 import kayak from "@/assets/experience-kayak.jpg";
+import hauntedForest from "@/assets/experience-haunted-forest.jpg";
 import mysteryIsland from "@/assets/experience-mystery-island.jpg";
 const Home = () => {
   const categories = [{
@@ -35,19 +35,19 @@ const Home = () => {
     duration: "2 hours",
     image: beachMeditation
   }, {
-    id: 3,
-    title: "Treasure Hunt in Old City",
-    category: "Culture",
-    price: "₹600",
-    duration: "2.5 hours",
-    image: treasureHunt
-  }, {
     id: 4,
     title: "Kayak & Chill",
     category: "Thrill",
     price: "₹800",
     duration: "3 hours",
     image: kayak
+  }, {
+    id: 6,
+    title: "Haunted Forest Story Walk",
+    category: "Thrill",
+    price: "₹800",
+    duration: "4 hours",
+    image: hauntedForest
   }, {
     id: 7,
     title: "Mystery Island Escape",
