@@ -218,24 +218,30 @@ const Explore = () => {
                             alt={experience.title}
                             className="w-full h-full object-cover"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
-                          
-                          {/* Coming Soon Badge */}
-                          <Badge className="absolute top-4 left-4 bg-accent text-black border-2 border-accent px-6 py-2 text-sm uppercase tracking-widest font-bold">
-                            Coming Soon
-                          </Badge>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                           
                           {/* Category Badge */}
-                          <Badge className="absolute top-4 right-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
+                          <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
                             {experience.category}
                           </Badge>
+                          
+                          {/* Emotion Tag */}
+                          <div className="absolute top-4 right-4 text-xs text-muted-foreground uppercase tracking-wide bg-black/60 px-3 py-1 rounded">
+                            {experience.emotion}
+                          </div>
 
-                          {/* Title Overlay */}
+                          {/* Title and Coming Soon Overlay */}
                           <div className="absolute bottom-0 left-0 right-0 p-6">
                             <h3 className="text-2xl font-display font-bold mb-2 text-white leading-tight">
                               {experience.title}
                             </h3>
-                            <p className="text-sm text-muted-foreground">{experience.emotion}</p>
+                            <div className="flex items-end justify-between">
+                              <div>
+                                <div className="text-2xl font-bold text-muted-foreground">
+                                  Coming Soon
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
