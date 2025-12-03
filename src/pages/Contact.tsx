@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,6 +10,36 @@ import { Label } from "@/components/ui/label";
 const Contact = () => {
   const whatsappNumber = "917907536782";
   
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const whatsappMessage = `Hi BunkRoot! 👋
+
+*New Contact Form Submission*
+
+Name: ${formData.name}
+Email: ${formData.email}
+
+Message:
+${formData.message}`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -68,17 +99,32 @@ const Contact = () => {
               </div>
             </div>
             
-            <form className="bg-card border-2 border-border rounded-lg p-8 space-y-6">
+            <form onSubmit={handleSubmit} className="bg-card border-2 border-border rounded-lg p-8 space-y-6">
               <h3 className="text-2xl font-bold mb-4">Send Us a Message</h3>
               
               <div>
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" placeholder="Your name" className="mt-2" />
+                <Input 
+                  id="name" 
+                  placeholder="Your name" 
+                  className="mt-2" 
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               
               <div>
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="your@email.com" className="mt-2" />
+                <Input 
+                  id="email" 
+                  type="email" 
+                  placeholder="your@email.com" 
+                  className="mt-2"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               
               <div>
@@ -87,6 +133,9 @@ const Contact = () => {
                   id="message" 
                   placeholder="Tell us what's on your mind..." 
                   className="mt-2 min-h-32"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               
@@ -95,7 +144,7 @@ const Contact = () => {
                 className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold"
                 size="lg"
               >
-                Send Message
+                Send via WhatsApp
               </Button>
             </form>
           </motion.div>
