@@ -137,9 +137,16 @@ const Explore = () => {
 
   const comingSoonIds = [2, 5, 3]; // Candle-light Truth Room, Fishing with Locals, Treasure Hunt
   
-  const filteredExperiences = selectedCategory
+  const filteredExperiences = (selectedCategory
     ? experiences.filter(exp => exp.category === selectedCategory)
-    : experiences;
+    : experiences
+  ).sort((a, b) => {
+    const aComingSoon = comingSoonIds.includes(a.id);
+    const bComingSoon = comingSoonIds.includes(b.id);
+    if (aComingSoon && !bComingSoon) return 1;
+    if (!aComingSoon && bComingSoon) return -1;
+    return 0;
+  });
 
   return (
     <div className="min-h-screen bg-background">
