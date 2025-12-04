@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 const Host = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    phone: "",
     experience: "",
     description: "",
     category: "",
@@ -23,7 +23,7 @@ const Host = () => {
     const message = `🌟 NEW HOST APPLICATION 🌟
 
 Name: ${formData.name}
-Email: ${formData.email}
+Phone: ${formData.phone}
 
 Experience: ${formData.experience}
 
@@ -103,13 +103,13 @@ Price Range: ${formData.price}`;
               </div>
               
               <div>
-                <Label htmlFor="email" className="text-lg font-bold mb-2 block">Email</Label>
+                <Label htmlFor="phone" className="text-lg font-bold mb-2 block">Phone Number</Label>
                 <Input 
-                  id="email" 
-                  type="email" 
-                  placeholder="your@email.com" 
+                  id="phone" 
+                  type="tel" 
+                  placeholder="Your phone number" 
                   className="h-12"
-                  value={formData.email}
+                  value={formData.phone}
                   onChange={handleChange}
                   required
                 />
