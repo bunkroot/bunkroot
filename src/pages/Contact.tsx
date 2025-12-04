@@ -12,7 +12,7 @@ const Contact = () => {
   
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    phone: "",
     message: ""
   });
 
@@ -31,7 +31,7 @@ const Contact = () => {
 *New Contact Form Submission*
 
 Name: ${formData.name}
-Email: ${formData.email}
+Phone: ${formData.phone}
 
 Message:
 ${formData.message}`;
@@ -115,13 +115,13 @@ ${formData.message}`;
               </div>
               
               <div>
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="phone">Phone Number</Label>
                 <Input 
-                  id="email" 
-                  type="email" 
-                  placeholder="your@email.com" 
+                  id="phone" 
+                  type="tel" 
+                  placeholder="Your phone number" 
                   className="mt-2"
-                  value={formData.email}
+                  value={formData.phone}
                   onChange={handleChange}
                   required
                 />
