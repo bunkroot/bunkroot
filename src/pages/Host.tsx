@@ -6,6 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const Host = () => {
   const [formData, setFormData] = useState({
@@ -142,20 +149,28 @@ Price Range: ${formData.price}`;
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <Label htmlFor="category" className="text-lg font-bold mb-2 block">Category</Label>
-                  <Input 
-                    id="category" 
-                    placeholder="Thrill, Calm, Culture..." 
-                    className="h-12"
+                  <Select
                     value={formData.category}
-                    onChange={handleChange}
+                    onValueChange={(value) => setFormData(prev => ({ ...prev, category: value }))}
                     required
-                  />
+                  >
+                    <SelectTrigger className="h-12 bg-background">
+                      <SelectValue placeholder="Select a category" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-card border border-border z-50">
+                      <SelectItem value="thrill">Thrill</SelectItem>
+                      <SelectItem value="calm">Calm</SelectItem>
+                      <SelectItem value="culture">Culture</SelectItem>
+                      <SelectItem value="connection">Connection</SelectItem>
+                      <SelectItem value="strange">Strange</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div>
-                  <Label htmlFor="price" className="text-lg font-bold mb-2 block">Price Range</Label>
+                  <Label htmlFor="price" className="text-lg font-bold mb-2 block">Price per Guest</Label>
                   <Input 
                     id="price" 
-                    placeholder="₹1,000 - ₹5,000" 
+                    placeholder="₹1,000" 
                     className="h-12"
                     value={formData.price}
                     onChange={handleChange}
