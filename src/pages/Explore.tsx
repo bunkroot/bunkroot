@@ -244,10 +244,20 @@ const Explore = () => {
                             </h3>
                             <div className="flex items-end justify-between">
                               <div>
-                                <div className="text-2xl font-bold text-muted-foreground">
+                                <div className="text-lg font-bold text-muted-foreground">
                                   Coming Soon
                                 </div>
                               </div>
+                              <Button 
+                                size="sm"
+                                className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold"
+                                onClick={() => {
+                                  const message = encodeURIComponent(`Hey! I'm interested in "${experience.title}" experience. Please notify me when it becomes available.`);
+                                  window.open(`https://wa.me/917907536782?text=${message}`, '_blank');
+                                }}
+                              >
+                                Notify Me
+                              </Button>
                             </div>
                           </div>
                         </div>
