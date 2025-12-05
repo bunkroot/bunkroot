@@ -260,9 +260,9 @@ const ExperienceDetail = () => {
 
   // sanitize phone: remove non-digits. WhatsApp expects country code, e.g. 91XXXXXXXXXX
   const sanitizedPhone = phone.replace(/\D/g, "");
-  const waNumber = sanitizedPhone.startsWith("91") ? sanitizedPhone : `91${sanitizedPhone}`;
+  // const waNumber = sanitizedPhone.startsWith("91") ? sanitizedPhone : `91${sanitizedPhone}`;
 
-  const url = `https://wa.me/${waNumber}?text=${encoded}`;
+  const url = `https://wa.me/917907536782?text=${encoded}`;
   // for debugging uncomment:
   // console.log({ rawMessage, encoded, url });
 
