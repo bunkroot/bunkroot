@@ -135,64 +135,54 @@ const Home = () => {
       }} />
       </section>
 
-      {/* Social Proof - Recent Activity */}
-      <section className="py-12 relative overflow-hidden">
+      {/* Reality Check Section */}
+      <section className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-12 xl:px-20">
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-wrap items-center justify-center gap-6 md:gap-12"
+            className="relative"
           >
-            {/* Live Activity Ticker */}
-            <div className="flex items-center gap-3">
-              <div className="relative">
-                <div className="w-3 h-3 bg-[hsl(var(--neon-start))] rounded-full animate-pulse" />
-                <div className="absolute inset-0 w-3 h-3 bg-[hsl(var(--neon-start))] rounded-full animate-ping opacity-40" />
-              </div>
-              <span className="text-muted-foreground text-sm md:text-base">
-                <span className="text-foreground font-medium">23 people</span> exploring this weekend
-              </span>
+            {/* Crossed out routine things */}
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-8">
+              {["Netflix", "Scrolling", "Same cafe", "Reply later", "Next weekend"].map((item, i) => (
+                <motion.span 
+                  key={item}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="text-xl md:text-2xl text-muted-foreground/50 line-through decoration-[hsl(var(--neon-start))] decoration-2"
+                >
+                  {item}
+                </motion.span>
+              ))}
             </div>
-
-            <div className="hidden md:block w-px h-6 bg-border" />
-
-            {/* Stacked Avatars */}
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-3">
-                {["🏄", "🧗", "🚴", "🏕️"].map((emoji, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="w-9 h-9 rounded-full bg-card border-2 border-background flex items-center justify-center text-lg"
-                  >
-                    {emoji}
-                  </motion.div>
-                ))}
-              </div>
-              <span className="text-muted-foreground text-sm md:text-base">
-                Hosted by <span className="text-foreground font-medium">locals who get it</span>
-              </span>
-            </div>
-
-            <div className="hidden md:block w-px h-6 bg-border" />
-
-            {/* WhatsApp Community */}
-            <a 
-              href="https://chat.whatsapp.com/your-group-link" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
+            
+            {/* The hook */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="text-center"
             >
-              <span className="text-xl">💬</span>
-              <span className="text-sm md:text-base">
-                <span className="text-foreground font-medium group-hover:text-[hsl(var(--neon-start))] transition-colors">Join the crew</span> on WhatsApp
-              </span>
-            </a>
+              <p className="text-2xl md:text-4xl font-bold">
+                Your best stories won't happen on a{" "}
+                <span className="relative inline-block">
+                  <span className="text-muted-foreground/40">couch</span>
+                  <motion.span 
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.8, duration: 0.4 }}
+                  />
+                </span>
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
