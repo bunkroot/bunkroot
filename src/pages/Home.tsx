@@ -135,61 +135,64 @@ const Home = () => {
       }} />
       </section>
 
-      {/* Trust & Stats Section */}
-      <section className="py-16 border-y border-border/30 bg-card/30">
+      {/* Social Proof - Recent Activity */}
+      <section className="py-12 relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-12 xl:px-20">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
+            transition={{ duration: 0.8 }}
+            className="flex flex-wrap items-center justify-center gap-6 md:gap-12"
           >
-            {[
-              { value: "500+", label: "Happy Explorers", icon: "🎒" },
-              { value: "7", label: "Unique Experiences", icon: "✨" },
-              { value: "4.9", label: "Average Rating", icon: "⭐" },
-              { value: "100%", label: "Local Hosts", icon: "🏠" },
-            ].map((stat, index) => (
-              <motion.div 
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
-                  {stat.value}
-                </div>
-                <div className="text-sm md:text-base text-muted-foreground mt-1 uppercase tracking-wider">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-          
-          {/* Testimonial */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 text-center max-w-2xl mx-auto"
-          >
-            <p className="text-lg md:text-xl text-muted-foreground italic">
-              "Finally found something that gets me off my couch on weekends. The kayaking experience was unreal!"
-            </p>
-            <div className="mt-4 flex items-center justify-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] flex items-center justify-center text-black font-bold">
-                R
+            {/* Live Activity Ticker */}
+            <div className="flex items-center gap-3">
+              <div className="relative">
+                <div className="w-3 h-3 bg-[hsl(var(--neon-start))] rounded-full animate-pulse" />
+                <div className="absolute inset-0 w-3 h-3 bg-[hsl(var(--neon-start))] rounded-full animate-ping opacity-40" />
               </div>
-              <div className="text-left">
-                <div className="font-semibold text-sm">Rahul M.</div>
-                <div className="text-xs text-muted-foreground">Kochi Explorer</div>
-              </div>
+              <span className="text-muted-foreground text-sm md:text-base">
+                <span className="text-foreground font-medium">23 people</span> exploring this weekend
+              </span>
             </div>
+
+            <div className="hidden md:block w-px h-6 bg-border" />
+
+            {/* Stacked Avatars */}
+            <div className="flex items-center gap-3">
+              <div className="flex -space-x-3">
+                {["🏄", "🧗", "🚴", "🏕️"].map((emoji, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="w-9 h-9 rounded-full bg-card border-2 border-background flex items-center justify-center text-lg"
+                  >
+                    {emoji}
+                  </motion.div>
+                ))}
+              </div>
+              <span className="text-muted-foreground text-sm md:text-base">
+                Hosted by <span className="text-foreground font-medium">locals who get it</span>
+              </span>
+            </div>
+
+            <div className="hidden md:block w-px h-6 bg-border" />
+
+            {/* WhatsApp Community */}
+            <a 
+              href="https://chat.whatsapp.com/your-group-link" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
+            >
+              <span className="text-xl">💬</span>
+              <span className="text-sm md:text-base">
+                <span className="text-foreground font-medium group-hover:text-[hsl(var(--neon-start))] transition-colors">Join the crew</span> on WhatsApp
+              </span>
+            </a>
           </motion.div>
         </div>
       </section>
