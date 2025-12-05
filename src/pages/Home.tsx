@@ -135,6 +135,65 @@ const Home = () => {
       }} />
       </section>
 
+      {/* Trust & Stats Section */}
+      <section className="py-16 border-y border-border/30 bg-card/30">
+        <div className="container mx-auto px-4 lg:px-12 xl:px-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
+          >
+            {[
+              { value: "500+", label: "Happy Explorers", icon: "🎒" },
+              { value: "7", label: "Unique Experiences", icon: "✨" },
+              { value: "4.9", label: "Average Rating", icon: "⭐" },
+              { value: "100%", label: "Local Hosts", icon: "🏠" },
+            ].map((stat, index) => (
+              <motion.div 
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-3xl mb-2">{stat.icon}</div>
+                <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
+                  {stat.value}
+                </div>
+                <div className="text-sm md:text-base text-muted-foreground mt-1 uppercase tracking-wider">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+          
+          {/* Testimonial */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12 text-center max-w-2xl mx-auto"
+          >
+            <p className="text-lg md:text-xl text-muted-foreground italic">
+              "Finally found something that gets me off my couch on weekends. The kayaking experience was unreal!"
+            </p>
+            <div className="mt-4 flex items-center justify-center gap-2">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] flex items-center justify-center text-black font-bold">
+                R
+              </div>
+              <div className="text-left">
+                <div className="font-semibold text-sm">Rahul M.</div>
+                <div className="text-xs text-muted-foreground">Kochi Explorer</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Categories Section */}
       <section className="py-24 bg-gradient-to-b from-background via-card to-background relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImRvdHMiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMTQzLDI1NSwwLDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2RvdHMpIi8+PC9zdmc+')] opacity-40" />
