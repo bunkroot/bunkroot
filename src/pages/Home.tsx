@@ -109,7 +109,7 @@ const Home = () => {
             }}>
                 <Link to="/explore">
                   <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg px-10 py-7 hover:scale-105 hover:shadow-[0_0_30px_rgba(143,255,0,0.4)] transition-all">
-                    START EXPLORING
+                    BREAK FREE →
                   </Button>
                 </Link>
               </motion.div>
