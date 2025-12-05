@@ -229,15 +229,46 @@ const ExperienceDetail = () => {
     return <Navigate to="/explore" replace />;
   }
 
-  const handleBooking = () => {
-    if (!selectedDate || !selectedTime || !name || !phone || !guests) {
-      toast.error("Please fill in all booking details");
-      return;
-    }
+ const handleBooking = () => {
+  // stricter emptiness checks:
+  // - selectedDate must exist
+  // - selectedTime/name/phone must be non-empty strings
+  // - guests is allowed to be 0; check for null/empty string instead
+  const missing =
+    !selectedDate ||
+    !selectedTime ||
+    !name ||
+    !phone ||
+    guests === null ||
+    guests === undefined ||
+    guests === "";
 
-    const message = `Hi! I'd like to book ${experience.title}%0A%0ADate: ${selectedDate.toLocaleDateString()}%0ATime: ${selectedTime}%0AGuests: ${guests}%0AName: ${name}%0APhone: ${phone}`;
-    window.open(`https://wa.me/917907536782?text=${message}`, '_blank');
-  };
+  if (missing) {
+    toast.error("Please fill in all booking details");
+    return;
+  }
+
+  // build a readable message (use \n, then encode whole message)
+  const dateStr =
+    selectedDate instanceof Date
+      ? selectedDate.toLocaleDateString()
+      : String(selectedDate);
+
+  const rawMessage = `Hi! I'd like to book ${experience?.title || "your experience"}\n\nDate: ${dateStr}\nTime: ${selectedTime}\nGuests: ${guests}\nName: ${name}\nPhone: ${phone}`;
+
+  const encoded = encodeURIComponent(rawMessage);
+
+  // sanitize phone: remove non-digits. WhatsApp expects country code, e.g. 91XXXXXXXXXX
+  const sanitizedPhone = phone.replace(/\D/g, "");
+  const waNumber = sanitizedPhone.startsWith("91") ? sanitizedPhone : `91${sanitizedPhone}`;
+
+  const url = `https://wa.me/${waNumber}?text=${encoded}`;
+  // for debugging uncomment:
+  // console.log({ rawMessage, encoded, url });
+
+  window.open(url, "_blank");
+};
+
 
   return (
     <div className="min-h-screen bg-background">
