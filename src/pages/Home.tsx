@@ -135,57 +135,6 @@ const Home = () => {
       }} />
       </section>
 
-      {/* Reality Check Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 lg:px-12 xl:px-20">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            {/* Crossed out routine things */}
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-8">
-              {["Netflix", "Scrolling", "Same cafe", "Reply later", "Next weekend"].map((item, i) => (
-                <motion.span 
-                  key={item}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="text-xl md:text-2xl text-muted-foreground/50 line-through decoration-[hsl(var(--neon-start))] decoration-2"
-                >
-                  {item}
-                </motion.span>
-              ))}
-            </div>
-            
-            {/* The hook */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-center"
-            >
-              <p className="text-2xl md:text-4xl font-bold">
-                Your best stories won't happen on a{" "}
-                <span className="relative inline-block">
-                  <span className="text-muted-foreground/40">couch</span>
-                  <motion.span 
-                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]"
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.8, duration: 0.4 }}
-                  />
-                </span>
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Categories Section */}
       <section className="py-24 bg-gradient-to-b from-background via-card to-background relative overflow-hidden">
