@@ -10,7 +10,7 @@ export default {
   	    sans: ['Poppins', 'sans-serif'],
   	    display: ['Bebas Neue', 'sans-serif'],
   	    bahianita: ['Bahianita', 'sans-serif'],
-  	    edo: ['Edo', 'sans-serif'],
+  	    marker: ['Permanent Marker', 'cursive'],
   	  },
   	  colors: {
         border: "hsl(var(--border))",
