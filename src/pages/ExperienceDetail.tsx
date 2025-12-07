@@ -180,7 +180,7 @@ const ExperienceDetail = () => {
       image: hauntedForest,
       description: "Kerala folklore horror experience with professional theater actors and ambient sounds",
       highlights: ["Yakshi stories", "Theyyam-inspired finale", "Campfire debrief", "Transport included"],
-      availableTimes: ["7:00 PM"],
+      availableTimes: ["7:00 PM, 7:30 PM"],
       spotsRemaining: 10,
       timeline: [
         { time: "7:00 PM", activity: "Pickup from Calicut city", icon: "🚐" },
