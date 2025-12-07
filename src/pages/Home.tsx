@@ -15,7 +15,7 @@ const Home = () => {
     name: "Thrill",
     emoji: "⚡"
   }, {
-    name: "Calm",
+    name: "Peace",
     emoji: "🧘"
   }, {
     name: "Culture",
