@@ -90,7 +90,7 @@ const Home = () => {
               duration: 1.2,
               ease: "easeOut"
             }} className="mb-8">
-                <span className="block text-5xl md:text-7xl font-marker mb-2">Life's</span>
+                <span className="block text-5xl md:text-7xl font-roxy mb-2">Life's</span>
                 <span className="block font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
                   Out There 
                 </span>
