@@ -9,9 +9,9 @@ export default {
   	  fontFamily: {
   	    sans: ['Poppins', 'sans-serif'],
   	    display: ['Bebas Neue', 'sans-serif'],
-  	    bahianita: ['Bahianita', 'sans-serif'],
-  	    roxy: ['Roxy', 'cursive'],
-  	  },
+        bahianita: ['Bahianita', 'sans-serif'],
+        marker: ['Permanent Marker', 'cursive'],
+      },
   	  colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
