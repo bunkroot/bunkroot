@@ -10,6 +10,7 @@ import beachMeditation from "@/assets/experience-beach-meditation.jpg";
 import kayak from "@/assets/experience-kayak.jpg";
 import hauntedForest from "@/assets/experience-haunted-forest.jpg";
 import mysteryIsland from "@/assets/experience-mystery-island.jpg";
+
 const Home = () => {
   const categories = [{
     name: "Thrill",
@@ -27,6 +28,7 @@ const Home = () => {
     name: "Strange",
     emoji: "🌀"
   }];
+
   const featuredExperiences = [{
     id: 1,
     title: "Beach Meditation at Dawn",
@@ -56,11 +58,13 @@ const Home = () => {
     duration: "6 hours",
     image: mysteryIsland
   }];
-  return <div className="min-h-screen bg-background">
+
+  return (
+    <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[60vh] md:min-h-screen flex items-center pt-16 md:pt-20 overflow-hidden">
         {/* Adventure Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(143,255,0,0.08),transparent_50%)]" />
@@ -71,44 +75,43 @@ const Home = () => {
         <div className="container mx-auto px-4 lg:px-12 xl:px-20 relative z-10">
           <div className="max-w-5xl">
             <motion.div initial={{
-            opacity: 0,
-            y: 30
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 1,
-            ease: "easeOut"
-          }}>
-              <motion.h1 initial={{
               opacity: 0,
-              scale: 0.9
-            }} animate={{
-              opacity: 1,
-              scale: 1
-            }} transition={{
-              duration: 1.2,
-              ease: "easeOut"
-            }} className="mb-8">
-                <span className="block text-5xl md:text-7xl font-marker mb-2">Life's</span>
-                <span className="block font-bahianita text-8xl md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
-                  Out There 
-                </span>
-                
-              </motion.h1>
-              
-              <motion.div className="flex flex-wrap gap-4 mt-12" initial={{
-              opacity: 0,
-              y: 20
+              y: 30
             }} animate={{
               opacity: 1,
               y: 0
             }} transition={{
-              duration: 0.8,
-              delay: 0.3
+              duration: 1,
+              ease: "easeOut"
             }}>
+              <motion.h1 initial={{
+                opacity: 0,
+                scale: 0.9
+              }} animate={{
+                opacity: 1,
+                scale: 1
+              }} transition={{
+                duration: 1.2,
+                ease: "easeOut"
+              }} className="mb-4 md:mb-8">
+                <span className="block text-4xl md:text-7xl font-marker mb-1 md:mb-2">Life's</span>
+                <span className="block font-bahianita text-6xl md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
+                  Out There 
+                </span>
+              </motion.h1>
+              
+              <motion.div className="flex flex-wrap gap-4 mt-6 md:mt-12" initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.8,
+                delay: 0.3
+              }}>
                 <Link to="/explore">
-                  <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg px-10 py-7 hover:scale-105 hover:shadow-[0_0_30px_rgba(143,255,0,0.4)] transition-all">
+                  <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:scale-105 hover:shadow-[0_0_30px_rgba(143,255,0,0.4)] transition-all">
                     START EXPLORING
                   </Button>
                 </Link>
@@ -119,98 +122,99 @@ const Home = () => {
         
         {/* Floating Elements */}
         <motion.div className="absolute top-1/4 right-[10%] w-2 h-2 bg-[hsl(var(--neon-start))] rounded-full blur-sm" animate={{
-        y: [0, -20, 0],
-        opacity: [0.3, 0.7, 0.3]
-      }} transition={{
-        duration: 4,
-        repeat: Infinity
-      }} />
+          y: [0, -20, 0],
+          opacity: [0.3, 0.7, 0.3]
+        }} transition={{
+          duration: 4,
+          repeat: Infinity
+        }} />
         <motion.div className="absolute bottom-1/3 left-[15%] w-3 h-3 bg-[hsl(var(--neon-end))] rounded-full blur-sm" animate={{
-        y: [0, 20, 0],
-        opacity: [0.4, 0.8, 0.4]
-      }} transition={{
-        duration: 5,
-        repeat: Infinity,
-        delay: 1
-      }} />
+          y: [0, 20, 0],
+          opacity: [0.4, 0.8, 0.4]
+        }} transition={{
+          duration: 5,
+          repeat: Infinity,
+          delay: 1
+        }} />
       </section>
 
-
       {/* Categories Section */}
-      <section className="py-24 bg-gradient-to-b from-background via-card to-background relative overflow-hidden">
+      <section className="py-10 md:py-24 bg-gradient-to-b from-background via-card to-background relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImRvdHMiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMTQzLDI1NSwwLDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2RvdHMpIi8+PC9zdmc+')] opacity-40" />
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
           <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }}>
-            <h2 className="text-6xl md:text-7xl font-display font-bold mb-16">
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6
+          }}>
+            <h2 className="text-4xl md:text-7xl font-display font-bold mb-6 md:mb-16">
               PICK YOUR VIBE
             </h2>
             
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              {categories.map((category, index) => <Link key={category.name} to={`/explore?category=${category.name.toLowerCase()}`}>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
+              {categories.map((category, index) => (
+                <Link key={category.name} to={`/explore?category=${category.name.toLowerCase()}`}>
                   <motion.div initial={{
-                opacity: 0,
-                y: 20
-              }} whileInView={{
-                opacity: 1,
-                y: 0
-              }} viewport={{
-                once: true
-              }} transition={{
-                duration: 0.4,
-                delay: index * 0.1
-              }} whileHover={{
-                scale: 1.08,
-                y: -5
-              }} className="bg-gradient-to-br from-card to-background border border-border hover:border-[hsl(var(--neon-start))] rounded-xl p-10 text-center cursor-pointer transition-all group relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(143,255,0,0.15)]">
+                    opacity: 0,
+                    y: 20
+                  }} whileInView={{
+                    opacity: 1,
+                    y: 0
+                  }} viewport={{
+                    once: true
+                  }} transition={{
+                    duration: 0.4,
+                    delay: index * 0.1
+                  }} whileHover={{
+                    scale: 1.08,
+                    y: -5
+                  }} className="bg-gradient-to-br from-card to-background border border-border hover:border-[hsl(var(--neon-start))] rounded-xl p-5 md:p-10 text-center cursor-pointer transition-all group relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(143,255,0,0.15)]">
                     <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--neon-start))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="text-7xl mb-5 group-hover:scale-125 transition-transform duration-300 relative z-10 filter drop-shadow-[0_0_8px_rgba(143,255,0,0.3)]">
+                    <div className="text-4xl md:text-7xl mb-2 md:mb-5 group-hover:scale-125 transition-transform duration-300 relative z-10 filter drop-shadow-[0_0_8px_rgba(143,255,0,0.3)]">
                       {category.emoji}
                     </div>
-                    <h3 className="font-bold text-2xl uppercase tracking-wider relative z-10 group-hover:text-[hsl(var(--neon-start))] transition-colors">
+                    <h3 className="font-bold text-sm md:text-2xl uppercase tracking-wider relative z-10 group-hover:text-[hsl(var(--neon-start))] transition-colors">
                       {category.name}
                     </h3>
                   </motion.div>
-                </Link>)}
+                </Link>
+              ))}
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Featured Experiences Section */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-10 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
           <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }}>
-            <div className="flex justify-between items-end mb-16">
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6
+          }}>
+            <div className="flex justify-between items-end mb-6 md:mb-16">
               <div>
-                <h2 className="text-6xl md:text-8xl font-display font-bold mb-4">
+                <h2 className="text-4xl md:text-8xl font-display font-bold mb-2 md:mb-4">
                   FEATURED
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
                     ESCAPES
                   </span>
                 </h2>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-sm md:text-xl text-muted-foreground">
                   Break the routine. Start here.
                 </p>
               </div>
@@ -221,49 +225,51 @@ const Home = () => {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {featuredExperiences.map((experience, index) => <motion.div key={experience.id} initial={{
-              opacity: 0,
-              y: 30
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              duration: 0.5,
-              delay: index * 0.1
-            }} whileHover={{
-              y: -8
-            }} className="group cursor-pointer">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+              {featuredExperiences.map((experience, index) => (
+                <motion.div key={experience.id} initial={{
+                  opacity: 0,
+                  y: 30
+                }} whileInView={{
+                  opacity: 1,
+                  y: 0
+                }} viewport={{
+                  once: true
+                }} transition={{
+                  duration: 0.5,
+                  delay: index * 0.1
+                }} whileHover={{
+                  y: -8
+                }} className="group cursor-pointer">
                   <Link to={`/experience/${experience.id}`}>
-                    <div className="relative h-80 overflow-hidden rounded-lg border-2 border-border group-hover:border-accent transition-all">
+                    <div className="relative h-48 md:h-80 overflow-hidden rounded-lg border-2 border-border group-hover:border-accent transition-all">
                       <img src={experience.image} alt={experience.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
                       
                       {/* Category Badge */}
-                      <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-wider">
+                      <Badge className="absolute top-2 left-2 md:top-4 md:left-4 bg-black/80 text-accent border border-accent/50 px-2 md:px-4 py-0.5 md:py-1 text-[10px] md:text-xs uppercase tracking-wider">
                         {experience.category}
                       </Badge>
                       
                       {/* Content */}
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h3 className="text-xl font-bold mb-2 leading-tight group-hover:text-[hsl(var(--neon-start))] transition-colors">
+                      <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
+                        <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-2 leading-tight group-hover:text-[hsl(var(--neon-start))] transition-colors">
                           {experience.title}
                         </h3>
-                        <div className="flex justify-between items-center text-sm">
+                        <div className="flex justify-between items-center text-xs md:text-sm">
                           <span className="text-muted-foreground">{experience.duration}</span>
-                          <span className="text-[hsl(var(--neon-start))] font-bold text-lg">{experience.price}</span>
+                          <span className="text-[hsl(var(--neon-start))] font-bold text-sm md:text-lg">{experience.price}</span>
                         </div>
                       </div>
                     </div>
                   </Link>
-                </motion.div>)}
+                </motion.div>
+              ))}
             </div>
 
             {/* Mobile See All Button */}
-            <div className="mt-12 text-center md:hidden">
+            <div className="mt-6 text-center md:hidden">
               <Link to="/explore">
                 <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold w-full">
                   SEE ALL EXPERIENCES →
@@ -275,7 +281,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-12 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--neon-start))]/10 via-transparent to-[hsl(var(--neon-end))]/10" />
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-[hsl(var(--neon-start))] rounded-full blur-[150px] opacity-10" />
@@ -284,27 +290,31 @@ const Home = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }} className="text-center max-w-4xl mx-auto">
-            <h2 className="text-6xl md:text-8xl font-display font-bold mb-12 leading-tight">
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6
+          }} className="text-center max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-8xl font-display font-bold mb-6 md:mb-12 leading-tight">
               BECOME A HOST
             </h2>
             <Link to="/host">
-              <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-xl px-12 py-8 hover:scale-105 hover:shadow-[0_0_40px_rgba(143,255,0,0.5)] transition-all">Share Your Idea</Button>
+              <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg md:text-xl px-10 md:px-12 py-6 md:py-8 hover:scale-105 hover:shadow-[0_0_40px_rgba(143,255,0,0.5)] transition-all">
+                Share Your Idea
+              </Button>
             </Link>
           </motion.div>
         </div>
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Home;
