@@ -96,7 +96,7 @@ const Home = () => {
                 </span>
               </motion.h1>
               
-              <motion.div className="flex flex-wrap gap-4 mt-6 md:mt-12" initial={{
+              <motion.div className="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-12" initial={{
               opacity: 0,
               y: 20
             }} animate={{
@@ -109,6 +109,11 @@ const Home = () => {
                 <Link to="/explore">
                   <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:scale-105 hover:shadow-[0_0_30px_rgba(143,255,0,0.4)] transition-all">
                     START EXPLORING
+                  </Button>
+                </Link>
+                <Link to="/quiz">
+                  <Button size="lg" variant="outline" className="border-2 border-[hsl(var(--neon-start))] text-[hsl(var(--neon-start))] font-bold text-base md:text-lg px-6 md:px-8 py-6 md:py-7 hover:bg-[hsl(var(--neon-start))]/10 transition-all">
+                    🎯 Find Your Vibe
                   </Button>
                 </Link>
               </motion.div>
