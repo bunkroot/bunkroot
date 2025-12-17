@@ -18,9 +18,19 @@ import mysteryIsland from "@/assets/experience-mystery-island.jpg";
 const Explore = () => {
   const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [vibeBanner, setVibeBanner] = useState<string | null>(null);
   const categories = ["Thrill", "Calm", "Culture", "Connection"];
 
-  // Read category from URL params on mount
+  // Map vibe types to categories
+  const vibeToCategory: Record<string, string> = {
+    thrill: "Thrill",
+    calm: "Calm",
+    culture: "Culture",
+    connection: "Connection",
+    strange: "Thrill" // fallback for strange
+  };
+
+  // Read category or vibe from URL params on mount
   useEffect(() => {
     const categoryParam = searchParams.get("category");
     if (categoryParam) {
@@ -28,6 +38,11 @@ const Explore = () => {
       const formattedCategory = categoryParam.charAt(0).toUpperCase() + categoryParam.slice(1);
       if (categories.includes(formattedCategory)) {
         setSelectedCategory(formattedCategory);
+        // Check if it came from quiz
+        const mappedCategory = vibeToCategory[categoryParam.toLowerCase()];
+        if (mappedCategory) {
+          setVibeBanner(categoryParam);
+        }
       }
     }
   }, [searchParams]);
@@ -146,6 +161,15 @@ const Explore = () => {
         }} transition={{
           duration: 0.6
         }}>
+            {/* Vibe Banner (from Quiz) */}
+            {vibeBanner && (
+              <div className="mb-6 p-4 bg-gradient-to-r from-[hsl(var(--neon-start))]/10 to-[hsl(var(--neon-end))]/10 border border-[hsl(var(--neon-start))]/30 rounded-xl">
+                <p className="text-lg font-semibold">
+                  🎯 Showing <span className="text-[hsl(var(--neon-start))]">{selectedCategory}</span> experiences based on your quiz result!
+                </p>
+              </div>
+            )}
+
             {/* Hero Section */}
             <div className="mb-12 md:mb-16">
               <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-bold mb-4 md:mb-6 leading-none break-words">
