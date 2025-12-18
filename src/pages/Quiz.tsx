@@ -97,7 +97,7 @@ const Quiz = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
-                Answer 6 quick questions and discover which BunkRoot experiences are perfect for you.
+                Answer 8 quick questions and discover which BunkRoot experiences are perfect for you.
               </p>
               <motion.button
                 onClick={() => setShowIntro(false)}

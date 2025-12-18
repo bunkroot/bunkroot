@@ -12,20 +12,37 @@ import hauntedForest from "@/assets/experience-haunted-forest.jpg";
 import mysteryIsland from "@/assets/experience-mystery-island.jpg";
 const Home = () => {
   const categories = [{
+    name: "Adventure",
+    emoji: "⛰️",
+    desc: "Trekking, kayaking, cycling"
+  }, {
+    name: "Nature",
+    emoji: "🌿",
+    desc: "Birdwatching, stargazing, foraging"
+  }, {
+    name: "Skill-Learning",
+    emoji: "🎨",
+    desc: "Pottery, archery, cooking"
+  }, {
     name: "Thrill",
-    emoji: "⚡"
+    emoji: "👻",
+    desc: "Horror walks, escape rooms"
   }, {
-    name: "Calm",
-    emoji: "🧘"
+    name: "Mindfulness",
+    emoji: "🧘",
+    desc: "Yoga, meditation, wellness"
   }, {
-    name: "Culture",
-    emoji: "🎭"
+    name: "Sports",
+    emoji: "⚽",
+    desc: "Pickup games, competitions"
   }, {
-    name: "Connection",
-    emoji: "🤝"
+    name: "Social",
+    emoji: "🎲",
+    desc: "Book clubs, game nights"
   }, {
-    name: "Strange",
-    emoji: "🌀"
+    name: "Offbeat",
+    emoji: "🔮",
+    desc: "Weird & wonderful experiences"
   }];
   const featuredExperiences = [{
     id: 1,
@@ -158,7 +175,7 @@ const Home = () => {
               PICK YOUR VIBE
             </h2>
             
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {categories.map((category, index) => <Link key={category.name} to={`/explore?category=${category.name.toLowerCase()}`}>
                   <motion.div initial={{
                 opacity: 0,
@@ -170,18 +187,21 @@ const Home = () => {
                 once: true
               }} transition={{
                 duration: 0.4,
-                delay: index * 0.1
+                delay: index * 0.05
               }} whileHover={{
-                scale: 1.08,
+                scale: 1.05,
                 y: -5
-              }} className="bg-gradient-to-br from-card to-background border border-border hover:border-[hsl(var(--neon-start))] rounded-xl p-5 md:p-10 text-center cursor-pointer transition-all group relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(143,255,0,0.15)]">
+              }} className="bg-gradient-to-br from-card to-background border border-border hover:border-[hsl(var(--neon-start))] rounded-xl p-4 md:p-6 text-center cursor-pointer transition-all group relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(143,255,0,0.15)]">
                     <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--neon-start))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="text-4xl md:text-7xl mb-2 md:mb-5 group-hover:scale-125 transition-transform duration-300 relative z-10 filter drop-shadow-[0_0_8px_rgba(143,255,0,0.3)]">
+                    <div className="text-3xl md:text-5xl mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300 relative z-10 filter drop-shadow-[0_0_8px_rgba(143,255,0,0.3)]">
                       {category.emoji}
                     </div>
-                    <h3 className="font-bold text-sm md:text-2xl uppercase tracking-wider relative z-10 group-hover:text-[hsl(var(--neon-start))] transition-colors">
+                    <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider relative z-10 group-hover:text-[hsl(var(--neon-start))] transition-colors">
                       {category.name}
                     </h3>
+                    <p className="text-[10px] md:text-xs text-muted-foreground mt-1 relative z-10 hidden md:block">
+                      {category.desc}
+                    </p>
                   </motion.div>
                 </Link>)}
             </div>

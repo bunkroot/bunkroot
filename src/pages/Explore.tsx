@@ -19,23 +19,29 @@ const Explore = () => {
   const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [vibeBanner, setVibeBanner] = useState<string | null>(null);
-  const categories = ["Thrill", "Calm", "Culture", "Connection"];
+  const categories = ["Adventure", "Nature", "Skill-Learning", "Thrill", "Mindfulness", "Sports", "Social", "Offbeat"];
 
-  // Map vibe types to categories
+  // Map vibe result categories to display categories
   const vibeToCategory: Record<string, string> = {
+    adventure: "Adventure",
+    nature: "Nature",
+    "skill-learning": "Skill-Learning",
     thrill: "Thrill",
-    calm: "Calm",
-    culture: "Culture",
-    connection: "Connection",
-    strange: "Thrill" // fallback for strange
+    mindfulness: "Mindfulness",
+    sports: "Sports",
+    social: "Social",
+    offbeat: "Offbeat"
   };
 
   // Read category or vibe from URL params on mount
   useEffect(() => {
     const categoryParam = searchParams.get("category");
     if (categoryParam) {
-      // Capitalize first letter to match category names
-      const formattedCategory = categoryParam.charAt(0).toUpperCase() + categoryParam.slice(1);
+      // Handle multi-word categories like skill-learning
+      const formattedCategory = categoryParam.split('-').map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1)
+      ).join('-');
+      
       if (categories.includes(formattedCategory)) {
         setSelectedCategory(formattedCategory);
         // Check if it came from quiz
@@ -49,7 +55,7 @@ const Explore = () => {
   const experiences = [{
     id: 1,
     title: "Beach Meditation at Dawn",
-    category: "Calm",
+    category: "Mindfulness",
     emotion: "Peace + Reset",
     price: "₹350",
     duration: "2 hours",
@@ -62,7 +68,7 @@ const Explore = () => {
   }, {
     id: 2,
     title: "Candle-light Truth Room",
-    category: "Connection",
+    category: "Social",
     emotion: "Connection + Vulnerability",
     price: "₹500",
     duration: "2.5 hours",
@@ -75,7 +81,7 @@ const Explore = () => {
   }, {
     id: 3,
     title: "Treasure Hunt in Old City",
-    category: "Culture",
+    category: "Adventure",
     emotion: "Curiosity + Competition",
     price: "₹600",
     duration: "2.5 hours",
@@ -88,7 +94,7 @@ const Explore = () => {
   }, {
     id: 4,
     title: "Kayak & Chill",
-    category: "Thrill",
+    category: "Adventure",
     emotion: "Adventure + Peace",
     price: "₹800",
     duration: "3 hours",
@@ -101,7 +107,7 @@ const Explore = () => {
   }, {
     id: 5,
     title: "Fishing with Locals at Sea",
-    category: "Culture",
+    category: "Nature",
     emotion: "Authenticity + Culture",
     price: "₹900",
     duration: "6 hours",
@@ -127,7 +133,7 @@ const Explore = () => {
   }, {
     id: 7,
     title: "Mystery Island Escape",
-    category: "Thrill",
+    category: "Offbeat",
     emotion: "Thrill + Wonder",
     price: "₹1,500",
     duration: "6 hours",
