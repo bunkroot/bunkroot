@@ -575,7 +575,7 @@ const ExperienceDetail = () => {
                 {/* Price */}
                 <div className="border-b border-border pb-4 md:pb-6">
                   <div className="text-xs uppercase tracking-wide text-black mb-2">From</div>
-                  <div className="text-4xl md:text-5xl font-bold text-black break-words">
+                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
                     {experience.price}
                   </div>
                   <div className="text-sm text-black mt-1">per person</div>
