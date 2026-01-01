@@ -351,29 +351,43 @@ const ExperienceDetail = () => {
               {/* Mobile & Tablet Booking Widget (before "The Experience" heading) */}
               <div className="lg:hidden">
                   <motion.div 
-                    className="sticky top-20 z-40 bg-card border-2 border-border rounded-lg overflow-hidden shadow-lg"
+                    className={`sticky top-20 z-40 rounded-lg overflow-hidden shadow-lg transition-all duration-300 ${
+                      isBookingExpanded 
+                        ? "bg-card border-2 border-border" 
+                        : "bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]"
+                    }`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
                     {/* Minimized View */}
                     <button 
                       onClick={() => setIsBookingExpanded(!isBookingExpanded)}
-                      className="w-full p-4 flex items-center justify-between hover:bg-accent/5 transition-colors"
+                      className={`w-full p-4 flex items-center justify-between transition-colors ${
+                        isBookingExpanded ? "hover:bg-accent/5" : ""
+                      }`}
                     >
                       <div className="flex items-center gap-4">
                         <div>
-                          <div className="text-xs uppercase tracking-wide text-muted-foreground">From</div>
-                          <div className="text-2xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
+                          <div className={`text-xs uppercase tracking-wide ${
+                            isBookingExpanded ? "text-muted-foreground" : "text-black/70"
+                          }`}>From</div>
+                          <div className={`text-2xl font-bold ${
+                            isBookingExpanded 
+                              ? "bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent" 
+                              : "text-black"
+                          }`}>
                             {experience.price}
                           </div>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-sm font-semibold">Book via WhatsApp</span>
+                        <span className={`text-sm font-semibold ${
+                          isBookingExpanded ? "text-foreground" : "text-black"
+                        }`}>Book via WhatsApp</span>
                         {isBookingExpanded ? (
                           <ChevronUp className="w-5 h-5 text-accent" />
                         ) : (
-                          <ChevronDown className="w-5 h-5 text-accent" />
+                          <ChevronDown className="w-5 h-5 text-black" />
                         )}
                       </div>
                     </button>
