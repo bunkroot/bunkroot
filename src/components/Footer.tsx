@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">© 2025 BunkRoot. Off the Routine.</p>
+          <p className="text-sm text-muted-foreground">© 2026 BunkRoot. Life's Out There.</p>
           <div className="flex gap-4 text-sm">
             <Link to="/terms" className="text-muted-foreground hover:text-accent transition-colors">Terms</Link>
             <Link to="/privacy" className="text-muted-foreground hover:text-accent transition-colors">Privacy</Link>
