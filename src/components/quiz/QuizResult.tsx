@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { VibeResult } from "@/data/quizData";
@@ -10,18 +9,14 @@ interface QuizResultProps {
 }
 
 const QuizResult = ({ result }: QuizResultProps) => {
-  const [showLeadCapture, setShowLeadCapture] = useState(true);
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
 
-  const handleSubmitLead = () => {
-    if (name && phone) {
-      const message = encodeURIComponent(
-        `Hey! I just took the BunkRoot quiz and I'm "${result.title}" 🎯. My name is ${name}. Keep me updated on ${result.category} experiences!`
-      );
-      window.open(`https://wa.me/917907536782?text=${message}`, "_blank");
-    }
-    setShowLeadCapture(false);
+  const handleGetAnalysis = () => {
+    const userName = name.trim() || "Hey";
+    const message = encodeURIComponent(
+      `${userName}! I just discovered I'm "${result.title}" ${result.emoji} on BunkRoot's vibe quiz. I'd love to get my detailed vibe analysis and personalized ${result.category} experience recommendations!`
+    );
+    window.open(`https://wa.me/917907536782?text=${message}`, "_blank");
   };
 
   return (
@@ -50,70 +45,37 @@ const QuizResult = ({ result }: QuizResultProps) => {
         </p>
       </motion.div>
 
-      {/* Lead Capture */}
-      {showLeadCapture && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="bg-card border border-border rounded-xl p-6 mb-6"
-        >
-          <h3 className="text-lg font-bold mb-4">
-            Get notified about {result.category} experiences! 🔔
-          </h3>
-          <div className="space-y-3">
-            <Input
-              placeholder="Your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="h-12 bg-background"
-            />
-            <Input
-              placeholder="WhatsApp number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="h-12 bg-background"
-            />
-            <Button
-              onClick={handleSubmitLead}
-              className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold h-12"
-            >
-              Join the Waitlist via WhatsApp
-            </Button>
-          </div>
-          <button
-            onClick={() => setShowLeadCapture(false)}
-            className="text-sm text-muted-foreground mt-3 hover:text-foreground transition-colors"
-          >
-            Skip for now
-          </button>
-        </motion.div>
-      )}
-
-      {/* CTA Buttons */}
+      {/* WhatsApp CTA */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: showLeadCapture ? 0.6 : 0.3 }}
-        className="space-y-3"
+        transition={{ delay: 0.4 }}
+        className="bg-card border border-border rounded-xl p-6"
       >
-        <Link to={`/explore?category=${result.category}`}>
+        <h3 className="text-xl font-bold mb-2">
+          Want your full vibe breakdown? 🔥
+        </h3>
+        <p className="text-muted-foreground mb-6 text-sm">
+          Get a detailed analysis of your personality + handpicked {result.category} experiences curated just for you.
+        </p>
+        <div className="space-y-4">
+          <Input
+            placeholder="Your name (optional)"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="h-12 bg-background text-center"
+          />
           <Button
+            onClick={handleGetAnalysis}
             size="lg"
             className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold h-14 text-lg"
           >
-            Explore {result.title} Experiences →
+            Get My Vibe Analysis →
           </Button>
-        </Link>
-        <Link to="/explore">
-          <Button
-            size="lg"
-            variant="outline"
-            className="w-full border-2 border-border h-14"
-          >
-            See All Experiences
-          </Button>
-        </Link>
+          <p className="text-xs text-muted-foreground">
+            We'll chat on WhatsApp — no spam, just vibes ✨
+          </p>
+        </div>
       </motion.div>
     </motion.div>
   );
