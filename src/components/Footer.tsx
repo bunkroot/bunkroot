@@ -16,9 +16,9 @@ const Footer = () => {
             <h4 className="font-bold mb-4 text-accent">Explore</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/explore" className="text-muted-foreground hover:text-accent transition-colors">All Experiences</Link></li>
+              <li><Link to="/explore?category=adventure" className="text-muted-foreground hover:text-accent transition-colors">Adventure</Link></li>
               <li><Link to="/explore?category=thrill" className="text-muted-foreground hover:text-accent transition-colors">Thrill</Link></li>
-              <li><Link to="/explore?category=calm" className="text-muted-foreground hover:text-accent transition-colors">Calm</Link></li>
-              <li><Link to="/explore?category=culture" className="text-muted-foreground hover:text-accent transition-colors">Culture</Link></li>
+              <li><Link to="/explore?category=mindfulness" className="text-muted-foreground hover:text-accent transition-colors">Mindfulness</Link></li>
             </ul>
           </div>
           
