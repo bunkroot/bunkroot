@@ -11,8 +11,9 @@ const QuizResult = ({
 }: QuizResultProps) => {
   const [name, setName] = useState("");
   const handleGetAnalysis = () => {
-    const userName = name.trim() || "Hey";
-    const message = encodeURIComponent(`${userName}! I just discovered I'm "${result.title}" ${result.emoji} on BunkRoot's vibe quiz. I'd love to get my detailed vibe analysis and personalized ${result.category} experience recommendations!`);
+    const userName = name.trim();
+    const greeting = userName ? `Hey, I'm ${userName}!` : "Hey!";
+    const message = encodeURIComponent(`${greeting} I just discovered I'm "${result.title}" ${result.emoji} on BunkRoot's vibe quiz. I'd love to get my detailed vibe analysis and personalized ${result.category} experience recommendations!`);
     window.open(`https://wa.me/917907536782?text=${message}`, "_blank");
   };
   return <motion.div initial={{
