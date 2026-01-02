@@ -40,13 +40,13 @@ const ExperienceDetail = () => {
       price: "₹350",
       duration: "2 hours",
       time: "6:00 AM - 8:00 AM",
-      groupSize: "12-15 people",
+      minGuests: 1,
+      maxGuests: 15,
       location: "Kappad Beach",
       image: beachMeditation,
       description: "Guided meditation with sound of waves, breathing exercises, and traditional Kerala breakfast",
       highlights: ["Golden hour photography", "First light energy", "Community feeling"],
       availableTimes: ["6:00 AM", "6:30 AM"],
-      spotsRemaining: 8,
       timeline: [
         { time: "6:00 AM", activity: "Meet at Kappad Beach parking", icon: "📍" },
         { time: "6:10 AM", activity: "Breathing exercises & stretching", icon: "🌬️" },
@@ -67,13 +67,13 @@ const ExperienceDetail = () => {
       price: "₹500",
       duration: "2.5 hours",
       time: "7:00 PM - 9:30 PM",
-      groupSize: "8-10 people",
+      minGuests: 2,
+      maxGuests: 10,
       location: "Heritage Homestay",
       image: truthRoom,
       description: "Radical honesty in a safe space, facilitated by trained psychology professional",
       highlights: ["Structured vulnerability exercises", "Burn one written fear", "Post-session WhatsApp group"],
       availableTimes: ["7:00 PM", "7:30 PM"],
-      spotsRemaining: 5,
       timeline: [
         { time: "7:00 PM", activity: "Arrival & welcome tea", icon: "🍵" },
         { time: "7:15 PM", activity: "Ground rules & circle formation", icon: "⭕" },
@@ -94,13 +94,13 @@ const ExperienceDetail = () => {
       price: "₹600",
       duration: "2.5 hours",
       time: "4:00 PM - 6:30 PM",
-      groupSize: "20-25 people",
+      minGuests: 4,
+      maxGuests: 25,
       location: "Mananchira to Mishkal Mosque",
       image: treasureHunt,
       description: "Cryptic riddles through historic Calicut streets with real locals telling real stories",
       highlights: ["Team competition", "Malayalam clues", "Heritage passport", "Halwa tasting"],
       availableTimes: ["4:00 PM", "4:30 PM"],
-      spotsRemaining: 12,
       timeline: [
         { time: "4:00 PM", activity: "Team formation at Mananchira Square", icon: "👥" },
         { time: "4:15 PM", activity: "Receive first cryptic clue", icon: "🗺️" },
@@ -121,13 +121,13 @@ const ExperienceDetail = () => {
       price: "₹800",
       duration: "3 hours",
       time: "4:30 PM - 7:30 PM",
-      groupSize: "10-12 people",
+      minGuests: 2,
+      maxGuests: 12,
       location: "Kadalundi Estuary",
       image: kayak,
       description: "Sunset kayaking through mangroves with float therapy and bonfire on isolated sandbar",
       highlights: ["Professional photos included", "Float therapy", "Sunset watching"],
       availableTimes: ["4:30 PM", "5:00 PM"],
-      spotsRemaining: 6,
       timeline: [
         { time: "4:30 PM", activity: "Safety briefing & gear up", icon: "🛟" },
         { time: "4:45 PM", activity: "Begin kayaking through mangroves", icon: "🚣" },
@@ -148,13 +148,13 @@ const ExperienceDetail = () => {
       price: "₹900",
       duration: "6 hours",
       time: "4:15 AM - 10:30 AM",
-      groupSize: "6-8 people",
+      minGuests: 2,
+      maxGuests: 8,
       location: "Beypore",
       image: fishing,
       description: "Real fishing trip with multigenerational fishermen, learn net-casting, cook your catch",
       highlights: ["Dawn at sea", "Traditional fish-cleaning", "Breakfast you caught", "Uru boat yard visit"],
       availableTimes: ["4:15 AM"],
-      spotsRemaining: 4,
       timeline: [
         { time: "4:15 AM", activity: "Meet fishermen at Beypore harbor", icon: "⚓" },
         { time: "4:30 AM", activity: "Sail into the Arabian Sea", icon: "🚤" },
@@ -175,13 +175,13 @@ const ExperienceDetail = () => {
       price: "₹800",
       duration: "4 hours",
       time: "7:00 PM - 11:15 PM",
-      groupSize: "15-20 people",
+      minGuests: 4,
+      maxGuests: 20,
       location: "Kakkayam/Thusharagiri",
       image: hauntedForest,
       description: "Kerala folklore horror experience with professional theater actors and ambient sounds",
       highlights: ["Yakshi stories", "Theyyam-inspired finale", "Campfire debrief", "Transport included"],
       availableTimes: ["7:00 PM", "7:30 PM"],
-      spotsRemaining: 10,
       timeline: [
         { time: "7:00 PM", activity: "Pickup from Calicut city", icon: "🚐" },
         { time: "7:45 PM", activity: "Arrive at forest entrance", icon: "🌲" },
@@ -202,13 +202,13 @@ const ExperienceDetail = () => {
       price: "₹1,500",
       duration: "6 hours",
       time: "4:00 PM - 10:00 PM",
-      groupSize: "12-16 people",
+      minGuests: 4,
+      maxGuests: 16,
       location: "Secret Island",
       image: mysteryIsland,
       description: "Solve puzzles on boat journey to mystery island, earn premium seafood dinner through challenges",
       highlights: ["Destination unknown", "Decode coordinates", "Build emergency shelter", "Cinematic reveal"],
       availableTimes: ["4:00 PM"],
-      spotsRemaining: 7,
       timeline: [
         { time: "4:00 PM", activity: "Board mystery boat from secret dock", icon: "⛵" },
         { time: "4:30 PM", activity: "Solve cryptic navigation puzzles", icon: "🧩" },
@@ -332,8 +332,8 @@ const ExperienceDetail = () => {
                 </div>
                 <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
                   <Users className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Group Size</div>
-                  <div className="text-sm md:text-lg font-bold break-words">{experience.groupSize}</div>
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Min Guests</div>
+                  <div className="text-sm md:text-lg font-bold break-words">{experience.minGuests}</div>
                 </div>
                 <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
                   <MapPin className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
@@ -341,9 +341,10 @@ const ExperienceDetail = () => {
                   <div className="text-sm md:text-lg font-bold break-words">{experience.location}</div>
                 </div>
                 <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Spots Left</div>
+                  <Users className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Max Guests</div>
                   <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
-                    {experience.spotsRemaining}
+                    {experience.maxGuests}
                   </div>
                 </div>
               </div>
@@ -430,8 +431,8 @@ const ExperienceDetail = () => {
                               <Input 
                                 id="guests-mobile"
                                 type="number"
-                                min="1"
-                                max={experience.spotsRemaining}
+                                min={experience.minGuests}
+                                max={experience.maxGuests}
                                 value={guests}
                                 onChange={(e) => setGuests(e.target.value)}
                                 className="bg-card border-2"
@@ -624,8 +625,8 @@ const ExperienceDetail = () => {
                     <Input 
                       id="guests"
                       type="number"
-                      min="1"
-                      max={experience.spotsRemaining}
+                      min={experience.minGuests}
+                      max={experience.maxGuests}
                       value={guests}
                       onChange={(e) => setGuests(e.target.value)}
                       className="bg-background border-2"
