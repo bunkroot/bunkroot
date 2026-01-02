@@ -331,21 +331,19 @@ const ExperienceDetail = () => {
                   <div className="text-sm md:text-lg font-bold break-words">{experience.duration}</div>
                 </div>
                 <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
-                  <Users className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Min Guests</div>
-                  <div className="text-sm md:text-lg font-bold break-words">{experience.minGuests}</div>
-                </div>
-                <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
                   <MapPin className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Location</div>
                   <div className="text-sm md:text-lg font-bold break-words">{experience.location}</div>
                 </div>
                 <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
                   <Users className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Min Guests</div>
+                  <div className="text-sm md:text-lg font-bold break-words">{experience.minGuests}</div>
+                </div>
+                <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
+                  <Users className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Max Guests</div>
-                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
-                    {experience.maxGuests}
-                  </div>
+                  <div className="text-sm md:text-lg font-bold break-words">{experience.maxGuests}</div>
                 </div>
               </div>
 
