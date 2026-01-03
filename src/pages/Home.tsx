@@ -107,7 +107,7 @@ const Home = () => {
               duration: 1.2,
               ease: "easeOut"
             }} className="mb-4 md:mb-8">
-                <span className="block text-5xl font-edo mb-1 md:mb-2 md:text-6xl">Life's</span>
+                <span className="block text-5xl font-edo mb-1 md:mb-2 md:text-7xl">Life's</span>
                 <span className="block font-bahianita md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-9xl">
                   Out There 
                 </span>
