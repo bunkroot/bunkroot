@@ -694,10 +694,10 @@ const ExperienceDetail = () => {
                 <span className="transform group-open:rotate-180 transition-transform">▼</span>
               </summary>
               <div className="mt-4 text-xs text-muted-foreground space-y-2 pl-4">
-                <p><strong>Cancellation Policy:</strong> Full refund if cancelled 48 hours before the experience. 50% refund if cancelled 24-48 hours before. No refund for cancellations within 24 hours.</p>
+                <p><strong>Cancellation Policy:</strong> Full refund if cancelled 48 hours before the activity. No refund of booking amount for cancellations within 48 hours.</p>
                 <p><strong>Safety Requirements:</strong> All participants must follow safety guidelines provided by the host. BunkRoot and hosts reserve the right to refuse service to anyone who appears intoxicated or unfit to participate.</p>
-                <p><strong>Age Restrictions:</strong> Some experiences have minimum age requirements. Please check experience details before booking.</p>
-                <p><strong>Weather Policy:</strong> In case of extreme weather conditions, experiences may be rescheduled or cancelled with full refund.</p>
+                <p><strong>Age Restrictions:</strong> Some activities have minimum age requirements. Please check activity details before booking.</p>
+                <p><strong>Weather Policy:</strong> In case of extreme weather conditions, activities may be rescheduled or cancelled with full refund.</p>
                 <p><strong>Liability:</strong> Participants engage in activities at their own risk. BunkRoot and experience hosts are not liable for injuries or losses during the experience.</p>
               </div>
             </details>
