@@ -40,8 +40,8 @@ const ExperienceDetail = () => {
       price: "₹350",
       duration: "2 hours",
       time: "6:00 AM - 8:00 AM",
-      minGuests: 1,
-      maxGuests: 15,
+      groupSize: "1-15",
+      minAge: 10,
       location: "Kappad Beach",
       image: beachMeditation,
       description: "Guided meditation with sound of waves, breathing exercises, and traditional Kerala breakfast",
@@ -67,8 +67,8 @@ const ExperienceDetail = () => {
       price: "₹500",
       duration: "2.5 hours",
       time: "7:00 PM - 9:30 PM",
-      minGuests: 2,
-      maxGuests: 10,
+      groupSize: "2-10",
+      minAge: 18,
       location: "Heritage Homestay",
       image: truthRoom,
       description: "Radical honesty in a safe space, facilitated by trained psychology professional",
@@ -94,8 +94,8 @@ const ExperienceDetail = () => {
       price: "₹600",
       duration: "2.5 hours",
       time: "4:00 PM - 6:30 PM",
-      minGuests: 4,
-      maxGuests: 25,
+      groupSize: "4-25",
+      minAge: 10,
       location: "Mananchira to Mishkal Mosque",
       image: treasureHunt,
       description: "Cryptic riddles through historic Calicut streets with real locals telling real stories",
@@ -121,8 +121,8 @@ const ExperienceDetail = () => {
       price: "₹800",
       duration: "3 hours",
       time: "4:30 PM - 7:30 PM",
-      minGuests: 2,
-      maxGuests: 12,
+      groupSize: "2-12",
+      minAge: 12,
       location: "Kadalundi Estuary",
       image: kayak,
       description: "Sunset kayaking through mangroves with float therapy and bonfire on isolated sandbar",
@@ -148,8 +148,8 @@ const ExperienceDetail = () => {
       price: "₹900",
       duration: "6 hours",
       time: "4:15 AM - 10:30 AM",
-      minGuests: 2,
-      maxGuests: 8,
+      groupSize: "2-8",
+      minAge: 12,
       location: "Beypore",
       image: fishing,
       description: "Real fishing trip with multigenerational fishermen, learn net-casting, cook your catch",
@@ -175,8 +175,8 @@ const ExperienceDetail = () => {
       price: "₹800",
       duration: "4 hours",
       time: "7:00 PM - 11:15 PM",
-      minGuests: 4,
-      maxGuests: 20,
+      groupSize: "4-20",
+      minAge: 16,
       location: "Kakkayam/Thusharagiri",
       image: hauntedForest,
       description: "Kerala folklore horror experience with professional theater actors and ambient sounds",
@@ -202,8 +202,8 @@ const ExperienceDetail = () => {
       price: "₹1,500",
       duration: "6 hours",
       time: "4:00 PM - 10:00 PM",
-      minGuests: 4,
-      maxGuests: 16,
+      groupSize: "4-16",
+      minAge: 14,
       location: "Secret Island",
       image: mysteryIsland,
       description: "Solve puzzles on boat journey to mystery island, earn premium seafood dinner through challenges",
@@ -337,13 +337,13 @@ const ExperienceDetail = () => {
                 </div>
                 <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
                   <Users className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Min Guests</div>
-                  <div className="text-sm md:text-lg font-bold break-words">{experience.minGuests}</div>
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Group Size</div>
+                  <div className="text-sm md:text-lg font-bold break-words">{experience.groupSize}</div>
                 </div>
                 <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
                   <Users className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Max Guests</div>
-                  <div className="text-sm md:text-lg font-bold break-words">{experience.maxGuests}</div>
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Min Age</div>
+                  <div className="text-sm md:text-lg font-bold break-words">{experience.minAge}+</div>
                 </div>
               </div>
 
@@ -429,8 +429,8 @@ const ExperienceDetail = () => {
                               <Input 
                                 id="guests-mobile"
                                 type="number"
-                                min={experience.minGuests}
-                                max={experience.maxGuests}
+                                min={1}
+                                max={20}
                                 value={guests}
                                 onChange={(e) => setGuests(e.target.value)}
                                 className="bg-card border-2"
@@ -623,8 +623,8 @@ const ExperienceDetail = () => {
                     <Input 
                       id="guests"
                       type="number"
-                      min={experience.minGuests}
-                      max={experience.maxGuests}
+                      min={1}
+                      max={20}
                       value={guests}
                       onChange={(e) => setGuests(e.target.value)}
                       className="bg-background border-2"

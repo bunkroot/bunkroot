@@ -158,11 +158,14 @@ Price Range: ${formData.price}`;
                       <SelectValue placeholder="Select a category" />
                     </SelectTrigger>
                     <SelectContent className="bg-card border border-border z-50">
+                      <SelectItem value="adventure">Adventure</SelectItem>
+                      <SelectItem value="nature">Nature</SelectItem>
+                      <SelectItem value="skill-learning">Skill-Learning</SelectItem>
                       <SelectItem value="thrill">Thrill</SelectItem>
-                      <SelectItem value="calm">Calm</SelectItem>
-                      <SelectItem value="culture">Culture</SelectItem>
-                      <SelectItem value="connection">Connection</SelectItem>
-                      <SelectItem value="strange">Strange</SelectItem>
+                      <SelectItem value="mindfulness">Mindfulness</SelectItem>
+                      <SelectItem value="sports">Sports</SelectItem>
+                      <SelectItem value="social">Social</SelectItem>
+                      <SelectItem value="offbeat">Offbeat</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
