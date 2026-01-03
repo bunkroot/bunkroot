@@ -11,6 +11,7 @@ export default {
   	    display: ['Bebas Neue', 'sans-serif'],
         bahianita: ['Bahianita', 'sans-serif'],
         marker: ['Permanent Marker', 'cursive'],
+        edo: ['Edo', 'sans-serif'],
       },
   	  colors: {
         border: "hsl(var(--border))",
