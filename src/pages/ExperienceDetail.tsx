@@ -522,59 +522,6 @@ const ExperienceDetail = () => {
                 </div>
               </div>
 
-              {/* Highlights */}
-              <div>
-                <h3 className="text-2xl font-display font-bold mb-6">Highlights</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {experience.highlights.map((highlight, idx) => (
-                    <div key={idx} className="flex items-start gap-3 bg-accent/10 border border-accent/30 p-4 rounded-lg">
-                      <span className="text-accent text-xl">★</span>
-                      <span className="text-foreground">{highlight}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Experience Timeline */}
-              <div>
-                <h3 className="text-2xl font-display font-bold mb-6">Experience Timeline</h3>
-                <div className="relative">
-                  {/* Vertical Line */}
-                  <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]" />
-                  
-                  <div className="space-y-6">
-                    {experience.timeline.map((step, idx) => (
-                      <motion.div
-                        key={idx}
-                        className="relative flex gap-6"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1 }}
-                      >
-                        {/* Icon Circle */}
-                        <div className="relative z-10 flex-shrink-0">
-                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] flex items-center justify-center text-2xl shadow-lg shadow-accent/30">
-                            {step.icon}
-                          </div>
-                        </div>
-                        
-                        {/* Content */}
-                        <div className="flex-1 pb-2">
-                          <div className="bg-card/80 border-2 border-border hover:border-accent/50 rounded-lg p-4 transition-all">
-                            <div className="text-sm font-bold text-accent uppercase tracking-wide mb-1">
-                              {step.time}
-                            </div>
-                            <div className="text-base text-foreground">
-                              {step.activity}
-                            </div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
             </motion.div>
 
             {/* Right Column - Booking Card (Sticky) - Desktop Only */}
