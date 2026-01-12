@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Clock, Users, MapPin, Calendar as CalendarIcon, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowLeft, Clock, Users, MapPin, Calendar as CalendarIcon, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
@@ -30,6 +31,21 @@ const ExperienceDetail = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [guests, setGuests] = useState("1");
+  
+  // Embla carousel for gallery
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    slidesToScroll: 1,
+    containScroll: "trimSnaps",
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   const experiences = [
     {
@@ -44,6 +60,7 @@ const ExperienceDetail = () => {
       minAge: 10,
       location: "Kappad Beach",
       image: beachMeditation,
+      gallery: [beachMeditation, beachMeditation, beachMeditation, beachMeditation],
       description: "Guided meditation with sound of waves, breathing exercises, and traditional Kerala breakfast",
       highlights: ["Golden hour photography", "First light energy", "Community feeling"],
       availableTimes: ["6:00 AM", "6:30 AM"],
@@ -71,6 +88,7 @@ const ExperienceDetail = () => {
       minAge: 18,
       location: "Heritage Homestay",
       image: truthRoom,
+      gallery: [truthRoom, truthRoom, truthRoom, truthRoom],
       description: "Radical honesty in a safe space, facilitated by trained psychology professional",
       highlights: ["Structured vulnerability exercises", "Burn one written fear", "Post-session WhatsApp group"],
       availableTimes: ["7:00 PM", "7:30 PM"],
@@ -98,6 +116,7 @@ const ExperienceDetail = () => {
       minAge: 10,
       location: "Mananchira to Mishkal Mosque",
       image: treasureHunt,
+      gallery: [treasureHunt, treasureHunt, treasureHunt, treasureHunt],
       description: "Cryptic riddles through historic Calicut streets with real locals telling real stories",
       highlights: ["Team competition", "Malayalam clues", "Heritage passport", "Halwa tasting"],
       availableTimes: ["4:00 PM", "4:30 PM"],
@@ -125,6 +144,7 @@ const ExperienceDetail = () => {
       minAge: 12,
       location: "Kadalundi Estuary",
       image: kayak,
+      gallery: [kayak, kayak, kayak, kayak],
       description: "Sunset kayaking through mangroves with float therapy and bonfire on isolated sandbar",
       highlights: ["Professional photos included", "Float therapy", "Sunset watching"],
       availableTimes: ["4:30 PM", "5:00 PM"],
@@ -152,6 +172,7 @@ const ExperienceDetail = () => {
       minAge: 12,
       location: "Beypore",
       image: fishing,
+      gallery: [fishing, fishing, fishing, fishing],
       description: "Real fishing trip with multigenerational fishermen, learn net-casting, cook your catch",
       highlights: ["Dawn at sea", "Traditional fish-cleaning", "Breakfast you caught", "Uru boat yard visit"],
       availableTimes: ["4:15 AM"],
@@ -179,6 +200,7 @@ const ExperienceDetail = () => {
       minAge: 16,
       location: "Kakkayam/Thusharagiri",
       image: hauntedForest,
+      gallery: [hauntedForest, hauntedForest, hauntedForest, hauntedForest],
       description: "Kerala folklore horror experience with professional theater actors and ambient sounds",
       highlights: ["Yakshi stories", "Theyyam-inspired finale", "Campfire debrief", "Transport included"],
       availableTimes: ["7:00 PM", "7:30 PM"],
@@ -206,6 +228,7 @@ const ExperienceDetail = () => {
       minAge: 14,
       location: "Secret Island",
       image: mysteryIsland,
+      gallery: [mysteryIsland, mysteryIsland, mysteryIsland, mysteryIsland],
       description: "Solve puzzles on boat journey to mystery island, earn premium seafood dinner through challenges",
       highlights: ["Destination unknown", "Decode coordinates", "Build emergency shelter", "Cinematic reveal"],
       availableTimes: ["4:00 PM"],
@@ -488,6 +511,44 @@ const ExperienceDetail = () => {
                     </AnimatePresence>
                   </motion.div>
                 </div>
+
+              {/* Image Gallery Carousel */}
+              <div className="relative">
+                <h3 className="text-2xl font-display font-bold mb-4">Gallery</h3>
+                <div className="overflow-hidden rounded-lg" ref={emblaRef}>
+                  <div className="flex gap-3 md:gap-4">
+                    {experience.gallery.map((img, idx) => (
+                      <div 
+                        key={idx} 
+                        className="flex-shrink-0 w-[85%] sm:w-[48%] lg:w-[32%]"
+                      >
+                        <img 
+                          src={img} 
+                          alt={`${experience.title} - Image ${idx + 1}`}
+                          className="w-full h-48 md:h-64 object-cover rounded-lg border-2 border-border hover:border-accent/50 transition-colors"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* Navigation Arrows */}
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="absolute left-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-black z-10"
+                  onClick={scrollPrev}
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="absolute right-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-black z-10"
+                  onClick={scrollNext}
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </Button>
+              </div>
 
               {/* Full Description */}
               <div>
