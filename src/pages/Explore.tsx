@@ -19,8 +19,7 @@ const Explore = () => {
   const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [vibeBanner, setVibeBanner] = useState<string | null>(null);
-  const [searchInput, setSearchInput] = useState("");
-  const [activeSearch, setActiveSearch] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const categories = ["Adventure", "Nature", "Skill-Learning", "Thrill", "Mindfulness", "Sports", "Social", "Offbeat"];
 
   // Map vibe result categories to display categories
@@ -151,12 +150,12 @@ const Explore = () => {
   const filteredExperiences = experiences
     .filter(exp => {
       const matchesCategory = selectedCategory ? exp.category === selectedCategory : true;
-      const matchesSearch = activeSearch.trim() 
-        ? exp.title.toLowerCase().includes(activeSearch.toLowerCase()) ||
-          exp.category.toLowerCase().includes(activeSearch.toLowerCase()) ||
-          exp.host.toLowerCase().includes(activeSearch.toLowerCase()) ||
-          exp.location.toLowerCase().includes(activeSearch.toLowerCase()) ||
-          exp.description.toLowerCase().includes(activeSearch.toLowerCase())
+      const matchesSearch = searchQuery.trim() 
+        ? exp.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          exp.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          exp.host.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          exp.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          exp.description.toLowerCase().includes(searchQuery.toLowerCase())
         : true;
       return matchesCategory && matchesSearch;
     })
@@ -168,15 +167,6 @@ const Explore = () => {
       return 0;
     });
 
-  const handleSearch = () => {
-    setActiveSearch(searchInput);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
-  };
   return <div className="min-h-screen bg-background">
       <Header />
       
@@ -214,14 +204,12 @@ const Explore = () => {
               <Input 
                 placeholder="Search experiences..." 
                 className="flex-1 h-14 text-lg bg-card border-2 border-border focus:border-accent" 
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                onKeyDown={handleKeyDown}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
               <Button 
                 size="lg" 
                 className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold h-14 hover:opacity-90"
-                onClick={handleSearch}
               >
                 Search
               </Button>
