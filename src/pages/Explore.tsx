@@ -19,6 +19,7 @@ const Explore = () => {
   const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [vibeBanner, setVibeBanner] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
   const categories = ["Adventure", "Nature", "Skill-Learning", "Thrill", "Mindfulness", "Sports", "Social", "Offbeat"];
 
   // Map vibe result categories to display categories
@@ -146,13 +147,25 @@ const Explore = () => {
   }];
   const comingSoonIds = [2, 5, 3]; // Candle-light Truth Room, Fishing with Locals, Treasure Hunt
 
-  const filteredExperiences = (selectedCategory ? experiences.filter(exp => exp.category === selectedCategory) : experiences).sort((a, b) => {
-    const aComingSoon = comingSoonIds.includes(a.id);
-    const bComingSoon = comingSoonIds.includes(b.id);
-    if (aComingSoon && !bComingSoon) return 1;
-    if (!aComingSoon && bComingSoon) return -1;
-    return 0;
-  });
+  const filteredExperiences = experiences
+    .filter(exp => {
+      const matchesCategory = selectedCategory ? exp.category === selectedCategory : true;
+      const matchesSearch = searchQuery.trim() 
+        ? exp.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          exp.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          exp.host.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          exp.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          exp.description.toLowerCase().includes(searchQuery.toLowerCase())
+        : true;
+      return matchesCategory && matchesSearch;
+    })
+    .sort((a, b) => {
+      const aComingSoon = comingSoonIds.includes(a.id);
+      const bComingSoon = comingSoonIds.includes(b.id);
+      if (aComingSoon && !bComingSoon) return 1;
+      if (!aComingSoon && bComingSoon) return -1;
+      return 0;
+    });
   return <div className="min-h-screen bg-background">
       <Header />
       
@@ -187,8 +200,17 @@ const Explore = () => {
             
             {/* Search Bar */}
             <div className="flex gap-3 md:gap-4 mb-8 md:mb-12">
-              <Input placeholder="Search experiences..." className="flex-1 h-14 text-lg bg-card border-2 border-border focus:border-accent" />
-              <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold h-14 hover:opacity-90">
+              <Input 
+                placeholder="Search experiences..." 
+                className="flex-1 h-14 text-lg bg-card border-2 border-border focus:border-accent" 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold h-14 hover:opacity-90"
+                onClick={() => {/* Search happens automatically via state */}}
+              >
                 Search
               </Button>
             </div>
