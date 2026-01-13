@@ -56,7 +56,7 @@ const Explore = () => {
     id: 1,
     title: "Beach Meditation at Dawn",
     category: "Mindfulness",
-    emotion: "Peace + Reset",
+    host: "Medlife",
     price: "₹350",
     duration: "2 hours",
     time: "6:00 AM - 8:00 AM",
@@ -69,7 +69,7 @@ const Explore = () => {
     id: 2,
     title: "Candle-light Truth Room",
     category: "Social",
-    emotion: "Connection + Vulnerability",
+    host: "Truth Room",
     price: "₹500",
     duration: "2.5 hours",
     time: "7:00 PM - 9:30 PM",
@@ -82,7 +82,7 @@ const Explore = () => {
     id: 3,
     title: "Treasure Hunt in Old City",
     category: "Adventure",
-    emotion: "Curiosity + Competition",
+    host: "Heritage Gala",
     price: "₹600",
     duration: "2.5 hours",
     time: "4:00 PM - 6:30 PM",
@@ -95,7 +95,7 @@ const Explore = () => {
     id: 4,
     title: "Kayak & Chill",
     category: "Adventure",
-    emotion: "Adventure + Peace",
+    host: "Riverdale Kayak",
     price: "₹800",
     duration: "3 hours",
     time: "4:30 PM - 7:30 PM",
@@ -108,7 +108,7 @@ const Explore = () => {
     id: 5,
     title: "Fishing with Locals at Sea",
     category: "Nature",
-    emotion: "Authenticity + Culture",
+    host: "Sea Nets",
     price: "₹900",
     duration: "6 hours",
     time: "4:15 AM - 10:30 AM",
@@ -121,7 +121,7 @@ const Explore = () => {
     id: 6,
     title: "Haunted Forest Story Walk",
     category: "Thrill",
-    emotion: "Fear + Thrill",
+    host: "Horror Tales",
     price: "₹800",
     duration: "4 hours",
     time: "7:00 PM - 11:15 PM",
@@ -134,7 +134,7 @@ const Explore = () => {
     id: 7,
     title: "Mystery Island Escape",
     category: "Offbeat",
-    emotion: "Thrill + Wonder",
+    host: "Escape Routes",
     price: "₹1,500",
     duration: "6 hours",
     time: "4:00 PM - 10:00 PM",
@@ -224,17 +224,15 @@ const Explore = () => {
                           <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
                             {experience.category}
                           </Badge>
-                          
-                          {/* Emotion Tag */}
-                          <div className="absolute top-4 right-4 text-xs text-muted-foreground uppercase tracking-wide bg-black/60 px-3 py-1 rounded">
-                            {experience.emotion}
-                          </div>
 
                           {/* Title and Coming Soon Overlay */}
                           <div className="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 className="text-2xl font-display font-bold mb-2 text-white leading-tight">
+                            <h3 className="text-2xl font-display font-bold mb-1 text-white leading-tight">
                               {experience.title}
                             </h3>
+                            <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">
+                              {experience.host}
+                            </p>
                             <div className="flex items-end justify-between">
                               <div>
                                 <div className="text-lg font-bold text-muted-foreground">
@@ -261,17 +259,15 @@ const Explore = () => {
                             <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
                               {experience.category}
                             </Badge>
-                            
-                            {/* Emotion Tag */}
-                            <div className="absolute top-4 right-4 text-xs text-muted-foreground uppercase tracking-wide bg-black/60 px-3 py-1 rounded">
-                              {experience.emotion}
-                            </div>
 
                             {/* Title and Price Overlay */}
                             <div className="absolute bottom-0 left-0 right-0 p-6">
-                              <h3 className="text-2xl font-display font-bold mb-2 text-white leading-tight">
+                              <h3 className="text-2xl font-display font-bold mb-1 text-white leading-tight">
                                 {experience.title}
                               </h3>
+                              <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">
+                                {experience.host}
+                              </p>
                               <div className="flex items-end justify-between">
                                 <div>
                                   <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">From</div>
