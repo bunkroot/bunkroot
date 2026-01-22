@@ -70,22 +70,22 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: "1",
-    title: "Sunset Kayak Break",
+    title: "3-Hours Kayak Break",
     emoji: "🌅",
     category: "Nature",
-    host: "Backwater Paddle Club",
-    price: "₹499",
-    duration: "1 hour",
-    groupSize: "1–4",
+    host: "jellyfish Watersports",
+    price: "₹999",
+    duration: "3 hours",
+    groupSize: "1–15",
     minAge: 12,
-    location: "Kadalundi Side Road",
+    location: "Cheruvannur",
     image: expKayakMain,
     gallery: [expKayakMain, expKayakGallery1, expKayakGallery2],
     description: "Paddle through calm backwaters during sunset and take a break from the usual city evenings. A peaceful way to bunk routine life.",
     fullDescription: "Paddle through calm backwaters during sunset and take a break from the usual city evenings. A peaceful way to bunk routine life. The serene waters of Kadalundi provide the perfect backdrop for a quick escape from the daily grind. Whether you're solo or with friends, this is your chance to disconnect from screens and reconnect with nature.",
     included: ["Kayak & safety jacket", "Basic paddling guidance"],
     whatToBring: ["Comfortable clothes", "Extra clothes (optional)"],
-    availableTimes: ["4:30 PM", "5:45 PM"]
+    availableTimes: ["4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM"]
   },
   {
     id: "2",
