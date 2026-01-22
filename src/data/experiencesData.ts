@@ -1,11 +1,51 @@
-// Placeholder images - these should be replaced with actual photos
-import kayak from "@/assets/experience-kayak.jpg";
-import beachMeditation from "@/assets/experience-beach-meditation.jpg";
-import truthRoom from "@/assets/experience-truth-room.jpg";
-import treasureHunt from "@/assets/experience-treasure-hunt.jpg";
-import fishing from "@/assets/experience-fishing.jpg";
-import hauntedForest from "@/assets/experience-haunted-forest.jpg";
-import mysteryIsland from "@/assets/experience-mystery-island.jpg";
+// Urban vibrant experience images
+import expKayakMain from "@/assets/exp-kayak-main.jpg";
+import expKayakGallery1 from "@/assets/exp-kayak-gallery1.jpg";
+import expKayakGallery2 from "@/assets/exp-kayak-gallery2.jpg";
+
+import expBowlingMain from "@/assets/exp-bowling-main.jpg";
+import expBowlingGallery1 from "@/assets/exp-bowling-gallery1.jpg";
+import expBowlingGallery2 from "@/assets/exp-bowling-gallery2.jpg";
+
+import expVrMain from "@/assets/exp-vr-main.jpg";
+import expVrGallery1 from "@/assets/exp-vr-gallery1.jpg";
+import expVrGallery2 from "@/assets/exp-vr-gallery2.jpg";
+
+import expPlaystationMain from "@/assets/exp-playstation-main.jpg";
+import expPlaystationGallery1 from "@/assets/exp-playstation-gallery1.jpg";
+import expPlaystationGallery2 from "@/assets/exp-playstation-gallery2.jpg";
+
+import expPotteryMain from "@/assets/exp-pottery-main.jpg";
+import expPotteryGallery1 from "@/assets/exp-pottery-gallery1.jpg";
+import expPotteryGallery2 from "@/assets/exp-pottery-gallery2.jpg";
+
+import expHookahMain from "@/assets/exp-hookah-main.jpg";
+import expHookahGallery1 from "@/assets/exp-hookah-gallery1.jpg";
+import expHookahGallery2 from "@/assets/exp-hookah-gallery2.jpg";
+
+import expSwimmingMain from "@/assets/exp-swimming-main.jpg";
+import expSwimmingGallery1 from "@/assets/exp-swimming-gallery1.jpg";
+import expSwimmingGallery2 from "@/assets/exp-swimming-gallery2.jpg";
+
+import expBadmintonMain from "@/assets/exp-badminton-main.jpg";
+import expBadmintonGallery1 from "@/assets/exp-badminton-gallery1.jpg";
+import expBadmintonGallery2 from "@/assets/exp-badminton-gallery2.jpg";
+
+import expIcebathMain from "@/assets/exp-icebath-main.jpg";
+import expIcebathGallery1 from "@/assets/exp-icebath-gallery1.jpg";
+import expIcebathGallery2 from "@/assets/exp-icebath-gallery2.jpg";
+
+import expPickleballMain from "@/assets/exp-pickleball-main.jpg";
+import expPickleballGallery1 from "@/assets/exp-pickleball-gallery1.jpg";
+import expPickleballGallery2 from "@/assets/exp-pickleball-gallery2.jpg";
+
+import expSnookerMain from "@/assets/exp-snooker-main.jpg";
+import expSnookerGallery1 from "@/assets/exp-snooker-gallery1.jpg";
+import expSnookerGallery2 from "@/assets/exp-snooker-gallery2.jpg";
+
+import expBeachwalkMain from "@/assets/exp-beachwalk-main.jpg";
+import expBeachwalkGallery1 from "@/assets/exp-beachwalk-gallery1.jpg";
+import expBeachwalkGallery2 from "@/assets/exp-beachwalk-gallery2.jpg";
 
 export interface Experience {
   id: string;
@@ -39,8 +79,8 @@ export const experiences: Experience[] = [
     groupSize: "1–4",
     minAge: 12,
     location: "Kadalundi Side Road",
-    image: kayak,
-    gallery: [kayak, kayak, kayak, kayak],
+    image: expKayakMain,
+    gallery: [expKayakMain, expKayakGallery1, expKayakGallery2],
     description: "Paddle through calm backwaters during sunset and take a break from the usual city evenings. A peaceful way to bunk routine life.",
     fullDescription: "Paddle through calm backwaters during sunset and take a break from the usual city evenings. A peaceful way to bunk routine life. The serene waters of Kadalundi provide the perfect backdrop for a quick escape from the daily grind. Whether you're solo or with friends, this is your chance to disconnect from screens and reconnect with nature.",
     included: ["Kayak & safety jacket", "Basic paddling guidance"],
@@ -58,8 +98,8 @@ export const experiences: Experience[] = [
     groupSize: "2–6",
     minAge: 10,
     location: "HiLite Area",
-    image: truthRoom,
-    gallery: [truthRoom, truthRoom, truthRoom, truthRoom],
+    image: expBowlingMain,
+    gallery: [expBowlingMain, expBowlingGallery1, expBowlingGallery2],
     description: "A casual bowling session where strikes don't matter as much as the laughs. Perfect for friends and small groups.",
     fullDescription: "A casual bowling session where strikes don't matter as much as the laughs. Perfect for friends and small groups. No pressure to be good—just show up, throw some balls, and have a great time. The neon-lit lanes and upbeat music make for the perfect hangout spot after a long day.",
     included: ["Bowling lane access", "Shoe rental"],
@@ -77,8 +117,8 @@ export const experiences: Experience[] = [
     groupSize: "1–3",
     minAge: 12,
     location: "Beach Road Area",
-    image: hauntedForest,
-    gallery: [hauntedForest, hauntedForest, hauntedForest, hauntedForest],
+    image: expVrMain,
+    gallery: [expVrMain, expVrGallery1, expVrGallery2],
     description: "Experience quick virtual reality games that give you a short burst of excitement without any learning curve.",
     fullDescription: "Experience quick virtual reality games that give you a short burst of excitement without any learning curve. Step into immersive worlds for a quick thrill—whether it's zombie survival, racing, or adventure games. No prior experience needed; just put on the headset and dive in.",
     included: ["VR headset & controllers", "Game assistance"],
@@ -96,8 +136,8 @@ export const experiences: Experience[] = [
     groupSize: "2–5",
     minAge: 10,
     location: "Mananchira Area",
-    image: treasureHunt,
-    gallery: [treasureHunt, treasureHunt, treasureHunt, treasureHunt],
+    image: expPlaystationMain,
+    gallery: [expPlaystationMain, expPlaystationGallery1, expPlaystationGallery2],
     description: "Sit back and play FIFA, racing, or story games with friends. No pressure, just play and chill.",
     fullDescription: "Sit back and play FIFA, racing, or story games with friends. No pressure, just play and chill. Pick from a library of popular games, grab a controller, and let the competition (or co-op) begin. Comfy seating, good vibes, and snacks available.",
     included: ["Console & game access", "Seating space"],
@@ -115,8 +155,8 @@ export const experiences: Experience[] = [
     groupSize: "1–4",
     minAge: 14,
     location: "Thondayad Area",
-    image: beachMeditation,
-    gallery: [beachMeditation, beachMeditation, beachMeditation, beachMeditation],
+    image: expPotteryMain,
+    gallery: [expPotteryMain, expPotteryGallery1, expPotteryGallery2],
     description: "Try basic pottery techniques and create something with your hands. Slow, calming, and screen-free.",
     fullDescription: "Try basic pottery techniques and create something with your hands. Slow, calming, and screen-free. Get your hands dirty (literally) as you learn to shape clay on the wheel. Walk away with something you made yourself—a bowl, cup, or just a happy mess.",
     included: ["Clay & pottery tools", "Basic guidance"],
@@ -134,8 +174,8 @@ export const experiences: Experience[] = [
     groupSize: "2–6",
     minAge: 18,
     location: "Customs Road Area",
-    image: mysteryIsland,
-    gallery: [mysteryIsland, mysteryIsland, mysteryIsland, mysteryIsland],
+    image: expHookahMain,
+    gallery: [expHookahMain, expHookahGallery1, expHookahGallery2],
     description: "Relax with flavoured hookah and easy board games in a laid-back lounge setup.",
     fullDescription: "Relax with flavoured hookah and easy board games in a laid-back lounge setup. The perfect spot for when you want to slow down, catch up with friends, and enjoy some classic games like Uno, Jenga, or Monopoly over aromatic hookah.",
     included: ["Hookah setup", "Board games access"],
@@ -153,8 +193,8 @@ export const experiences: Experience[] = [
     groupSize: "1–5",
     minAge: 10,
     location: "Kallayi Area",
-    image: fishing,
-    gallery: [fishing, fishing, fishing, fishing],
+    image: expSwimmingMain,
+    gallery: [expSwimmingMain, expSwimmingGallery1, expSwimmingGallery2],
     description: "A calm evening swim to cool off and relax without the usual crowd.",
     fullDescription: "A calm evening swim to cool off and relax without the usual crowd. Whether you want to do laps or just float around, this is your escape from the heat and stress. Clean pool, good vibes, and minimal crowds during evening slots.",
     included: ["Pool access", "Changing rooms"],
@@ -172,8 +212,8 @@ export const experiences: Experience[] = [
     groupSize: "2–4",
     minAge: 12,
     location: "Chevayoor Area",
-    image: kayak,
-    gallery: [kayak, kayak, kayak, kayak],
+    image: expBadmintonMain,
+    gallery: [expBadmintonMain, expBadmintonGallery1, expBadmintonGallery2],
     description: "Fast rallies and friendly matches for people who want a quick active break after work.",
     fullDescription: "Fast rallies and friendly matches for people who want a quick active break after work. Indoor courts with good lighting mean you can play even after sunset. Bring a friend or get matched with other players for doubles.",
     included: ["Court access", "Shuttlecock"],
@@ -191,8 +231,8 @@ export const experiences: Experience[] = [
     groupSize: "1–3",
     minAge: 16,
     location: "Kallayi Side",
-    image: beachMeditation,
-    gallery: [beachMeditation, beachMeditation, beachMeditation, beachMeditation],
+    image: expIcebathMain,
+    gallery: [expIcebathMain, expIcebathGallery1, expIcebathGallery2],
     description: "A short guided ice bath session designed to reset your body and mind.",
     fullDescription: "A short guided ice bath session designed to reset your body and mind. Experience the trending cold therapy that athletes and wellness enthusiasts swear by. Guided breathing helps you stay calm as you take the plunge into icy waters.",
     included: ["Ice bath tub", "Basic breathing guidance"],
@@ -210,8 +250,8 @@ export const experiences: Experience[] = [
     groupSize: "2–4",
     minAge: 12,
     location: "Govindapuram Area",
-    image: treasureHunt,
-    gallery: [treasureHunt, treasureHunt, treasureHunt, treasureHunt],
+    image: expPickleballMain,
+    gallery: [expPickleballMain, expPickleballGallery1, expPickleballGallery2],
     description: "An easy-to-learn sport that's fast, fun, and perfect for beginners.",
     fullDescription: "An easy-to-learn sport that's fast, fun, and perfect for beginners. Pickleball is the trending sport everyone's talking about—a mix of tennis, badminton, and ping pong. Pick it up in minutes, enjoy it for hours.",
     included: ["Court access", "Paddle & ball"],
@@ -229,8 +269,8 @@ export const experiences: Experience[] = [
     groupSize: "2–4",
     minAge: 14,
     location: "Palayam Area",
-    image: mysteryIsland,
-    gallery: [mysteryIsland, mysteryIsland, mysteryIsland, mysteryIsland],
+    image: expSnookerMain,
+    gallery: [expSnookerMain, expSnookerGallery1, expSnookerGallery2],
     description: "A slow-paced indoor game session that's perfect for relaxed conversations.",
     fullDescription: "A slow-paced indoor game session that's perfect for relaxed conversations. The classic game of strategy and precision. Perfect for those who like their hangouts with a side of friendly competition and deep chats.",
     included: ["Table access", "Cues & balls"],
@@ -248,8 +288,8 @@ export const experiences: Experience[] = [
     groupSize: "3–8",
     minAge: 16,
     location: "Beach Road",
-    image: fishing,
-    gallery: [fishing, fishing, fishing, fishing],
+    image: expBeachwalkMain,
+    gallery: [expBeachwalkMain, expBeachwalkGallery1, expBeachwalkGallery2],
     description: "A relaxed beach walk with light conversations. No rush, no fitness pressure.",
     fullDescription: "A relaxed beach walk with light conversations. No rush, no fitness pressure. Meet new people or bring your crew for a sunset stroll along the shore. Good conversations, ocean breeze, and zero workout intensity.",
     included: ["Guided group walk"],
