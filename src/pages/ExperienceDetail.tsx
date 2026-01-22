@@ -18,7 +18,7 @@ const ExperienceDetail = () => {
   const { id } = useParams();
   const isMobile = useIsMobile();
   const [isBookingExpanded, setIsBookingExpanded] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>();
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
