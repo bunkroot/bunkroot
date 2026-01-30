@@ -346,6 +346,19 @@ const ExperienceDetail = () => {
                 </Button>
               </div>
 
+              {/* Amenities Section */}
+              <div className="bg-card/50 border-2 border-border p-6 md:p-8 rounded-lg">
+                <h3 className="text-xl md:text-2xl font-display font-bold mb-4 md:mb-6">Amenities</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {experience.amenities.map((amenity, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-muted-foreground">
+                      <span className="text-accent">•</span>
+                      <span className="text-sm md:text-base">{amenity}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Full Description */}
               <div>
                 <h2 className="text-4xl font-display font-bold mb-6">The Experience</h2>
