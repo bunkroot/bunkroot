@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
@@ -24,6 +24,19 @@ const ExperienceDetail = () => {
   const [phone, setPhone] = useState("");
   const [guests, setGuests] = useState("1");
   const [couponCode, setCouponCode] = useState("");
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  const [showReadMore, setShowReadMore] = useState(false);
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+
+  // Check if description exceeds 3 lines
+  useEffect(() => {
+    if (descriptionRef.current) {
+      const lineHeight = parseInt(getComputedStyle(descriptionRef.current).lineHeight);
+      const height = descriptionRef.current.scrollHeight;
+      const lines = height / lineHeight;
+      setShowReadMore(lines > 3);
+    }
+  }, []);
   
   // Embla carousel for gallery
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -261,12 +274,12 @@ const ExperienceDetail = () => {
 
                           <div>
                             <Label className="text-sm uppercase tracking-wide mb-3 block">Available Times</Label>
-                            <div className="space-y-2">
+                            <div className="grid grid-cols-3 gap-2">
                               {experience.availableTimes.map((time) => (
                                 <Button
                                   key={time}
                                   variant={selectedTime === time ? "default" : "outline"}
-                                  className={`w-full justify-start ${
+                                  className={`justify-center text-sm ${
                                     selectedTime === time 
                                       ? "bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black" 
                                       : "border-2"
@@ -346,12 +359,40 @@ const ExperienceDetail = () => {
                 </Button>
               </div>
 
+              {/* Amenities Section */}
+              <div className="bg-card/50 border-2 border-border p-6 md:p-8 rounded-lg">
+                <h3 className="text-xl md:text-2xl font-display font-bold mb-4 md:mb-6">Amenities</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {experience.amenities.map((amenity, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-muted-foreground">
+                      <span className="text-accent">•</span>
+                      <span className="text-sm md:text-base">{amenity}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Full Description */}
               <div>
                 <h2 className="text-4xl font-display font-bold mb-6">The Experience</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {experience.fullDescription}
-                </p>
+                <div className="relative">
+                  <p 
+                    ref={descriptionRef}
+                    className={`text-lg text-muted-foreground leading-relaxed ${
+                      !isDescriptionExpanded && showReadMore ? "line-clamp-3" : ""
+                    }`}
+                  >
+                    {experience.fullDescription}
+                  </p>
+                  {showReadMore && (
+                    <button
+                      onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+                      className="mt-2 text-accent font-medium hover:underline focus:outline-none"
+                    >
+                      {isDescriptionExpanded ? "Read less" : "Read more"}
+                    </button>
+                  )}
+                </div>
               </div>
 
               {/* What's Included */}
@@ -455,12 +496,12 @@ const ExperienceDetail = () => {
 
                   <div>
                     <Label className="text-sm uppercase tracking-wide mb-3 block">Available Times</Label>
-                    <div className="space-y-2">
+                    <div className="grid grid-cols-3 gap-2">
                       {experience.availableTimes.map((time) => (
                         <Button
                           key={time}
                           variant={selectedTime === time ? "default" : "outline"}
-                          className={`w-full justify-start ${
+                          className={`justify-center text-xs px-2 ${
                             selectedTime === time 
                               ? "bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black" 
                               : "border-2"
