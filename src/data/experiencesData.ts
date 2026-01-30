@@ -308,7 +308,7 @@ export const experiences: Experience[] = [
     whatToBring: ["Comfortable footwear"],
     amenities: ["Scenic Views", "Photo Spots", "Street Food Nearby", "Sunset Timing", "Group Vibes"],
     availableTimes: ["6:00 AM", "6:00 PM"]
-  }
+  },
   {
     id: "13",
     title: "Steam Bath Reset",
