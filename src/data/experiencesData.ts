@@ -64,6 +64,7 @@ export interface Experience {
   fullDescription: string;
   included: string[];
   whatToBring: string[];
+  amenities: string[];
   availableTimes: string[];
 }
 
@@ -85,6 +86,7 @@ export const experiences: Experience[] = [
     fullDescription: "Paddle through calm backwaters during sunset and take a break from the usual city evenings. A peaceful way to bunk routine life. The serene waters of Kadalundi provide the perfect backdrop for a quick escape from the daily grind. Whether you're solo or with friends, this is your chance to disconnect from screens and reconnect with nature.",
     included: ["Kayak & safety jacket", "Basic paddling guidance"],
     whatToBring: ["Comfortable clothes", "Extra clothes (optional)"],
+    amenities: ["Parking Available", "Washroom", "First Aid Kit", "Photo Spots", "Drinking Water"],
     availableTimes: ["4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM"]
   },
   {
@@ -104,6 +106,7 @@ export const experiences: Experience[] = [
     fullDescription: "A casual bowling session where strikes don't matter as much as the laughs. Perfect for friends and small groups. No pressure to be good—just show up, throw some balls, and have a great time. The neon-lit lanes and upbeat music make for the perfect hangout spot after a long day.",
     included: ["Bowling lane access", "Shoe rental"],
     whatToBring: ["Socks"],
+    amenities: ["AC Venue", "Snacks Counter", "Music System", "Parking", "Washroom"],
     availableTimes: ["3:00 PM", "4:30 PM", "6:00 PM"]
   },
   {
@@ -123,6 +126,7 @@ export const experiences: Experience[] = [
     fullDescription: "Experience quick virtual reality games that give you a short burst of excitement without any learning curve. Step into immersive worlds for a quick thrill—whether it's zombie survival, racing, or adventure games. No prior experience needed; just put on the headset and dive in.",
     included: ["VR headset & controllers", "Game assistance"],
     whatToBring: ["Nothing special"],
+    amenities: ["AC Room", "Sanitized Equipment", "Waiting Lounge", "Washroom", "WiFi"],
     availableTimes: ["5:00 PM", "6:00 PM", "7:00 PM"]
   },
   {
@@ -142,6 +146,7 @@ export const experiences: Experience[] = [
     fullDescription: "Sit back and play FIFA, racing, or story games with friends. No pressure, just play and chill. Pick from a library of popular games, grab a controller, and let the competition (or co-op) begin. Comfy seating, good vibes, and snacks available.",
     included: ["Console & game access", "Seating space"],
     whatToBring: ["Competitive spirit 😄"],
+    amenities: ["AC Lounge", "Snacks Available", "Comfy Seating", "Charging Points", "WiFi"],
     availableTimes: ["4:00 PM", "5:30 PM", "7:00 PM"]
   },
   {
@@ -161,6 +166,7 @@ export const experiences: Experience[] = [
     fullDescription: "Try basic pottery techniques and create something with your hands. Slow, calming, and screen-free. Get your hands dirty (literally) as you learn to shape clay on the wheel. Walk away with something you made yourself—a bowl, cup, or just a happy mess.",
     included: ["Clay & pottery tools", "Basic guidance"],
     whatToBring: ["Old clothes or apron"],
+    amenities: ["Aprons Provided", "Hand Wash Station", "Natural Lighting", "Parking", "Relaxing Music"],
     availableTimes: ["11:00 AM", "4:00 PM"]
   },
   {
@@ -180,6 +186,7 @@ export const experiences: Experience[] = [
     fullDescription: "Relax with flavoured hookah and easy board games in a laid-back lounge setup. The perfect spot for when you want to slow down, catch up with friends, and enjoy some classic games like Uno, Jenga, or Monopoly over aromatic hookah.",
     included: ["Hookah setup", "Board games access"],
     whatToBring: ["Valid ID"],
+    amenities: ["AC Lounge", "Premium Seating", "Mood Lighting", "Music", "Washroom"],
     availableTimes: ["5:30 PM", "7:30 PM"]
   },
   {
@@ -199,6 +206,7 @@ export const experiences: Experience[] = [
     fullDescription: "A calm evening swim to cool off and relax without the usual crowd. Whether you want to do laps or just float around, this is your escape from the heat and stress. Clean pool, good vibes, and minimal crowds during evening slots.",
     included: ["Pool access", "Changing rooms"],
     whatToBring: ["Swimwear", "Towel"],
+    amenities: ["Changing Rooms", "Lockers", "Showers", "Poolside Seating", "First Aid"],
     availableTimes: ["4:00 PM", "5:30 PM"]
   },
   {
@@ -218,6 +226,7 @@ export const experiences: Experience[] = [
     fullDescription: "Fast rallies and friendly matches for people who want a quick active break after work. Indoor courts with good lighting mean you can play even after sunset. Bring a friend or get matched with other players for doubles.",
     included: ["Court access", "Shuttlecock"],
     whatToBring: ["Non-marking sports shoes"],
+    amenities: ["Indoor Courts", "Good Lighting", "Drinking Water", "Washroom", "Parking"],
     availableTimes: ["6:00 PM", "7:00 PM"]
   },
   {
@@ -237,6 +246,7 @@ export const experiences: Experience[] = [
     fullDescription: "A short guided ice bath session designed to reset your body and mind. Experience the trending cold therapy that athletes and wellness enthusiasts swear by. Guided breathing helps you stay calm as you take the plunge into icy waters.",
     included: ["Ice bath tub", "Basic breathing guidance"],
     whatToBring: ["Towel", "Change of clothes"],
+    amenities: ["Private Sessions", "Changing Area", "Hot Beverages", "Guided Breathing", "Relaxation Zone"],
     availableTimes: ["7:00 AM", "6:00 PM"]
   },
   {
@@ -256,6 +266,7 @@ export const experiences: Experience[] = [
     fullDescription: "An easy-to-learn sport that's fast, fun, and perfect for beginners. Pickleball is the trending sport everyone's talking about—a mix of tennis, badminton, and ping pong. Pick it up in minutes, enjoy it for hours.",
     included: ["Court access", "Paddle & ball"],
     whatToBring: ["Sports shoes"],
+    amenities: ["Outdoor Courts", "Shade Area", "Drinking Water", "Washroom", "Beginner Friendly"],
     availableTimes: ["5:00 PM", "6:00 PM"]
   },
   {
@@ -275,6 +286,7 @@ export const experiences: Experience[] = [
     fullDescription: "A slow-paced indoor game session that's perfect for relaxed conversations. The classic game of strategy and precision. Perfect for those who like their hangouts with a side of friendly competition and deep chats.",
     included: ["Table access", "Cues & balls"],
     whatToBring: ["Nothing special"],
+    amenities: ["AC Hall", "Premium Tables", "Snacks Counter", "Lounge Area", "Parking"],
     availableTimes: ["4:30 PM", "6:00 PM"]
   },
   {
@@ -294,6 +306,7 @@ export const experiences: Experience[] = [
     fullDescription: "A relaxed beach walk with light conversations. No rush, no fitness pressure. Meet new people or bring your crew for a sunset stroll along the shore. Good conversations, ocean breeze, and zero workout intensity.",
     included: ["Guided group walk"],
     whatToBring: ["Comfortable footwear"],
+    amenities: ["Scenic Views", "Photo Spots", "Street Food Nearby", "Sunset Timing", "Group Vibes"],
     availableTimes: ["6:00 AM", "6:00 PM"]
   }
 ];
