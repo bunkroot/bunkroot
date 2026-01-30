@@ -328,6 +328,26 @@ export const experiences: Experience[] = [
     whatToBring: ["Towel", "Change of clothes"],
     availableTimes: ["7:00 AM", "7:30 AM", "8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM"],
     amenities: ["Shower", "Changing Area", "Lockers", "First Aid", "Parking"]
+  },
+  {
+    id: "14",
+    title: "Ice + Steam Bath",
+    emoji: "❄️♨️",
+    category: "Mindfulness",
+    host: "Ice Plunge",
+    price: "₹800",
+    duration: "30 minutes",
+    groupSize: "1–4",
+    minAge: 12,
+    location: "Kallayi",
+    image: expIcebathMain,
+    gallery: [expIcebathMain, expIcebathGallery1, expIcebathGallery2],
+    description: "A short guided ice + steam bath session designed to reset your body and mind.",
+    fullDescription: "A short guided ice + steam bath session designed to reset your body and mind. Experience the trending cold therapy that athletes and wellness enthusiasts swear by. Guided breathing helps you stay calm as you take the plunge into icy waters.",
+    included: ["Steam bath room", "Basic breathing guidance"],
+    whatToBring: ["Towel", "Change of clothes"],
+    availableTimes: ["7:00 AM", "7:30 AM", "8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM"],
+    amenities: ["Shower", "Changing Area", "Lockers", "First Aid", "Parking"]
   }
 ];
 
