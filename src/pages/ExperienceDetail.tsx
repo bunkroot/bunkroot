@@ -80,7 +80,7 @@ const ExperienceDetail = () => {
         : String(selectedDate);
 
     const couponText = couponCode.trim() ? `\nCoupon Code: ${couponCode.trim()}` : "";
-    const rawMessage = `Hi! I'd like to book ${experience?.title || "your experience"}\n\nHost: ${experience?.host || "N/A"}\nDate: ${dateStr}\nTime: ${selectedTime}\nGuests: ${guests}\nName: ${name}\nPhone: ${phone}${couponText}`;
+    const rawMessage = `Hi! I'd like to book ${experience?.title || "your experience"}\n\nPlace: ${experience?.host","${experience?.location || "N/A"}\nDate: ${dateStr}\nTime: ${selectedTime}\nGuests: ${guests}\nName: ${name}\nPhone: ${phone}${couponText}`;
 
     const encoded = encodeURIComponent(rawMessage);
     const url = `https://wa.me/917907536782?text=${encoded}`;
