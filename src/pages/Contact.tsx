@@ -86,7 +86,7 @@ ${formData.message}`;
                 <div className="space-y-3 text-sm">
                   <div>
                     <p className="font-bold mb-1">How do I book?</p>
-                    <p className="text-muted-foreground">Click the experience and hit "Book via WhatsApp"</p>
+                    <p className="text-muted-foreground">Click the experience and hit "Check Availability"</p>
                   </div>
                   <div>
                     <p className="font-bold mb-1">Can I cancel?</p>
