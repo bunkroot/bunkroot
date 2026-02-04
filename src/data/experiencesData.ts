@@ -138,7 +138,7 @@ export const experiences: Experience[] = [
     price: "₹250",
     duration: "1 hour",
     groupSize: "1–2",
-    minAge: "NA",
+    minAge: 0,
     location: "Methottuthazham",
     image: expPlaystationMain,
     gallery: [expPlaystationMain, expPlaystationGallery1, expPlaystationGallery2],

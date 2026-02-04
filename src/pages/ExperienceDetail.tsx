@@ -199,7 +199,7 @@ const ExperienceDetail = () => {
                     <div className="flex items-center gap-2">
                       <span className={`text-sm font-semibold ${
                         isBookingExpanded ? "text-foreground" : "text-black"
-                      }`}>Book via WhatsApp</span>
+                      }`}>Check Availability</span>
                       {isBookingExpanded ? (
                         <ChevronUp className="w-5 h-5 text-accent" />
                       ) : (
@@ -308,7 +308,7 @@ const ExperienceDetail = () => {
                             className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg h-14 hover:opacity-90"
                             onClick={handleBooking}
                           >
-                            Book via WhatsApp
+                            Check Availability
                           </Button>
 
                           <p className="text-xs text-muted-foreground text-center">
@@ -530,7 +530,7 @@ const ExperienceDetail = () => {
                     className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg h-14 hover:opacity-90"
                     onClick={handleBooking}
                   >
-                    Book via WhatsApp
+                    Check Availability
                   </Button>
 
                   <p className="text-xs text-muted-foreground text-center">
