@@ -50,6 +50,7 @@ import expBeachwalkGallery2 from "@/assets/exp-beachwalk-gallery2.jpg";
 export interface Experience {
   id: string;
   title: string;
+  emoji: string;
   category: string;
   host: string;
   price: string;
@@ -71,6 +72,7 @@ export const experiences: Experience[] = [
   {
     id: "1",
     title: "3-Hours Kayak Break",
+    emoji: "🌅",
     category: "Nature",
     host: "jellyfish Watersports",
     price: "₹999",
@@ -90,6 +92,7 @@ export const experiences: Experience[] = [
   {
     id: "2",
     title: "Bowling & Chill",
+    emoji: "🎳",
     category: "Social",
     host: "PinDrop Arena",
     price: "₹349",
@@ -109,6 +112,7 @@ export const experiences: Experience[] = [
   {
     id: "3",
     title: "VR Gaming Session",
+    emoji: "🕶️",
     category: "Thrill",
     host: "VR Zone",
     price: "₹200",
@@ -128,6 +132,7 @@ export const experiences: Experience[] = [
   {
     id: "4",
     title: "PlayStation Hangout",
+    emoji: "🎮",
     category: "Offbeat",
     host: "Master Gaming",
     price: "₹250",
@@ -140,13 +145,14 @@ export const experiences: Experience[] = [
     description: "Sit back and play FIFA, racing, or story games with friends. No pressure, just play and chill.",
     fullDescription: "Sit back and play FIFA, racing, or story games with friends. No pressure, just play and chill. Pick from a library of popular games, grab a controller, and let the competition (or co-op) begin. Comfy seating, good vibes, and snacks available.",
     included: ["Console & game access", "Seating space"],
-    whatToBring: ["Competitive spirit"],
+    whatToBring: ["Competitive spirit 😄"],
     amenities: ["AC Lounge", "Comfy Seating", "Charging Points", "WiFi"],
     availableTimes: ["10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM", "9:30 PM", "10:00 PM", "10:30 PM", "11:00 PM", "11:30 PM"]
   },
   {
     id: "5",
     title: "Pottery for Beginners",
+    emoji: "🏺",
     category: "Skill-Learning",
     host: "Pottery Studio",
     price: "₹699",
@@ -166,6 +172,7 @@ export const experiences: Experience[] = [
   {
     id: "6",
     title: "Hookah & Board Games Lounge",
+    emoji: "💨",
     category: "Offbeat",
     host: "Cloud Nine Lounge",
     price: "₹399",
@@ -185,6 +192,7 @@ export const experiences: Experience[] = [
   {
     id: "7",
     title: "Evening Swimming Session",
+    emoji: "🏊",
     category: "Sports",
     host: "BlueWave Pool",
     price: "₹199",
@@ -204,6 +212,7 @@ export const experiences: Experience[] = [
   {
     id: "8",
     title: "Badminton Night Rally",
+    emoji: "🏸",
     category: "Sports",
     host: "SmashPoint Court",
     price: "₹299",
@@ -223,6 +232,7 @@ export const experiences: Experience[] = [
   {
     id: "9",
     title: "Ice Bath Reset",
+    emoji: "❄️",
     category: "Mindfulness",
     host: "Ice Plunge",
     price: "₹500",
@@ -242,6 +252,7 @@ export const experiences: Experience[] = [
   {
     id: "10",
     title: "Pickleball Quick Match",
+    emoji: "🏓",
     category: "Sports",
     host: "Rally Play Court",
     price: "₹249",
@@ -261,6 +272,7 @@ export const experiences: Experience[] = [
   {
     id: "11",
     title: "Snooker & Billiards Hour",
+    emoji: "🎱",
     category: "Offbeat",
     host: "Corner Pocket Club",
     price: "₹279",
@@ -280,6 +292,7 @@ export const experiences: Experience[] = [
   {
     id: "12",
     title: "Beachside Walk & Talk",
+    emoji: "🚶",
     category: "Social",
     host: "OpenSteps Collective",
     price: "₹199",
@@ -299,6 +312,7 @@ export const experiences: Experience[] = [
   {
     id: "13",
     title: "Steam Bath Reset",
+    emoji: "♨️",
     category: "Mindfulness",
     host: "Ice Plunge",
     price: "₹400",
@@ -318,6 +332,7 @@ export const experiences: Experience[] = [
   {
     id: "14",
     title: "Ice + Steam Bath",
+    emoji: "❄️♨️",
     category: "Mindfulness",
     host: "Ice Plunge",
     price: "₹800",
@@ -339,7 +354,7 @@ export const experiences: Experience[] = [
 // Helper function to get featured experiences for home page
 export const getFeaturedExperiences = () => {
   // Return a curated selection of 4 diverse experiences
-  return experiences.filter(exp =>
+  return experiences.filter(exp => 
     ["1", "2", "5", "9"].includes(exp.id)
   );
 };

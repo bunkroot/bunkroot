@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Target } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { quizQuestions, calculateVibeResult, VibeResult } from "@/data/quizData";
 import QuizProgress from "@/components/quiz/QuizProgress";
 import QuizQuestion from "@/components/quiz/QuizQuestion";
@@ -83,13 +83,13 @@ const Quiz = () => {
               exit={{ opacity: 0, y: -20 }}
               className="text-center max-w-lg"
             >
-              <motion.div
-                className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[hsl(var(--neon-start))]/20 to-[hsl(var(--neon-end))]/20 border-2 border-accent/30 flex items-center justify-center"
-                animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 3, repeat: Infinity, repeatDelay: 1 }}
+              <motion.span
+                className="text-6xl md:text-8xl block mb-6"
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
               >
-                <Target className="w-10 h-10 md:w-12 md:h-12 text-accent" />
-              </motion.div>
+                🎯
+              </motion.span>
               <h1 className="text-3xl md:text-5xl font-display font-bold mb-4">
                 Find Your{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">

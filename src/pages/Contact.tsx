@@ -27,7 +27,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const whatsappMessage = `Hi BunkRoot!
+    const whatsappMessage = `Hi BunkRoot! 👋
 
 *New Contact Form Submission*
 
@@ -72,11 +72,11 @@ ${formData.message}`;
                       className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold"
                       size="lg"
                     >
-                    WhatsApp Us
-                  </Button>
+                      💬 WhatsApp Us
+                    </Button>
                   </a>
                   <Button variant="outline" size="lg" className="w-full">
-                    hello@bunkroot.com
+                    📧 hello@bunkroot.com
                   </Button>
                 </div>
               </div>

@@ -145,7 +145,7 @@ const Explore = () => {
                         
                         {/* Category Badge with Emoji */}
                         <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
-                          {experience.category}
+                          {experience.emoji} {experience.category}
                         </Badge>
 
                         {/* Title and Price Overlay */}

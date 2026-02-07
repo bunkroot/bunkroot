@@ -34,6 +34,7 @@ const QuizQuestion = ({ question, onAnswer, selectedAnswer }: QuizQuestionProps)
                 : "border-border bg-card hover:border-[hsl(var(--neon-start))]/50"
             }`}
           >
+            <span className="text-3xl mb-3 block">{option.emoji}</span>
             <span className="text-lg font-semibold">{option.label}</span>
           </motion.button>
         ))}
