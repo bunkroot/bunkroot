@@ -2,20 +2,22 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Mountain, Leaf, Palette, Zap, Heart, Trophy, Users, Compass, type LucideIcon } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
 import { getFeaturedExperiences } from "@/data/experiencesData";
 
 const Home = () => {
-  const categories = [
-    { name: "Adventure", emoji: "⛰️", desc: "Trekking, kayaking, cycling" },
-    { name: "Nature", emoji: "🌿", desc: "Birdwatching, stargazing, foraging" },
-    { name: "Skill-Learning", emoji: "🎨", desc: "Pottery, archery, cooking" },
-    { name: "Thrill", emoji: "👻", desc: "Horror walks, escape rooms" },
-    { name: "Mindfulness", emoji: "🧘", desc: "Yoga, meditation, wellness" },
-    { name: "Sports", emoji: "⚽", desc: "Pickup games, competitions" },
-    { name: "Social", emoji: "🎲", desc: "Book clubs, game nights" },
-    { name: "Offbeat", emoji: "🔮", desc: "Weird & wonderful experiences" }
+  const categories: { name: string; icon: LucideIcon; desc: string }[] = [
+    { name: "Adventure", icon: Mountain, desc: "Trekking, kayaking, cycling" },
+    { name: "Nature", icon: Leaf, desc: "Birdwatching, stargazing, foraging" },
+    { name: "Skill-Learning", icon: Palette, desc: "Pottery, archery, cooking" },
+    { name: "Thrill", icon: Zap, desc: "Horror walks, escape rooms" },
+    { name: "Mindfulness", icon: Heart, desc: "Yoga, meditation, wellness" },
+    { name: "Sports", icon: Trophy, desc: "Pickup games, competitions" },
+    { name: "Social", icon: Users, desc: "Book clubs, game nights" },
+    { name: "Offbeat", icon: Compass, desc: "Weird & wonderful experiences" },
   ];
 
   const featuredExperiences = getFeaturedExperiences();
@@ -23,114 +25,50 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] md:min-h-screen flex items-center pt-16 md:pt-20 overflow-hidden">
-        {/* Adventure Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(143,255,0,0.08),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(204,255,0,0.06),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDIpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
-        </div>
-        
-        <div className="container mx-auto px-4 lg:px-12 xl:px-20 relative z-10">
-          <div className="max-w-5xl">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 1, ease: "easeOut" }}
-            >
-              <motion.h1 
-                initial={{ opacity: 0, scale: 0.9 }} 
-                animate={{ opacity: 1, scale: 1 }} 
-                transition={{ duration: 1.2, ease: "easeOut" }} 
-                className="mb-4 md:mb-8"
-              >
-                <span className="block text-5xl font-edo mb-1 md:mb-2 md:text-7xl">Life's</span>
-                <span className="block font-bahianita md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-9xl">
-                  Out There 
-                </span>
-              </motion.h1>
-              
-              <motion.div 
-                className="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-12" 
-                initial={{ opacity: 0, y: 20 }} 
-                animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.8, delay: 0.3 }}
-              >
-                <Link to="/explore">
-                  <Button 
-                    size="lg" 
-                    className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:scale-105 hover:shadow-[0_0_30px_rgba(143,255,0,0.4)] transition-all"
-                  >
-                    START EXPLORING
-                  </Button>
-                </Link>
-                <Link to="/quiz">
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-2 border-[hsl(var(--neon-start))] text-[hsl(var(--neon-start))] font-bold text-base md:text-lg px-6 md:px-8 py-6 md:py-7 hover:bg-[hsl(var(--neon-start))]/10 transition-all"
-                  >
-                    🎯 Find Your Vibe
-                  </Button>
-                </Link>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-        
-        {/* Floating Elements */}
-        <motion.div 
-          className="absolute top-1/4 right-[10%] w-2 h-2 bg-[hsl(var(--neon-start))] rounded-full blur-sm" 
-          animate={{ y: [0, -20, 0], opacity: [0.3, 0.7, 0.3] }} 
-          transition={{ duration: 4, repeat: Infinity }} 
-        />
-        <motion.div 
-          className="absolute bottom-1/3 left-[15%] w-3 h-3 bg-[hsl(var(--neon-end))] rounded-full blur-sm" 
-          animate={{ y: [0, 20, 0], opacity: [0.4, 0.8, 0.4] }} 
-          transition={{ duration: 5, repeat: Infinity, delay: 1 }} 
-        />
-      </section>
+
+      <HeroSection />
 
       {/* Categories Section */}
       <section className="py-10 md:py-24 bg-gradient-to-b from-background via-card to-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImRvdHMiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMTQzLDI1NSwwLDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2RvdHMpIi8+PC9zdmc+')] opacity-40" />
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }} 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-7xl font-display font-bold mb-6 md:mb-16">
               PICK YOUR VIBE
             </h2>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-              {categories.map((category, index) => (
-                <Link key={category.name} to={`/explore?category=${category.name.toLowerCase()}`}>
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }} 
-                    whileInView={{ opacity: 1, y: 0 }} 
-                    viewport={{ once: true }} 
-                    transition={{ duration: 0.4, delay: index * 0.05 }} 
-                    whileHover={{ scale: 1.05, y: -5 }} 
-                    className="bg-gradient-to-br from-card to-background border border-border hover:border-[hsl(var(--neon-start))] rounded-xl p-4 md:p-6 text-center cursor-pointer transition-all group relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(143,255,0,0.15)]"
+              {categories.map((category, index) => {
+                const Icon = category.icon;
+                return (
+                  <Link
+                    key={category.name}
+                    to={`/explore?category=${category.name.toLowerCase()}`}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--neon-start))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="text-3xl md:text-5xl mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300 relative z-10 filter drop-shadow-[0_0_8px_rgba(143,255,0,0.3)]">
-                      {category.emoji}
-                    </div>
-                    <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider relative z-10 group-hover:text-[hsl(var(--neon-start))] transition-colors">
-                      {category.name}
-                    </h3>
-                    <p className="text-[10px] md:text-xs text-muted-foreground mt-1 relative z-10 hidden md:block">
-                      {category.desc}
-                    </p>
-                  </motion.div>
-                </Link>
-              ))}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: index * 0.05 }}
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      className="bg-gradient-to-br from-card to-background border border-border hover:border-[hsl(var(--neon-start))] rounded-xl p-4 md:p-6 text-center cursor-pointer transition-all group relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(143,255,0,0.15)]"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--neon-start))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <Icon className="w-8 h-8 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 text-accent group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                      <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider relative z-10 group-hover:text-[hsl(var(--neon-start))] transition-colors">
+                        {category.name}
+                      </h3>
+                      <p className="text-[10px] md:text-xs text-muted-foreground mt-1 relative z-10 hidden md:block">
+                        {category.desc}
+                      </p>
+                    </motion.div>
+                  </Link>
+                );
+              })}
             </div>
           </motion.div>
         </div>
@@ -140,10 +78,10 @@ const Home = () => {
       <section className="py-10 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }} 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <div className="flex justify-between items-end mb-6 md:mb-16">
@@ -160,9 +98,9 @@ const Home = () => {
                 </p>
               </div>
               <Link to="/explore">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="hidden md:flex border-2 border-accent text-accent hover:bg-accent hover:text-black font-bold px-8 transition-all"
                 >
                   SEE ALL EXPERIENCES →
@@ -172,38 +110,39 @@ const Home = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
               {featuredExperiences.map((experience, index) => (
-                <motion.div 
-                  key={experience.id} 
-                  initial={{ opacity: 0, y: 30 }} 
-                  whileInView={{ opacity: 1, y: 0 }} 
-                  viewport={{ once: true }} 
-                  transition={{ duration: 0.5, delay: index * 0.1 }} 
-                  whileHover={{ y: -8 }} 
+                <motion.div
+                  key={experience.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -8 }}
                   className="group cursor-pointer"
                 >
                   <Link to={`/experience/${experience.id}`}>
                     <div className="relative h-48 md:h-80 overflow-hidden rounded-lg border-2 border-border group-hover:border-accent transition-all">
-                      <img 
-                        src={experience.image} 
-                        alt={experience.title} 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                      <img
+                        src={experience.image}
+                        alt={experience.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
-                      {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-                      
-                      {/* Category Badge with Emoji */}
+
                       <Badge className="absolute top-2 left-2 md:top-4 md:left-4 bg-black/80 text-accent border border-accent/50 px-2 md:px-4 py-0.5 md:py-1 text-[10px] md:text-xs uppercase tracking-wider">
-                        {experience.emoji} {experience.category}
+                        {experience.category}
                       </Badge>
-                      
-                      {/* Content */}
+
                       <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
                         <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-2 leading-tight group-hover:text-[hsl(var(--neon-start))] transition-colors">
                           {experience.title}
                         </h3>
                         <div className="flex justify-between items-center text-xs md:text-sm">
-                          <span className="text-muted-foreground">{experience.duration}</span>
-                          <span className="text-[hsl(var(--neon-start))] font-bold text-sm md:text-lg">{experience.price}</span>
+                          <span className="text-muted-foreground">
+                            {experience.duration}
+                          </span>
+                          <span className="text-[hsl(var(--neon-start))] font-bold text-sm md:text-lg">
+                            {experience.price}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -215,8 +154,8 @@ const Home = () => {
             {/* Mobile See All Button */}
             <div className="mt-6 text-center md:hidden">
               <Link to="/explore">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold w-full"
                 >
                   SEE ALL EXPERIENCES →
@@ -234,21 +173,21 @@ const Home = () => {
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-[hsl(var(--neon-start))] rounded-full blur-[150px] opacity-10" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[hsl(var(--neon-end))] rounded-full blur-[150px] opacity-10" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }} 
-            transition={{ duration: 0.6 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
             <h2 className="text-4xl md:text-8xl font-display font-bold mb-6 md:mb-12 leading-tight">
               BECOME A HOST
             </h2>
             <Link to="/host">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg md:text-xl px-10 md:px-12 py-6 md:py-8 hover:scale-105 hover:shadow-[0_0_40px_rgba(143,255,0,0.5)] transition-all"
               >
                 Share Your Idea

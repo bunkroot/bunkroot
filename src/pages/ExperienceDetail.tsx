@@ -119,7 +119,7 @@ const ExperienceDetail = () => {
           {/* Floating Info on Image */}
           <div className="absolute bottom-12 left-0 right-0 container mx-auto px-4 lg:px-12">
             <Badge className="mb-4 bg-black/80 text-accent border border-accent/50 px-6 py-2 text-sm uppercase tracking-widest">
-              {experience.emoji} {experience.category}
+              {experience.category}
             </Badge>
             <h1 className="text-6xl md:text-8xl font-display font-bold mb-4 text-white leading-none">
               {experience.title}
