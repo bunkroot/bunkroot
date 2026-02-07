@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { DollarSign, Sparkles, TrendingUp } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -27,7 +28,7 @@ const Host = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const message = `🌟 NEW HOST APPLICATION 🌟
+    const message = `NEW HOST APPLICATION
 
 Name: ${formData.name}
 Phone: ${formData.phone}
@@ -73,21 +74,27 @@ Price Range: ${formData.price}`;
               <h2 className="text-3xl font-display font-bold mb-6">Why Host with BunkRoot?</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <div className="text-4xl mb-3">💰</div>
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-3">
+                    <DollarSign className="w-6 h-6 text-accent" />
+                  </div>
                   <h3 className="font-bold text-lg mb-2">Earn Money</h3>
                   <p className="text-muted-foreground text-sm">
                     Turn your passion into income
                   </p>
                 </div>
                 <div>
-                  <div className="text-4xl mb-3">🌟</div>
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-3">
+                    <Sparkles className="w-6 h-6 text-accent" />
+                  </div>
                   <h3 className="font-bold text-lg mb-2">Share Your Passion</h3>
                   <p className="text-muted-foreground text-sm">
                     Connect with like-minded people
                   </p>
                 </div>
                 <div>
-                  <div className="text-4xl mb-3">🚀</div>
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-3">
+                    <TrendingUp className="w-6 h-6 text-accent" />
+                  </div>
                   <h3 className="font-bold text-lg mb-2">Grow Your Brand</h3>
                   <p className="text-muted-foreground text-sm">
                     Build a following and reputation
