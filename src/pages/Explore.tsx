@@ -13,34 +13,34 @@ const Explore = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [vibeBanner, setVibeBanner] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const categories = ["Adventure", "Nature", "Skill-Learning", "Thrill", "Mindfulness", "Sports", "Social", "Offbeat"];
+  const categories = ["Wellness", "Water Activity", "Swimming", "Sports", "Riding", "Gaming", "Lounges", "Creative"];
 
   // Map vibe result categories to display categories
   const vibeToCategory: Record<string, string> = {
-    adventure: "Adventure",
-    nature: "Nature",
-    "skill-learning": "Skill-Learning",
-    thrill: "Thrill",
-    mindfulness: "Mindfulness",
+    wellness: "Wellness",
+    "water-activity": "Water Activity",
+    swimming: "Swimming",
     sports: "Sports",
-    social: "Social",
-    offbeat: "Offbeat"
+    riding: "Riding",
+    gaming: "Gaming",
+    lounges: "Lounges",
+    creative: "Creative"
   };
 
   // Read category or vibe from URL params on mount
   useEffect(() => {
     const categoryParam = searchParams.get("category");
     if (categoryParam) {
-      // Handle multi-word categories like skill-learning
-      const formattedCategory = categoryParam.split('-').map(word => 
-        word.charAt(0).toUpperCase() + word.slice(1)
-      ).join('-');
-      
-      if (categories.includes(formattedCategory)) {
-        setSelectedCategory(formattedCategory);
-        // Check if it came from quiz
+      // Check direct match first (e.g., "Sports")
+      const directMatch = categories.find(c => c.toLowerCase() === categoryParam.toLowerCase());
+      if (directMatch) {
+        setSelectedCategory(directMatch);
+        setVibeBanner(categoryParam);
+      } else {
+        // Handle hyphenated URL categories like "water-activity"
         const mappedCategory = vibeToCategory[categoryParam.toLowerCase()];
-        if (mappedCategory) {
+        if (mappedCategory && categories.includes(mappedCategory)) {
+          setSelectedCategory(mappedCategory);
           setVibeBanner(categoryParam);
         }
       }
@@ -143,9 +143,9 @@ const Explore = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                         
-                        {/* Category Badge with Emoji */}
+                        {/* Category Badge */}
                         <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
-                          {experience.emoji} {experience.category}
+                          {experience.category}
                         </Badge>
 
                         {/* Title and Price Overlay */}

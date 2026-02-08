@@ -119,7 +119,7 @@ const ExperienceDetail = () => {
           {/* Floating Info on Image */}
           <div className="absolute bottom-12 left-0 right-0 container mx-auto px-4 lg:px-12">
             <Badge className="mb-4 bg-black/80 text-accent border border-accent/50 px-6 py-2 text-sm uppercase tracking-widest">
-              {experience.emoji} {experience.category}
+              {experience.category}
             </Badge>
             <h1 className="text-6xl md:text-8xl font-display font-bold mb-4 text-white leading-none">
               {experience.title}
@@ -436,7 +436,7 @@ const ExperienceDetail = () => {
                   <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
                     {experience.price}
                   </div>
-                  <div className="text-sm text-muted-foreground mt-1">per person</div>
+                  <div className="text-sm text-muted-foreground mt-1">{experience.priceType}</div>
                 </div>
 
                 {/* Booking Form */}
