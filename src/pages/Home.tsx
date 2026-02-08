@@ -5,17 +5,31 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getFeaturedExperiences } from "@/data/experiencesData";
+import { Heart, Waves, Droplets, Trophy, Car, Gamepad2, Sofa, Palette } from "lucide-react";
+
+const categoryIcons: Record<string, React.ReactNode> = {
+  "Wellness": <Heart className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
+  "Water Activity": <Waves className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
+  "Swimming": <Droplets className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
+  "Sports": <Trophy className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
+  "Riding": <Car className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
+  "Gaming": <Gamepad2 className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
+  "Lounges": <Sofa className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
+  "Creative": <Palette className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
+};
+
+const getCategoryIcon = (name: string) => categoryIcons[name] || null;
 
 const Home = () => {
   const categories = [
-    { name: "Adventure", emoji: "⛰️", desc: "Trekking, kayaking, cycling" },
-    { name: "Nature", emoji: "🌿", desc: "Birdwatching, stargazing, foraging" },
-    { name: "Skill-Learning", emoji: "🎨", desc: "Pottery, archery, cooking" },
-    { name: "Thrill", emoji: "👻", desc: "Horror walks, escape rooms" },
-    { name: "Mindfulness", emoji: "🧘", desc: "Yoga, meditation, wellness" },
-    { name: "Sports", emoji: "⚽", desc: "Pickup games, competitions" },
-    { name: "Social", emoji: "🎲", desc: "Book clubs, game nights" },
-    { name: "Offbeat", emoji: "🔮", desc: "Weird & wonderful experiences" }
+    { name: "Wellness", desc: "Ice bath, steam, recovery" },
+    { name: "Water Activity", desc: "Kayaking, rafting, paddling" },
+    { name: "Swimming", desc: "Pool access, calm sessions" },
+    { name: "Sports", desc: "Badminton, pickleball courts" },
+    { name: "Riding", desc: "Go-karting, track rides" },
+    { name: "Gaming", desc: "Console, PC, VR gaming" },
+    { name: "Lounges", desc: "Billiards, shisha, hangouts" },
+    { name: "Creative", desc: "Pottery, workshops, art" }
   ];
 
   const featuredExperiences = getFeaturedExperiences();
@@ -66,15 +80,6 @@ const Home = () => {
                     START EXPLORING
                   </Button>
                 </Link>
-                <Link to="/quiz">
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-2 border-[hsl(var(--neon-start))] text-[hsl(var(--neon-start))] font-bold text-base md:text-lg px-6 md:px-8 py-6 md:py-7 hover:bg-[hsl(var(--neon-start))]/10 transition-all"
-                  >
-                    🎯 Find Your Vibe
-                  </Button>
-                </Link>
               </motion.div>
             </motion.div>
           </div>
@@ -120,7 +125,7 @@ const Home = () => {
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--neon-start))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="text-3xl md:text-5xl mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300 relative z-10 filter drop-shadow-[0_0_8px_rgba(143,255,0,0.3)]">
-                      {category.emoji}
+                      {getCategoryIcon(category.name)}
                     </div>
                     <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider relative z-10 group-hover:text-[hsl(var(--neon-start))] transition-colors">
                       {category.name}
@@ -191,9 +196,9 @@ const Home = () => {
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
                       
-                      {/* Category Badge with Emoji */}
+                      {/* Category Badge */}
                       <Badge className="absolute top-2 left-2 md:top-4 md:left-4 bg-black/80 text-accent border border-accent/50 px-2 md:px-4 py-0.5 md:py-1 text-[10px] md:text-xs uppercase tracking-wider">
-                        {experience.emoji} {experience.category}
+                        {experience.category}
                       </Badge>
                       
                       {/* Content */}
