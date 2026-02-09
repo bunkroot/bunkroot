@@ -7,14 +7,12 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { experiences } from "@/data/experiencesData";
-
 const Explore = () => {
   const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [vibeBanner, setVibeBanner] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const categories = ["Wellness", "Water Activity", "Swimming", "Sports", "Riding", "Gaming", "Lounges", "Creative"];
-
   const vibeToCategory: Record<string, string> = {
     wellness: "Wellness",
     "water-activity": "Water Activity",
@@ -25,7 +23,6 @@ const Explore = () => {
     lounges: "Lounges",
     creative: "Creative"
   };
-
   useEffect(() => {
     const categoryParam = searchParams.get("category");
     if (categoryParam) {
@@ -42,95 +39,67 @@ const Explore = () => {
       }
     }
   }, [searchParams]);
-
-  const filteredExperiences = experiences
-    .filter(exp => {
-      const matchesCategory = selectedCategory ? exp.category === selectedCategory : true;
-      const matchesSearch = searchQuery.trim() 
-        ? exp.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          exp.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          exp.host.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          exp.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          exp.description.toLowerCase().includes(searchQuery.toLowerCase())
-        : true;
-      return matchesCategory && matchesSearch;
-    });
-
-  return (
-    <div className="min-h-screen bg-background">
+  const filteredExperiences = experiences.filter(exp => {
+    const matchesCategory = selectedCategory ? exp.category === selectedCategory : true;
+    const matchesSearch = searchQuery.trim() ? exp.title.toLowerCase().includes(searchQuery.toLowerCase()) || exp.category.toLowerCase().includes(searchQuery.toLowerCase()) || exp.host.toLowerCase().includes(searchQuery.toLowerCase()) || exp.location.toLowerCase().includes(searchQuery.toLowerCase()) || exp.description.toLowerCase().includes(searchQuery.toLowerCase()) : true;
+    return matchesCategory && matchesSearch;
+  });
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <div className="pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-7xl">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.6 }}
-          >
-            {vibeBanner && (
-              <div className="mb-6 p-4 bg-primary/10 border border-primary/30 rounded-xl">
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.6
+        }}>
+            {vibeBanner && <div className="mb-6 p-4 bg-primary/10 border border-primary/30 rounded-xl">
                 <p className="text-lg font-semibold">
                   Showing <span className="text-primary">{selectedCategory}</span> experiences based on your quiz result!
                 </p>
-              </div>
-            )}
+              </div>}
 
             <div className="mb-12 md:mb-16">
-              <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-bold mb-4 md:mb-6 leading-none break-words">
-                BUNK<br />
-                <span className="text-primary">Routine</span>
+              <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-bold mb-4 md:mb-6 leading-none break-words text-primary">BUNK Routine
+              <br />
+                <span className="text-primary">​</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">Quick everyday escapes. No planning stress. Just go.</p>
             </div>
             
             <div className="flex gap-3 md:gap-4 mb-8 md:mb-12">
-              <Input 
-                placeholder="Search experiences..." 
-                className="flex-1 h-14 text-lg bg-card border-2 border-border focus:border-accent" 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <Button 
-                size="lg" 
-                className="bg-primary text-primary-foreground font-bold h-14 hover:opacity-90"
-              >
+              <Input placeholder="Search experiences..." className="flex-1 h-14 text-lg bg-card border-2 border-border focus:border-accent" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+              <Button size="lg" className="bg-primary text-primary-foreground font-bold h-14 hover:opacity-90">
                 Search
               </Button>
             </div>
             
             <div className="flex flex-wrap gap-3 mb-16">
-              {categories.map(category => (
-                <Badge 
-                  key={category} 
-                  variant={selectedCategory === category ? "default" : "outline"} 
-                  className={`cursor-pointer px-8 py-3 text-sm uppercase tracking-widest transition-all border-2 ${
-                    selectedCategory === category 
-                      ? "bg-primary text-primary-foreground border-transparent" 
-                      : "hover:border-accent hover:bg-accent/10"
-                  }`} 
-                  onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
-                >
+              {categories.map(category => <Badge key={category} variant={selectedCategory === category ? "default" : "outline"} className={`cursor-pointer px-8 py-3 text-sm uppercase tracking-widest transition-all border-2 ${selectedCategory === category ? "bg-primary text-primary-foreground border-transparent" : "hover:border-accent hover:bg-accent/10"}`} onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}>
                   {category}
-                </Badge>
-              ))}
+                </Badge>)}
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredExperiences.map((experience, index) => (
-                <motion.div 
-                  key={experience.id} 
-                  initial={{ opacity: 0, y: 30 }} 
-                  animate={{ opacity: 1, y: 0 }} 
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
+              {filteredExperiences.map((experience, index) => <motion.div key={experience.id} initial={{
+              opacity: 0,
+              y: 30
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }}>
                   <Link to={`/experience/${experience.id}`}>
                     <div className="group relative overflow-hidden rounded-lg border-2 border-border hover:border-accent transition-all duration-300 cursor-pointer">
                       <div className="relative h-80 overflow-hidden">
-                        <img 
-                          src={experience.image} 
-                          alt={experience.title} 
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-                        />
+                        <img src={experience.image} alt={experience.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                         
                         <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
@@ -151,10 +120,7 @@ const Explore = () => {
                                 {experience.price}
                               </div>
                             </div>
-                            <Button 
-                              size="sm" 
-                              className="bg-primary text-primary-foreground font-bold opacity-0 group-hover:opacity-100 transition-opacity"
-                            >
+                            <Button size="sm" className="bg-primary text-primary-foreground font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                               View Details
                             </Button>
                           </div>
@@ -162,31 +128,23 @@ const Explore = () => {
                       </div>
                     </div>
                   </Link>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
 
-            {filteredExperiences.length === 0 && (
-              <div className="text-center py-20">
+            {filteredExperiences.length === 0 && <div className="text-center py-20">
                 <p className="text-xl text-muted-foreground mb-4">No experiences found</p>
-                <Button 
-                  variant="outline" 
-                  onClick={() => {
-                    setSearchQuery("");
-                    setSelectedCategory(null);
-                  }}
-                >
+                <Button variant="outline" onClick={() => {
+              setSearchQuery("");
+              setSelectedCategory(null);
+            }}>
                   Clear filters
                 </Button>
-              </div>
-            )}
+              </div>}
           </motion.div>
         </div>
       </div>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Explore;
