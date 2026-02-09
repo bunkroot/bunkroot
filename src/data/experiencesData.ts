@@ -1,23 +1,51 @@
 // Urban vibrant experience images
-import expKayakMain from "@/assets/exp-kayak-main.jpg";
-import expKayakGallery1 from "@/assets/exp-kayak-gallery1.jpg";
-import expKayakGallery2 from "@/assets/exp-kayak-gallery2.jpg";
+import expVrMain from "@/assets/exp-vr-main.png";
+import expVrGallery1 from "@/assets/exp-vr-gallery1.png";
+import expVrGallery2 from "@/assets/exp-vr-gallery2.png";
+import expVrGallery3 from "@/assets/exp-vr-gallery3.png";
+import expVrGallery4 from "@/assets/exp-vr-gallery4.png";
+import expVrGallery5 from "@/assets/exp-vr-gallery5.png";
+import expVrGallery6 from "@/assets/exp-vr-gallery6.png";
+import expVrGallery7 from "@/assets/exp-vr-gallery7.png";
+import expVrGallery8 from "@/assets/exp-vr-gallery8.png";
+import expVrGallery9 from "@/assets/exp-vr-gallery9.png";
 
-import expBowlingMain from "@/assets/exp-bowling-main.jpg";
-import expBowlingGallery1 from "@/assets/exp-bowling-gallery1.jpg";
-import expBowlingGallery2 from "@/assets/exp-bowling-gallery2.jpg";
+import expRecoveryMain from "@/assets/exp-recovery-main.jpg";
+import expRecoveryGallery1 from "@/assets/exp-recovery-gallery1.webp";
+import expRecoveryGallery2 from "@/assets/exp-recovery-gallery2.webp";
+import expRecoveryGallery3 from "@/assets/exp-recovery-gallery3.jpg";
+import expRecoveryGallery4 from "@/assets/exp-recovery-gallery4.jpg";
+import expRecoveryGallery5 from "@/assets/exp-recovery-gallery5.jpg";
+import expRecoveryGallery6 from "@/assets/exp-recovery-gallery6.jpg";
+import expRecoveryGallery7 from "@/assets/exp-recovery-gallery7.jpg";
+import expRecoveryGallery8 from "@/assets/exp-recovery-gallery8.webp";
+import expRecoveryGallery9 from "@/assets/exp-recovery-gallery9.jpg";
 
-import expVrMain from "@/assets/exp-vr-main.jpg";
-import expVrGallery1 from "@/assets/exp-vr-gallery1.jpg";
-import expVrGallery2 from "@/assets/exp-vr-gallery2.jpg";
+import expBackkayakMain from "@/assets/exp-backkayak-main.webp";
+import expBackkayakGallery1 from "@/assets/exp-backkayak-gallery1.webp";
+import expBackkayakGallery2 from "@/assets/exp-backkayak-gallery2.webp";
+import expBackkayakGallery3 from "@/assets/exp-backkayak-gallery3.webp";
+import expBackkayakGallery4 from "@/assets/exp-backkayak-gallery4.webp";
+import expBackkayakGallery5 from "@/assets/exp-backkayak-gallery5.webp";
+import expBackkayakGallery6 from "@/assets/exp-backkayak-gallery6.webp";
+import expBackkayakGallery7 from "@/assets/exp-backkayak-gallery7.webp";
+import expBackkayakGallery8 from "@/assets/exp-backkayak-gallery8.webp";
+import expBackkayakGallery9 from "@/assets/exp-backkayak-gallery9.webp";
+
+import expKayakescapeMain from "@/assets/exp-kayakescape-main.webp";
+import expKayakescapeGallery1 from "@/assets/exp-kayakescape-gallery1.webp";
+import expKayakescapeGallery2 from "@/assets/exp-kayakescape-gallery2.webp";
+import expKayakescapeGallery3 from "@/assets/exp-kayakescape-gallery3.webp";
+import expKayakescapeGallery4 from "@/assets/exp-kayakescape-gallery4.webp";
+import expKayakescapeGallery5 from "@/assets/exp-kayakescape-gallery5.webp";
+import expKayakescapeGallery6 from "@/assets/exp-kayakescape-gallery6.webp";
+import expKayakescapeGallery7 from "@/assets/exp-kayakescape-gallery7.webp";
+import expKayakescapeGallery8 from "@/assets/exp-kayakescape-gallery8.webp";
+import expKayakescapeGallery9 from "@/assets/exp-kayakescape-gallery9.webp";
 
 import expPlaystationMain from "@/assets/exp-playstation-main.jpg";
 import expPlaystationGallery1 from "@/assets/exp-playstation-gallery1.jpg";
 import expPlaystationGallery2 from "@/assets/exp-playstation-gallery2.jpg";
-
-import expPotteryMain from "@/assets/exp-pottery-main.jpg";
-import expPotteryGallery1 from "@/assets/exp-pottery-gallery1.jpg";
-import expPotteryGallery2 from "@/assets/exp-pottery-gallery2.jpg";
 
 import expHookahMain from "@/assets/exp-hookah-main.jpg";
 import expHookahGallery1 from "@/assets/exp-hookah-gallery1.jpg";
@@ -32,8 +60,21 @@ import expBadmintonGallery1 from "@/assets/exp-badminton-gallery1.jpg";
 import expBadmintonGallery2 from "@/assets/exp-badminton-gallery2.jpg";
 
 import expIcebathMain from "@/assets/exp-icebath-main.jpg";
-import expIcebathGallery1 from "@/assets/exp-icebath-gallery1.jpg";
-import expIcebathGallery2 from "@/assets/exp-icebath-gallery2.jpg";
+import expIcebathGallery1 from "@/assets/exp-icebath-gallery1.webp";
+import expIcebathGallery2 from "@/assets/exp-icebath-gallery2.webp";
+import expIcebathGallery3 from "@/assets/exp-icebath-gallery3.jpg";
+import expIcebathGallery4 from "@/assets/exp-icebath-gallery4.jpg";
+import expIcebathGallery5 from "@/assets/exp-icebath-gallery5.jpg";
+import expIcebathGallery6 from "@/assets/exp-icebath-gallery6.jpg";
+import expIcebathGallery7 from "@/assets/exp-icebath-gallery7.webp";
+
+import expRiverraftMain from "@/assets/exp-riverraft-main.jpg";
+import expRiverraftGallery1 from "@/assets/exp-riverraft-gallery1.jpg";
+import expRiverraftGallery2 from "@/assets/exp-riverraft-gallery2.jpg";
+import expRiverraftGallery3 from "@/assets/exp-riverraft-gallery3.jpg";
+import expRiverraftGallery4 from "@/assets/exp-riverraft-gallery4.webp";
+import expRiverraftGallery5 from "@/assets/exp-riverraft-gallery5.webp";
+import expRiverraftGallery6 from "@/assets/exp-riverraft-gallery6.jpg";
 
 import expPickleballMain from "@/assets/exp-pickleball-main.jpg";
 import expPickleballGallery1 from "@/assets/exp-pickleball-gallery1.jpg";
@@ -46,6 +87,57 @@ import expSnookerGallery2 from "@/assets/exp-snooker-gallery2.jpg";
 import expBeachwalkMain from "@/assets/exp-beachwalk-main.jpg";
 import expBeachwalkGallery1 from "@/assets/exp-beachwalk-gallery1.jpg";
 import expBeachwalkGallery2 from "@/assets/exp-beachwalk-gallery2.jpg";
+
+import expGocartMain from "@/assets/exp-gocart-main.png";
+import expGocartGallery1 from "@/assets/exp-gocart-gallery1.png";
+import expGocartGallery2 from "@/assets/exp-gocart-gallery2.png";
+import expGocartGallery3 from "@/assets/exp-gocart-gallery3.png";
+import expGocartGallery4 from "@/assets/exp-gocart-gallery4.png";
+import expGocartGallery5 from "@/assets/exp-gocart-gallery5.png";
+import expGocartGallery6 from "@/assets/exp-gocart-gallery6.png";
+import expGocartGallery7 from "@/assets/exp-gocart-gallery7.png";
+import expGocartGallery8 from "@/assets/exp-gocart-gallery8.png";
+import expGocartGallery9 from "@/assets/exp-gocart-gallery9.png";
+
+import expLakekayakMain from "@/assets/exp-lakekayak-main.webp";
+import expLakekayakGallery1 from "@/assets/exp-lakekayak-gallery1.webp";
+import expLakekayakGallery2 from "@/assets/exp-lakekayak-gallery2.webp";
+import expLakekayakGallery3 from "@/assets/exp-lakekayak-gallery3.webp";
+import expLakekayakGallery4 from "@/assets/exp-lakekayak-gallery4.webp";
+import expLakekayakGallery5 from "@/assets/exp-lakekayak-gallery5.webp";
+import expLakekayakGallery6 from "@/assets/exp-lakekayak-gallery6.webp";
+import expLakekayakGallery7 from "@/assets/exp-lakekayak-gallery7.webp";
+import expLakekayakGallery8 from "@/assets/exp-lakekayak-gallery8.webp";
+
+import expPotteryMain from "@/assets/exp-pottery-main.png";
+import expPotteryGallery1 from "@/assets/exp-pottery-gallery1.png";
+import expPotteryGallery2 from "@/assets/exp-pottery-gallery2.png";
+import expPotteryGallery3 from "@/assets/exp-pottery-gallery3.png";
+import expPotteryGallery4 from "@/assets/exp-pottery-gallery4.png";
+
+import expStandupMain from "@/assets/exp-standup-main.jpg";
+import expStandupGallery1 from "@/assets/exp-standup-gallery1.webp";
+import expStandupGallery2 from "@/assets/exp-standup-gallery2.webp";
+import expStandupGallery3 from "@/assets/exp-standup-gallery3.webp";
+import expStandupGallery4 from "@/assets/exp-standup-gallery4.webp";
+
+import expPowerboatMain from "@/assets/exp-powerboat-main.webp";
+import expPowerboatGallery1 from "@/assets/exp-powerboat-gallery1.webp";
+import expPowerboatGallery2 from "@/assets/exp-powerboat-gallery2.webp";
+
+import expBananaMain from "@/assets/exp-banana-main.webp";
+import expBananaGallery1 from "@/assets/exp-banana-gallery1.webp";
+import expBananaGallery2 from "@/assets/exp-banana-gallery2.webp";
+
+import expBumperMain from "@/assets/exp-bumper-main.jpg";
+import expBumperGallery1 from "@/assets/exp-bumper-gallery1.jpg";
+import expBumperGallery2 from "@/assets/exp-bumper-gallery2.jpg";
+import expBumperGallery3 from "@/assets/exp-bumper-gallery3.jpeg";
+
+import expSteambathMain from "@/assets/exp-steambath-main.webp";
+import expSteambathGallery1 from "@/assets/exp-steambath-gallery1.jpg";
+import expSteambathGallery2 from "@/assets/exp-steambath-gallery2.jpg";
+import expSteambathGallery3 from "@/assets/exp-steambath-gallery3.webp";
 
 export interface Experience {
   id: string;
@@ -92,7 +184,7 @@ export const experiences: Experience[] = [
     minAge: 15,
     location: "Kallayi",
     image: expIcebathMain,
-    gallery: [expIcebathMain, expIcebathGallery1, expIcebathGallery2],
+    gallery: [expIcebathMain, expIcebathGallery1, expIcebathGallery2, expIcebathGallery3, expIcebathGallery4, expIcebathGallery5, expIcebathGallery6, expIcebathGallery7],
     description: "Guided cold exposure session designed for recovery and mental resilience.",
     fullDescription: "This ice bath session is designed for anyone looking to experience controlled cold exposure in a safe and guided environment. The session is kept short and manageable, making it suitable even for first-timers. A facilitator will guide you through the process and help you stay comfortable throughout. Many people use this session to support muscle recovery, reduce fatigue, or simply challenge themselves mentally.",
     included: ["Ice bath tub", "Guided session", "Temperature monitoring"],
@@ -111,8 +203,8 @@ export const experiences: Experience[] = [
     groupSize: "1–4",
     minAge: 15,
     location: "Kallayi",
-    image: expIcebathMain,
-    gallery: [expIcebathMain, expIcebathGallery1, expIcebathGallery2],
+    image: expSteambathMain,
+    gallery: [expSteambathMain, expSteambathGallery1, expSteambathGallery2, expSteambathGallery3],
     description: "A relaxing steam bath session to release tension and unwind.",
     fullDescription: "The steam bath reset is a slow, calming experience focused on relaxation. Warm steam helps loosen stiff muscles, ease stress, and promote overall relaxation. This session works well after workouts, long workdays, or as a standalone wellness break.",
     included: ["Steam room access", "Timed session"],
@@ -131,8 +223,8 @@ export const experiences: Experience[] = [
     groupSize: "1–4",
     minAge: 15,
     location: "Kallayi",
-    image: expIcebathMain,
-    gallery: [expIcebathMain, expIcebathGallery1, expIcebathGallery2],
+    image: expRecoveryMain,
+    gallery: [expRecoveryMain, expRecoveryGallery1, expRecoveryGallery2, expRecoveryGallery3, expRecoveryGallery4, expRecoveryGallery5, expRecoveryGallery6, expRecoveryGallery7, expRecoveryGallery8, expRecoveryGallery9],
     description: "Contrast therapy combining ice bath and steam for deep recovery.",
     fullDescription: "This recovery combo brings together cold and heat therapy in a single session. You'll move between ice exposure and steam therapy to stimulate circulation and reduce muscle fatigue. The contrast between temperatures makes this session more intense than a single treatment.",
     included: ["Ice bath access", "Steam bath access", "Guided flow"],
@@ -151,8 +243,8 @@ export const experiences: Experience[] = [
     groupSize: "1–10",
     minAge: 12,
     location: "Kadalundi",
-    image: expKayakMain,
-    gallery: [expKayakMain, expKayakGallery1, expKayakGallery2],
+    image: expBackkayakMain,
+    gallery: [expBackkayakMain, expBackkayakGallery1, expBackkayakGallery2, expBackkayakGallery3, expBackkayakGallery4, expBackkayakGallery5, expBackkayakGallery6, expBackkayakGallery7, expBackkayakGallery8, expBackkayakGallery9],
     description: "A calm kayaking experience through scenic backwaters.",
     fullDescription: "Backwater kayaking offers a peaceful way to explore nature at a relaxed pace. The route passes through calm waters, making it ideal for beginners and casual paddlers. Safety instructions are provided before starting.",
     included: ["Kayak", "Life jacket", "Safety briefing"],
@@ -171,8 +263,8 @@ export const experiences: Experience[] = [
     groupSize: "1–15",
     minAge: 12,
     location: "Cheruvannur",
-    image: expKayakMain,
-    gallery: [expKayakMain, expKayakGallery1, expKayakGallery2],
+    image: expKayakescapeMain,
+    gallery: [expKayakescapeGallery1, expKayakescapeGallery2, expKayakescapeGallery3, expKayakescapeGallery4, expKayakescapeGallery5, expKayakescapeGallery6, expKayakescapeGallery7, expKayakescapeGallery8, expKayakescapeGallery9],
     description: "A longer guided kayaking experience for deeper exploration.",
     fullDescription: "Kayak Escape is a longer, more immersive kayaking session designed for those who want to spend extended time on the water. With guidance provided throughout, participants can explore scenic stretches comfortably.",
     included: ["Kayak", "Safety gear", "Guided route"],
@@ -191,8 +283,8 @@ export const experiences: Experience[] = [
     groupSize: "6–10",
     minAge: 14,
     location: "Cheruvannur",
-    image: expKayakMain,
-    gallery: [expKayakMain, expKayakGallery1, expKayakGallery2],
+    image: expRiverraftMain,
+    gallery: [expRiverraftMain, expRiverraftGallery1, expRiverraftGallery2, expRiverraftGallery3, expRiverraftGallery4, expRiverraftGallery5, expRiverraftGallery6],
     description: "An exciting river rafting experience through flowing rapids and calm stretches.",
     fullDescription: "River rafting is a guided water adventure that takes you through natural river currents, combining moments of excitement with calmer stretches of water. This experience is designed for groups and first-time rafters as well as those looking for a refreshing outdoor activity.",
     included: ["Raft", "Safety gear", "Guided route"],
@@ -211,8 +303,8 @@ export const experiences: Experience[] = [
     groupSize: "1–15",
     minAge: 12,
     location: "Kayalam",
-    image: expKayakMain,
-    gallery: [expKayakMain, expKayakGallery1, expKayakGallery2],
+    image: expLakekayakMain,
+    gallery: [expLakekayakMain, expLakekayakGallery1, expLakekayakGallery2, expLakekayakGallery3, expLakekayakGallery4, expLakekayakGallery5, expLakekayakGallery6, expLakekayakGallery7, expLakekayakGallery8],
     description: "Easy-paced kayaking session on a calm lake.",
     fullDescription: "This lake kayaking experience is simple and accessible, especially for people trying kayaking for the first time. Calm water conditions make it easy to learn basic paddling techniques.",
     included: ["Kayak", "Life jacket"],
@@ -231,8 +323,8 @@ export const experiences: Experience[] = [
     groupSize: "1–15",
     minAge: 12,
     location: "Kayalam",
-    image: expBeachwalkMain,
-    gallery: [expBeachwalkMain, expBeachwalkGallery1, expBeachwalkGallery2],
+    image: expStandupMain,
+    gallery: [expStandupMain, expStandupGallery1, expStandupGallery2, expStandupGallery3, expStandupGallery4],
     description: "Try standup paddling on calm waters.",
     fullDescription: "Standup paddling is a balance-based water activity that combines light movement with calm exploration. Participants paddle while standing on a stable board after a short introduction.",
     included: ["Paddle board", "Paddle", "Safety briefing"],
@@ -251,8 +343,8 @@ export const experiences: Experience[] = [
     groupSize: "1–15",
     minAge: 14,
     location: "Kayalam",
-    image: expBeachwalkMain,
-    gallery: [expBeachwalkMain, expBeachwalkGallery1, expBeachwalkGallery2],
+    image: expPowerboatMain,
+    gallery: [expPowerboatMain, expPowerboatGallery1, expPowerboatGallery2],
     description: "A quick power boat ride experience on the lake.",
     fullDescription: "This power boat ride is a short burst of excitement on the water. Designed as a quick experience, it focuses on controlled speed and safety rather than extreme thrills.",
     included: ["Power boat ride", "Safety jacket"],
@@ -271,8 +363,8 @@ export const experiences: Experience[] = [
     groupSize: "1–15",
     minAge: 12,
     location: "Kayalam",
-    image: expBeachwalkMain,
-    gallery: [expBeachwalkMain, expBeachwalkGallery1, expBeachwalkGallery2],
+    image: expBananaMain,
+    gallery: [expBananaMain, expBananaGallery1, expBananaGallery2],
     description: "A fun group water ride with splashes and laughter.",
     fullDescription: "The banana ride is a popular group activity where participants sit together on an inflatable boat pulled across the water. Expect splashes, laughter, and a light adrenaline rush.",
     included: ["Inflatable banana ride", "Life jacket", "Instructor support"],
@@ -291,8 +383,8 @@ export const experiences: Experience[] = [
     groupSize: "1–15",
     minAge: 12,
     location: "Kayalam",
-    image: expBeachwalkMain,
-    gallery: [expBeachwalkMain, expBeachwalkGallery1, expBeachwalkGallery2],
+    image: expBumperMain,
+    gallery: [expBumperMain, expBumperGallery1, expBumperGallery2, expBumperGallery3],
     description: "A playful water ride with spins and splashes.",
     fullDescription: "Bumper rides are designed purely for fun. Riders sit on an inflatable tube while being gently pulled across the water, enjoying light spins and splashes.",
     included: ["Inflatable bumper ride", "Safety jacket"],
@@ -491,8 +583,8 @@ export const experiences: Experience[] = [
     groupSize: "1–10",
     minAge: 16,
     location: "Hilite Mall",
-    image: expBowlingMain,
-    gallery: [expBowlingMain, expBowlingGallery1, expBowlingGallery2],
+    image: expGocartMain,
+    gallery: [expGocartGallery1, expGocartGallery2, expGocartGallery3, expGocartGallery4, expGocartGallery5, expGocartGallery6, expGocartGallery7, expGocartGallery8, expGocartGallery9],
     description: "A quick go-karting experience for thrill seekers.",
     fullDescription: "This go-karting session offers a short but exciting drive on a controlled track. Safety instructions are provided before the ride.",
     included: ["Kart ride", "Safety helmet", "Track access"],
@@ -532,7 +624,7 @@ export const experiences: Experience[] = [
     minAge: 10,
     location: "Beach Road",
     image: expVrMain,
-    gallery: [expVrMain, expVrGallery1, expVrGallery2],
+    gallery: [expVrMain, expVrGallery1, expVrGallery2, expVrGallery3, expVrGallery4, expVrGallery5, expVrGallery6, expVrGallery7, expVrGallery8, expVrGallery9],
     description: "Immersive virtual reality gaming experience.",
     fullDescription: "VR Gaming & Simulation offers a short immersive experience using virtual reality headsets and interactive environments.",
     included: ["VR headset", "Game access"],
@@ -692,7 +784,7 @@ export const experiences: Experience[] = [
     minAge: 10,
     location: "Beach Road",
     image: expPotteryMain,
-    gallery: [expPotteryMain, expPotteryGallery1, expPotteryGallery2],
+    gallery: [expPotteryMain, expPotteryGallery1, expPotteryGallery2, expPotteryGallery3, expPotteryGallery4],
     description: "Hands-on pottery workshop for beginners.",
     fullDescription: "This pottery workshop introduces participants to basic clay techniques in a relaxed, guided setting where they can create their own piece.",
     included: ["Clay materials", "Pottery tools", "Guided session"],
