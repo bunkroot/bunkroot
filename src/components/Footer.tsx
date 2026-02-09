@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 lg:px-12 xl:px-20 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <img src={logo} alt="BunkRoot" className="h-8 mb-4" />
+            <img alt="BunkRoot" className="h-8 mb-4" src="/lovable-uploads/74f74d09-6d47-4265-8394-a51ad4ab6ef3.png" />
             <p className="text-sm text-muted-foreground">
               Escape Routine. Stay Rooted.
             </p>
