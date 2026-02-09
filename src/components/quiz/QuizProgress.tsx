@@ -16,7 +16,7 @@ const QuizProgress = ({ currentQuestion, totalQuestions }: QuizProgressProps) =>
       </div>
       <div className="h-2 bg-card border border-border rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]"
+          className="h-full bg-primary"
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.3, ease: "easeOut" }}

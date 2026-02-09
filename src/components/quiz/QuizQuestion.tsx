@@ -30,8 +30,8 @@ const QuizQuestion = ({ question, onAnswer, selectedAnswer }: QuizQuestionProps)
             whileTap={{ scale: 0.98 }}
             className={`p-6 rounded-xl border-2 text-left transition-all ${
               selectedAnswer === index
-                ? "border-[hsl(var(--neon-start))] bg-[hsl(var(--neon-start))]/10"
-                : "border-border bg-card hover:border-[hsl(var(--neon-start))]/50"
+                ? "border-primary bg-primary/10"
+                : "border-border bg-card hover:border-primary/50"
             }`}
           >
             <span className="text-lg font-semibold">{option.label}</span>

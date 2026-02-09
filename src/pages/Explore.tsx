@@ -15,7 +15,6 @@ const Explore = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const categories = ["Wellness", "Water Activity", "Swimming", "Sports", "Riding", "Gaming", "Lounges", "Creative"];
 
-  // Map vibe result categories to display categories
   const vibeToCategory: Record<string, string> = {
     wellness: "Wellness",
     "water-activity": "Water Activity",
@@ -27,17 +26,14 @@ const Explore = () => {
     creative: "Creative"
   };
 
-  // Read category or vibe from URL params on mount
   useEffect(() => {
     const categoryParam = searchParams.get("category");
     if (categoryParam) {
-      // Check direct match first (e.g., "Sports")
       const directMatch = categories.find(c => c.toLowerCase() === categoryParam.toLowerCase());
       if (directMatch) {
         setSelectedCategory(directMatch);
         setVibeBanner(categoryParam);
       } else {
-        // Handle hyphenated URL categories like "water-activity"
         const mappedCategory = vibeToCategory[categoryParam.toLowerCase()];
         if (mappedCategory && categories.includes(mappedCategory)) {
           setSelectedCategory(mappedCategory);
@@ -71,25 +67,22 @@ const Explore = () => {
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.6 }}
           >
-            {/* Vibe Banner (from Quiz) */}
             {vibeBanner && (
-              <div className="mb-6 p-4 bg-gradient-to-r from-[hsl(var(--neon-start))]/10 to-[hsl(var(--neon-end))]/10 border border-[hsl(var(--neon-start))]/30 rounded-xl">
+              <div className="mb-6 p-4 bg-primary/10 border border-primary/30 rounded-xl">
                 <p className="text-lg font-semibold">
-                  🎯 Showing <span className="text-[hsl(var(--neon-start))]">{selectedCategory}</span> experiences based on your quiz result!
+                  Showing <span className="text-primary">{selectedCategory}</span> experiences based on your quiz result!
                 </p>
               </div>
             )}
 
-            {/* Hero Section */}
             <div className="mb-12 md:mb-16">
               <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-bold mb-4 md:mb-6 leading-none break-words">
                 BUNK<br />
-                <span className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">Routine</span>
+                <span className="text-primary">Routine</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">Quick everyday escapes. No planning stress. Just go.</p>
             </div>
             
-            {/* Search Bar */}
             <div className="flex gap-3 md:gap-4 mb-8 md:mb-12">
               <Input 
                 placeholder="Search experiences..." 
@@ -99,13 +92,12 @@ const Explore = () => {
               />
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold h-14 hover:opacity-90"
+                className="bg-primary text-primary-foreground font-bold h-14 hover:opacity-90"
               >
                 Search
               </Button>
             </div>
             
-            {/* Category Filters */}
             <div className="flex flex-wrap gap-3 mb-16">
               {categories.map(category => (
                 <Badge 
@@ -113,7 +105,7 @@ const Explore = () => {
                   variant={selectedCategory === category ? "default" : "outline"} 
                   className={`cursor-pointer px-8 py-3 text-sm uppercase tracking-widest transition-all border-2 ${
                     selectedCategory === category 
-                      ? "bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black border-transparent" 
+                      ? "bg-primary text-primary-foreground border-transparent" 
                       : "hover:border-accent hover:bg-accent/10"
                   }`} 
                   onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
@@ -123,7 +115,6 @@ const Explore = () => {
               ))}
             </div>
             
-            {/* Card Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredExperiences.map((experience, index) => (
                 <motion.div 
@@ -134,7 +125,6 @@ const Explore = () => {
                 >
                   <Link to={`/experience/${experience.id}`}>
                     <div className="group relative overflow-hidden rounded-lg border-2 border-border hover:border-accent transition-all duration-300 cursor-pointer">
-                      {/* Image */}
                       <div className="relative h-80 overflow-hidden">
                         <img 
                           src={experience.image} 
@@ -143,12 +133,10 @@ const Explore = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                         
-                        {/* Category Badge */}
                         <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
                           {experience.category}
                         </Badge>
 
-                        {/* Title and Price Overlay */}
                         <div className="absolute bottom-0 left-0 right-0 p-6">
                           <h3 className="text-2xl font-display font-bold mb-1 text-white leading-tight">
                             {experience.title}
@@ -159,13 +147,13 @@ const Explore = () => {
                           <div className="flex items-end justify-between">
                             <div>
                               <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">From</div>
-                              <div className="text-2xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
+                              <div className="text-2xl font-bold text-primary">
                                 {experience.price}
                               </div>
                             </div>
                             <Button 
                               size="sm" 
-                              className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold opacity-0 group-hover:opacity-100 transition-opacity"
+                              className="bg-primary text-primary-foreground font-bold opacity-0 group-hover:opacity-100 transition-opacity"
                             >
                               View Details
                             </Button>
@@ -178,7 +166,6 @@ const Explore = () => {
               ))}
             </div>
 
-            {/* Empty State */}
             {filteredExperiences.length === 0 && (
               <div className="text-center py-20">
                 <p className="text-xl text-muted-foreground mb-4">No experiences found</p>

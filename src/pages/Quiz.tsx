@@ -18,12 +18,10 @@ const Quiz = () => {
     const newAnswers = { ...answers, [questionId]: optionIndex };
     setAnswers(newAnswers);
 
-    // Auto-advance after short delay
     setTimeout(() => {
       if (currentQuestionIndex < quizQuestions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       } else {
-        // Calculate result
         const vibeResult = calculateVibeResult(newAnswers);
         setResult(vibeResult);
       }
@@ -45,13 +43,11 @@ const Quiz = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(143,255,0,0.08),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(204,255,0,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(204,255,0,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(204,255,0,0.04),transparent_50%)]" />
       </div>
 
-      {/* Header */}
       <header className="relative z-10 p-4 md:p-6">
         <div className="flex justify-between items-center max-w-4xl mx-auto">
           <Link
@@ -72,7 +68,6 @@ const Quiz = () => {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="flex-1 flex items-center justify-center px-4 py-8 relative z-10">
         <AnimatePresence mode="wait">
           {showIntro ? (
@@ -83,18 +78,8 @@ const Quiz = () => {
               exit={{ opacity: 0, y: -20 }}
               className="text-center max-w-lg"
             >
-              <motion.span
-                className="text-6xl md:text-8xl block mb-6"
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-              >
-                🎯
-              </motion.span>
               <h1 className="text-3xl md:text-5xl font-display font-bold mb-4">
-                Find Your{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
-                  Weekend Vibe
-                </span>
+                Find Your <span className="text-primary">Weekend Vibe</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
                 Answer 8 quick questions and discover which BunkRoot experiences are perfect for you.
@@ -103,7 +88,7 @@ const Quiz = () => {
                 onClick={() => setShowIntro(false)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg rounded-lg hover:shadow-[0_0_30px_rgba(143,255,0,0.4)] transition-shadow"
+                className="px-10 py-4 bg-primary text-primary-foreground font-bold text-lg rounded-lg hover:shadow-[0_0_30px_rgba(204,255,0,0.4)] transition-shadow"
               >
                 Start Quiz (60 seconds) →
               </motion.button>
