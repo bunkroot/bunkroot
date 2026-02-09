@@ -185,7 +185,7 @@ Price Range: ${formData.price}`;
               <Button 
                 type="submit"
                 size="lg"
-                className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg py-6"
+                className="w-full bg-primary text-primary-foreground font-bold text-lg py-6"
               >
                 Submit via WhatsApp
               </Button>

@@ -28,7 +28,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map(link => <Link key={link.path} to={link.path} className="relative text-sm font-semibold tracking-wide transition-colors hover:text-accent">
                 {link.label}
-                {location.pathname === link.path && <motion.div layoutId="activeNav" className="absolute -bottom-[1.5rem] left-0 right-0 h-0.5 bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]" />}
+                {location.pathname === link.path && <motion.div layoutId="activeNav" className="absolute -bottom-[1.5rem] left-0 right-0 h-0.5 bg-primary" />}
               </Link>)}
           </nav>
 
@@ -40,7 +40,7 @@ const Header = () => {
             </Link>
             
             <Link to="/explore" className="hidden md:inline-flex">
-              <Button size="sm" className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-semibold">
+              <Button size="sm" className="bg-primary text-primary-foreground font-semibold">
                 Start Exploring
               </Button>
             </Link>
@@ -68,8 +68,6 @@ const Header = () => {
                         Become a Host
                       </Button>
                     </Link>
-                    
-                    
                   </div>
                 </nav>
               </SheetContent>

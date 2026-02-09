@@ -57,14 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        neon: {
-          start: "hsl(var(--neon-start))",
-          end: "hsl(var(--neon-end))",
+        surface: {
+          DEFAULT: "hsl(0 0% 20%)",
+          light: "hsl(0 0% 95%)",
+          white: "hsl(0 0% 100%)",
         },
       },
-      backgroundImage: {
-        'gradient-primary': 'var(--gradient-primary)',
-      },
+      backgroundImage: {},
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

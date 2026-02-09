@@ -28,7 +28,6 @@ const ExperienceDetail = () => {
   const [showReadMore, setShowReadMore] = useState(false);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
 
-  // Check if description exceeds 3 lines
   useEffect(() => {
     if (descriptionRef.current) {
       const lineHeight = parseInt(getComputedStyle(descriptionRef.current).lineHeight);
@@ -38,7 +37,6 @@ const ExperienceDetail = () => {
     }
   }, []);
   
-  // Embla carousel for gallery
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     slidesToScroll: 1,
@@ -92,7 +90,6 @@ const ExperienceDetail = () => {
       <Header />
       
       <div className="pt-24">
-        {/* Back Button */}
         <div className="container mx-auto px-4 lg:px-12 py-6">
           <Link to="/explore">
             <Button variant="ghost" size="sm" className="gap-2">
@@ -102,7 +99,6 @@ const ExperienceDetail = () => {
           </Link>
         </div>
 
-        {/* Hero Image */}
         <motion.div 
           className="relative w-full h-[70vh] overflow-hidden"
           initial={{ opacity: 0 }}
@@ -116,7 +112,6 @@ const ExperienceDetail = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
           
-          {/* Floating Info on Image */}
           <div className="absolute bottom-12 left-0 right-0 container mx-auto px-4 lg:px-12">
             <Badge className="mb-4 bg-black/80 text-accent border border-accent/50 px-6 py-2 text-sm uppercase tracking-widest">
               {experience.category}
@@ -130,17 +125,14 @@ const ExperienceDetail = () => {
           </div>
         </motion.div>
 
-        {/* Abstract Content Layout */}
         <div className="container mx-auto px-4 lg:px-12 py-16 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-            {/* Left Column - Experience Details */}
             <motion.div 
               className="lg:col-span-2 space-y-8 lg:space-y-12"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              {/* Quick Info */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                 <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
                   <Clock className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
@@ -170,12 +162,11 @@ const ExperienceDetail = () => {
                   className={`sticky top-20 z-40 rounded-lg overflow-hidden shadow-lg transition-all duration-300 ${
                     isBookingExpanded 
                       ? "bg-card border-2 border-border" 
-                      : "bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]"
+                      : "bg-primary"
                   }`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
-                  {/* Minimized View */}
                   <button 
                     onClick={() => setIsBookingExpanded(!isBookingExpanded)}
                     className={`w-full p-4 flex items-center justify-between transition-colors ${
@@ -185,12 +176,12 @@ const ExperienceDetail = () => {
                     <div className="flex items-center gap-4">
                       <div>
                         <div className={`text-xs uppercase tracking-wide ${
-                          isBookingExpanded ? "text-muted-foreground" : "text-black/70"
+                          isBookingExpanded ? "text-muted-foreground" : "text-primary-foreground/70"
                         }`}>From</div>
                         <div className={`text-2xl font-bold ${
                           isBookingExpanded 
-                            ? "bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent" 
-                            : "text-black"
+                            ? "text-primary" 
+                            : "text-primary-foreground"
                         }`}>
                           {experience.price}
                         </div>
@@ -198,17 +189,16 @@ const ExperienceDetail = () => {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className={`text-sm font-semibold ${
-                        isBookingExpanded ? "text-foreground" : "text-black"
+                        isBookingExpanded ? "text-foreground" : "text-primary-foreground"
                       }`}>Check Availability</span>
                       {isBookingExpanded ? (
                         <ChevronUp className="w-5 h-5 text-accent" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-black" />
+                        <ChevronDown className="w-5 h-5 text-primary-foreground" />
                       )}
                     </div>
                   </button>
 
-                  {/* Expanded Form */}
                   <AnimatePresence>
                     {isBookingExpanded && (
                       <motion.div
@@ -281,7 +271,7 @@ const ExperienceDetail = () => {
                                   variant={selectedTime === time ? "default" : "outline"}
                                   className={`justify-center text-sm ${
                                     selectedTime === time 
-                                      ? "bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black" 
+                                      ? "bg-primary text-primary-foreground" 
                                       : "border-2"
                                   }`}
                                   onClick={() => setSelectedTime(time)}
@@ -305,7 +295,7 @@ const ExperienceDetail = () => {
 
                           <Button
                             size="lg"
-                            className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg h-14 hover:opacity-90"
+                            className="w-full bg-primary text-primary-foreground font-bold text-lg h-14 hover:opacity-90"
                             onClick={handleBooking}
                           >
                             Check Availability
@@ -340,11 +330,10 @@ const ExperienceDetail = () => {
                     ))}
                   </div>
                 </div>
-                {/* Navigation Arrows */}
                 <Button
                   variant="outline"
                   size="icon"
-                  className="absolute left-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-black z-10"
+                  className="absolute left-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-primary-foreground z-10"
                   onClick={scrollPrev}
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -352,7 +341,7 @@ const ExperienceDetail = () => {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="absolute right-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-black z-10"
+                  className="absolute right-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-primary-foreground z-10"
                   onClick={scrollNext}
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -430,16 +419,14 @@ const ExperienceDetail = () => {
               transition={{ delay: 0.4 }}
             >
               <div className="sticky top-24 bg-card border-2 border-border rounded-lg p-6 md:p-8 space-y-4 md:space-y-6 overflow-hidden">
-                {/* Price */}
                 <div className="border-b border-border pb-4 md:pb-6">
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mb-2">From</div>
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] bg-clip-text text-transparent">
+                  <div className="text-4xl md:text-5xl font-bold text-primary">
                     {experience.price}
                   </div>
                   <div className="text-sm text-muted-foreground mt-1">{experience.priceType}</div>
                 </div>
 
-                {/* Booking Form */}
                 <div className="space-y-4">
                   <div>
                     <Label htmlFor="name" className="text-sm uppercase tracking-wide mb-2 block">Your Name</Label>
@@ -503,7 +490,7 @@ const ExperienceDetail = () => {
                           variant={selectedTime === time ? "default" : "outline"}
                           className={`justify-center text-xs px-2 ${
                             selectedTime === time 
-                              ? "bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black" 
+                              ? "bg-primary text-primary-foreground" 
                               : "border-2"
                           }`}
                           onClick={() => setSelectedTime(time)}
@@ -527,7 +514,7 @@ const ExperienceDetail = () => {
 
                   <Button
                     size="lg"
-                    className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg h-14 hover:opacity-90"
+                    className="w-full bg-primary text-primary-foreground font-bold text-lg h-14 hover:opacity-90"
                     onClick={handleBooking}
                   >
                     Check Availability

@@ -42,8 +42,8 @@ const Home = () => {
       <section className="relative min-h-[60vh] md:min-h-screen flex items-center pt-16 md:pt-20 overflow-hidden">
         {/* Adventure Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(143,255,0,0.08),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(204,255,0,0.06),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(204,255,0,0.06),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(204,255,0,0.04),transparent_50%)]" />
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDIpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
         </div>
         
@@ -61,7 +61,7 @@ const Home = () => {
                 className="mb-4 md:mb-8"
               >
                 <span className="block text-5xl font-edo mb-1 md:mb-2 md:text-7xl">Life's</span>
-                <span className="block font-bahianita md:text-[12rem] lg:text-[14rem] leading-none text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-9xl">
+                <span className="block font-bahianita md:text-[12rem] lg:text-[14rem] leading-none text-primary text-9xl">
                   Out There 
                 </span>
               </motion.h1>
@@ -75,7 +75,7 @@ const Home = () => {
                 <Link to="/explore">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:scale-105 hover:shadow-[0_0_30px_rgba(143,255,0,0.4)] transition-all"
+                    className="bg-primary text-primary-foreground font-bold text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:scale-105 hover:shadow-[0_0_30px_rgba(204,255,0,0.4)] transition-all"
                   >
                     START EXPLORING
                   </Button>
@@ -87,12 +87,12 @@ const Home = () => {
         
         {/* Floating Elements */}
         <motion.div 
-          className="absolute top-1/4 right-[10%] w-2 h-2 bg-[hsl(var(--neon-start))] rounded-full blur-sm" 
+          className="absolute top-1/4 right-[10%] w-2 h-2 bg-primary rounded-full blur-sm" 
           animate={{ y: [0, -20, 0], opacity: [0.3, 0.7, 0.3] }} 
           transition={{ duration: 4, repeat: Infinity }} 
         />
         <motion.div 
-          className="absolute bottom-1/3 left-[15%] w-3 h-3 bg-[hsl(var(--neon-end))] rounded-full blur-sm" 
+          className="absolute bottom-1/3 left-[15%] w-3 h-3 bg-primary rounded-full blur-sm" 
           animate={{ y: [0, 20, 0], opacity: [0.4, 0.8, 0.4] }} 
           transition={{ duration: 5, repeat: Infinity, delay: 1 }} 
         />
@@ -100,7 +100,7 @@ const Home = () => {
 
       {/* Categories Section */}
       <section className="py-10 md:py-24 bg-gradient-to-b from-background via-card to-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImRvdHMiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMTQzLDI1NSwwLDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2RvdHMpIi8+PC9zdmc+')] opacity-40" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImRvdHMiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjA0LDI1NSwwLDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2RvdHMpIi8+PC9zdmc+')] opacity-40" />
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
           <motion.div 
             initial={{ opacity: 0, y: 20 }} 
@@ -121,13 +121,13 @@ const Home = () => {
                     viewport={{ once: true }} 
                     transition={{ duration: 0.4, delay: index * 0.05 }} 
                     whileHover={{ scale: 1.05, y: -5 }} 
-                    className="bg-gradient-to-br from-card to-background border border-border hover:border-[hsl(var(--neon-start))] rounded-xl p-4 md:p-6 text-center cursor-pointer transition-all group relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(143,255,0,0.15)]"
+                    className="bg-gradient-to-br from-card to-background border border-border hover:border-primary rounded-xl p-4 md:p-6 text-center cursor-pointer transition-all group relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(204,255,0,0.15)]"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--neon-start))]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="text-3xl md:text-5xl mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300 relative z-10 filter drop-shadow-[0_0_8px_rgba(143,255,0,0.3)]">
+                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="text-3xl md:text-5xl mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300 relative z-10 filter drop-shadow-[0_0_8px_rgba(204,255,0,0.3)]">
                       {getCategoryIcon(category.name)}
                     </div>
-                    <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider relative z-10 group-hover:text-[hsl(var(--neon-start))] transition-colors">
+                    <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider relative z-10 group-hover:text-primary transition-colors">
                       {category.name}
                     </h3>
                     <p className="text-[10px] md:text-xs text-muted-foreground mt-1 relative z-10 hidden md:block">
@@ -156,7 +156,7 @@ const Home = () => {
                 <h2 className="text-4xl md:text-8xl font-display font-bold mb-2 md:mb-4">
                   QUICK
                   <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))]">
+                    <span className="text-primary">
                     ESCAPES
                   </span>
                 </h2>
@@ -203,12 +203,12 @@ const Home = () => {
                       
                       {/* Content */}
                       <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
-                        <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-2 leading-tight group-hover:text-[hsl(var(--neon-start))] transition-colors">
+                        <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-2 leading-tight group-hover:text-primary transition-colors">
                           {experience.title}
                         </h3>
                         <div className="flex justify-between items-center text-xs md:text-sm">
                           <span className="text-muted-foreground">{experience.duration}</span>
-                          <span className="text-[hsl(var(--neon-start))] font-bold text-sm md:text-lg">{experience.price}</span>
+                          <span className="text-primary font-bold text-sm md:text-lg">{experience.price}</span>
                         </div>
                       </div>
                     </div>
@@ -222,7 +222,7 @@ const Home = () => {
               <Link to="/explore">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold w-full"
+                  className="bg-primary text-primary-foreground font-bold w-full"
                 >
                   SEE ALL EXPERIENCES →
                 </Button>
@@ -235,9 +235,9 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-12 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--neon-start))]/10 via-transparent to-[hsl(var(--neon-end))]/10" />
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[hsl(var(--neon-start))] rounded-full blur-[150px] opacity-10" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[hsl(var(--neon-end))] rounded-full blur-[150px] opacity-10" />
+          <div className="absolute inset-0 bg-primary/5" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full blur-[150px] opacity-10" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary rounded-full blur-[150px] opacity-10" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -254,7 +254,7 @@ const Home = () => {
             <Link to="/host">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold text-lg md:text-xl px-10 md:px-12 py-6 md:py-8 hover:scale-105 hover:shadow-[0_0_40px_rgba(143,255,0,0.5)] transition-all"
+                className="bg-primary text-primary-foreground font-bold text-lg md:text-xl px-10 md:px-12 py-6 md:py-8 hover:scale-105 hover:shadow-[0_0_40px_rgba(204,255,0,0.5)] transition-all"
               >
                 Share Your Idea
               </Button>

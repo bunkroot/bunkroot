@@ -47,7 +47,7 @@ const Community = () => {
             <div className="flex gap-4 mb-12">
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold"
+                className="bg-primary text-primary-foreground font-bold"
               >
                 Share Your Story
               </Button>

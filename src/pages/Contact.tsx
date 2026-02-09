@@ -69,7 +69,7 @@ ${formData.message}`;
                     rel="noopener noreferrer"
                   >
                     <Button 
-                      className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold"
+                      className="w-full bg-primary text-primary-foreground font-bold"
                       size="lg"
                     >
                       💬 WhatsApp Us
@@ -142,7 +142,7 @@ ${formData.message}`;
               
               <Button 
                 type="submit"
-                className="w-full bg-gradient-to-r from-[hsl(var(--neon-start))] to-[hsl(var(--neon-end))] text-black font-bold"
+                className="w-full bg-primary text-primary-foreground font-bold"
                 size="lg"
               >
                 Send via WhatsApp
