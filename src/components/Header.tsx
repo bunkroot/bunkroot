@@ -22,7 +22,7 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-12 xl:px-20">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="BunkRoot" className="h-8" />
+            <img alt="BunkRoot" className="h-8 object-contain" src="/lovable-uploads/7b99ad59-bd0b-4fb0-8122-53000aca6cad.png" />
           </Link>
           
           <nav className="hidden md:flex items-center gap-8">
