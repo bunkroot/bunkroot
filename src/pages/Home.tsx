@@ -105,7 +105,7 @@ const Home = () => {
                       <img src={banner.image} alt={banner.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                       <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10">
-                        <h3 className="text-xl md:text-3xl font-bold text-white mb-1">{banner.title}</h3>
+                        <h3 className="md:text-3xl font-bold text-white mb-1 text-3xl">{banner.title}</h3>
                         <p className="text-sm md:text-base text-white/70">{banner.subtitle}</p>
                       </div>
                     </div>
