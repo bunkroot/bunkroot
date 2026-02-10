@@ -21,6 +21,55 @@ import expRecoveryGallery7 from "@/assets/exp-recovery-gallery7.jpg";
 import expRecoveryGallery8 from "@/assets/exp-recovery-gallery8.webp";
 import expRecoveryGallery9 from "@/assets/exp-recovery-gallery9.jpg";
 
+import expHookahprimeMain from "@/assets/exp-hookahprime-main.webp";
+import expHookahprimeGallery1 from "@/assets/exp-hookahprime-gallery1.webp";
+import expHookahprimeGallery2 from "@/assets/exp-hookahprime-gallery2.webp";
+import expHookahprimeGallery3 from "@/assets/exp-hookahprime-gallery3.webp";
+import expHookahprimeGallery4 from "@/assets/exp-hookahprime-gallery4.webp";
+import expHookahprimeGallery5 from "@/assets/exp-hookahprime-gallery5.webp";
+import expHookahprimeGallery6 from "@/assets/exp-hookahprime-gallery6.webp";
+import expHookahprimeGallery7 from "@/assets/exp-hookahprime-gallery7.webp";
+import expHookahprimeGallery8 from "@/assets/exp-hookahprime-gallery8.webp";
+import expHookahprimeGallery9 from "@/assets/exp-hookahprime-gallery9.webp";
+import expHookahprimeGallery10 from "@/assets/exp-hookahprime-gallery10.webp";
+
+import expClassichookahMain from "@/assets/exp-classichookah-main.webp";
+import expClassichookahGallery1 from "@/assets/exp-classichookah-gallery1.webp";
+import expClassichookahGallery2 from "@/assets/exp-classichookah-gallery2.webp";
+import expClassichookahGallery3 from "@/assets/exp-classichookah-gallery3.webp";
+import expClassichookahGallery4 from "@/assets/exp-classichookah-gallery4.webp";
+import expClassichookahGallery5 from "@/assets/exp-classichookah-gallery5.webp";
+import expClassichookahGallery6 from "@/assets/exp-classichookah-gallery6.webp";
+import expClassichookahGallery7 from "@/assets/exp-classichookah-gallery7.webp";
+import expClassichookahGallery8 from "@/assets/exp-classichookah-gallery8.webp";
+import expClassichookahGallery9 from "@/assets/exp-classichookah-gallery9.webp";
+
+import expHookahambienceMain from "@/assets/exp-hookahambience-main.webp";
+import expHookahambienceGallery1 from "@/assets/exp-hookahambience-gallery1.webp";
+import expHookahambienceGallery2 from "@/assets/exp-hookahambience-gallery2.webp";
+import expHookahambienceGallery3 from "@/assets/exp-hookahambience-gallery3.jpg";
+import expHookahambienceGallery4 from "@/assets/exp-hookahambience-gallery4.webp";
+import expHookahambienceGallery5 from "@/assets/exp-hookahambience-gallery5.webp";
+import expHookahambienceGallery6 from "@/assets/exp-hookahambience-gallery6.webp";
+import expHookahambienceGallery7 from "@/assets/exp-hookahambience-gallery7.webp";
+import expHookahambienceGallery8 from "@/assets/exp-hookahambience-gallery8.webp";
+import expHookahambienceGallery9 from "@/assets/exp-hookahambience-gallery9.webp";
+import expHookahambienceGallery10 from "@/assets/exp-hookahambience-gallery10.webp";
+import expHookahambienceGallery11 from "@/assets/exp-hookahambience-gallery11.jpg";
+import expHookahambienceGallery12 from "@/assets/exp-hookahambience-gallery12.jpg";
+
+import expShishabetterMain from "@/assets/exp-shishabetter-main.webp";
+import expShishabetterGallery1 from "@/assets/exp-shishabetter-gallery1.webp";
+import expShishabetterGallery2 from "@/assets/exp-shishabetter-gallery2.webp";
+import expShishabetterGallery3 from "@/assets/exp-shishabetter-gallery3.webp";
+import expShishabetterGallery4 from "@/assets/exp-shishabetter-gallery4.webp";
+import expShishabetterGallery5 from "@/assets/exp-shishabetter-gallery5.webp";
+
+import expLetsshishaMain from "@/assets/exp-letsshisha-main.png";
+import expLetsshishaGallery1 from "@/assets/exp-letsshisha-gallery1.webp";
+import expLetsshishaGallery2 from "@/assets/exp-letsshisha-gallery2.jpg";
+import expLetsshishaGallery3 from "@/assets/exp-letsshisha-gallery3.jpg";
+
 import expBackkayakMain from "@/assets/exp-backkayak-main.webp";
 import expBackkayakGallery1 from "@/assets/exp-backkayak-gallery1.webp";
 import expBackkayakGallery2 from "@/assets/exp-backkayak-gallery2.webp";
@@ -43,21 +92,18 @@ import expKayakescapeGallery7 from "@/assets/exp-kayakescape-gallery7.webp";
 import expKayakescapeGallery8 from "@/assets/exp-kayakescape-gallery8.webp";
 import expKayakescapeGallery9 from "@/assets/exp-kayakescape-gallery9.webp";
 
-import expPlaystationMain from "@/assets/exp-playstation-main.jpg";
-import expPlaystationGallery1 from "@/assets/exp-playstation-gallery1.jpg";
-import expPlaystationGallery2 from "@/assets/exp-playstation-gallery2.jpg";
+import expBilliardsclubMain from "@/assets/exp-billiardsclub-main.webp";
+import expBilliardsclubGallery1 from "@/assets/exp-billiardsclub-gallery1.webp";
+import expBilliardsclubGallery2 from "@/assets/exp-billiardsclub-gallery2.webp";
+import expBilliardsclubGallery3 from "@/assets/exp-billiardsclub-gallery3.webp";
+import expBilliardsclubGallery4 from "@/assets/exp-billiardsclub-gallery4.webp";
+import expBilliardsclubGallery5 from "@/assets/exp-billiardsclub-gallery5.webp";
+import expBilliardsclubGallery6 from "@/assets/exp-billiardsclub-gallery6.webp";
+import expBilliardsclubGallery7 from "@/assets/exp-billiardsclub-gallery7.webp";
 
-import expHookahMain from "@/assets/exp-hookah-main.jpg";
-import expHookahGallery1 from "@/assets/exp-hookah-gallery1.jpg";
-import expHookahGallery2 from "@/assets/exp-hookah-gallery2.jpg";
-
-import expSwimmingMain from "@/assets/exp-swimming-main.jpg";
-import expSwimmingGallery1 from "@/assets/exp-swimming-gallery1.jpg";
-import expSwimmingGallery2 from "@/assets/exp-swimming-gallery2.jpg";
-
-import expBadmintonMain from "@/assets/exp-badminton-main.jpg";
-import expBadmintonGallery1 from "@/assets/exp-badminton-gallery1.jpg";
-import expBadmintonGallery2 from "@/assets/exp-badminton-gallery2.jpg";
+import expBilliardsvibeMain from "@/assets/exp-billiardsvibe-main.webp";
+import expBilliardsvibeGallery1 from "@/assets/exp-billiardsvibe-gallery1.jpg";
+import expBilliardsvibeGallery2 from "@/assets/exp-billiardsvibe-gallery2.jpg";
 
 import expIcebathMain from "@/assets/exp-icebath-main.jpg";
 import expIcebathGallery1 from "@/assets/exp-icebath-gallery1.webp";
@@ -76,17 +122,20 @@ import expRiverraftGallery4 from "@/assets/exp-riverraft-gallery4.webp";
 import expRiverraftGallery5 from "@/assets/exp-riverraft-gallery5.webp";
 import expRiverraftGallery6 from "@/assets/exp-riverraft-gallery6.jpg";
 
-import expPickleballMain from "@/assets/exp-pickleball-main.jpg";
-import expPickleballGallery1 from "@/assets/exp-pickleball-gallery1.jpg";
-import expPickleballGallery2 from "@/assets/exp-pickleball-gallery2.jpg";
+import expPickleclubMain from "@/assets/exp-pickleclub-main.webp";
+import expPickleclubGallery1 from "@/assets/exp-pickleclub-gallery1.webp";
+import expPickleclubGallery2 from "@/assets/exp-pickleclub-gallery2.webp";
+import expPickleclubGallery3 from "@/assets/exp-pickleclub-gallery3.webp";
+import expPickleclubGallery4 from "@/assets/exp-pickleclub-gallery4.webp";
 
-import expSnookerMain from "@/assets/exp-snooker-main.jpg";
-import expSnookerGallery1 from "@/assets/exp-snooker-gallery1.jpg";
-import expSnookerGallery2 from "@/assets/exp-snooker-gallery2.jpg";
-
-import expBeachwalkMain from "@/assets/exp-beachwalk-main.jpg";
-import expBeachwalkGallery1 from "@/assets/exp-beachwalk-gallery1.jpg";
-import expBeachwalkGallery2 from "@/assets/exp-beachwalk-gallery2.jpg";
+import expPicklehubMain from "@/assets/exp-picklehub-main.webp";
+import expPicklehubGallery1 from "@/assets/exp-picklehub-gallery1.webp";
+import expPicklehubGallery2 from "@/assets/exp-picklehub-gallery2.webp";
+import expPicklehubGallery3 from "@/assets/exp-picklehub-gallery3.webp";
+import expPicklehubGallery4 from "@/assets/exp-picklehub-gallery4.webp";
+import expPicklehubGallery5 from "@/assets/exp-picklehub-gallery5.webp";
+import expPicklehubGallery6 from "@/assets/exp-picklehub-gallery6.webp";
+import expPicklehubGallery7 from "@/assets/exp-picklehub-gallery7.webp";
 
 import expGocartMain from "@/assets/exp-gocart-main.png";
 import expGocartGallery1 from "@/assets/exp-gocart-gallery1.png";
@@ -109,11 +158,16 @@ import expLakekayakGallery6 from "@/assets/exp-lakekayak-gallery6.webp";
 import expLakekayakGallery7 from "@/assets/exp-lakekayak-gallery7.webp";
 import expLakekayakGallery8 from "@/assets/exp-lakekayak-gallery8.webp";
 
-import expPotteryMain from "@/assets/exp-pottery-main.png";
-import expPotteryGallery1 from "@/assets/exp-pottery-gallery1.png";
+import expPotteryMain from "@/assets/exp-pottery-main.jpg";
+import expPotteryGallery1 from "@/assets/exp-pottery-gallery1.jpg";
 import expPotteryGallery2 from "@/assets/exp-pottery-gallery2.png";
 import expPotteryGallery3 from "@/assets/exp-pottery-gallery3.png";
 import expPotteryGallery4 from "@/assets/exp-pottery-gallery4.png";
+import expPotteryGallery5 from "@/assets/exp-pottery-gallery5.png";
+import expPotteryGallery6 from "@/assets/exp-pottery-gallery6.png";
+import expPotteryGallery7 from "@/assets/exp-pottery-gallery7.jpg";
+import expPotteryGallery8 from "@/assets/exp-pottery-gallery8.jpg";
+import expPotteryGallery9 from "@/assets/exp-pottery-gallery9.webp";
 
 import expStandupMain from "@/assets/exp-standup-main.jpg";
 import expStandupGallery1 from "@/assets/exp-standup-gallery1.webp";
@@ -138,6 +192,58 @@ import expSteambathMain from "@/assets/exp-steambath-main.webp";
 import expSteambathGallery1 from "@/assets/exp-steambath-gallery1.jpg";
 import expSteambathGallery2 from "@/assets/exp-steambath-gallery2.jpg";
 import expSteambathGallery3 from "@/assets/exp-steambath-gallery3.webp";
+
+import expPoolaccessMain from "@/assets/exp-poolaccess-main.webp";
+import expPoolaccessGallery1 from "@/assets/exp-poolaccess-gallery1.webp";
+import expPoolaccessGallery2 from "@/assets/exp-poolaccess-gallery2.webp";
+import expPoolaccessGallery3 from "@/assets/exp-poolaccess-gallery3.webp";
+import expPoolaccessGallery4 from "@/assets/exp-poolaccess-gallery4.webp";
+import expPoolaccessGallery5 from "@/assets/exp-poolaccess-gallery5.webp";
+
+import expSwimretreatMain from "@/assets/exp-swimretreat-main.webp";
+import expSwimretreatGallery1 from "@/assets/exp-swimretreat-gallery1.webp";
+import expSwimretreatGallery2 from "@/assets/exp-swimretreat-gallery2.webp";
+import expSwimretreatGallery3 from "@/assets/exp-swimretreat-gallery3.webp";
+import expSwimretreatGallery4 from "@/assets/exp-swimretreat-gallery4.webp";
+import expSwimretreatGallery5 from "@/assets/exp-swimretreat-gallery5.webp";
+import expSwimretreatGallery6 from "@/assets/exp-swimretreat-gallery6.webp";
+
+import expSwimloopMain from "@/assets/exp-swimloop-main.webp";
+import expSwimloopGallery1 from "@/assets/exp-swimloop-gallery1.webp";
+import expSwimloopGallery2 from "@/assets/exp-swimloop-gallery2.webp";
+import expSwimloopGallery3 from "@/assets/exp-swimloop-gallery3.webp";
+import expSwimloopGallery4 from "@/assets/exp-swimloop-gallery4.webp";
+
+import expSynthbadmintonMain from "@/assets/exp-synthbadminton-main.webp";
+import expSynthbadmintonGallery1 from "@/assets/exp-synthbadminton-gallery1.jpg";
+import expSynthbadmintonGallery2 from "@/assets/exp-synthbadminton-gallery2.webp";
+
+import expIndoorbadmintonMain from "@/assets/exp-indoorbadminton-main.webp";
+import expIndoorbadmintonGallery1 from "@/assets/exp-indoorbadminton-gallery1.webp";
+import expIndoorbadmintonGallery2 from "@/assets/exp-indoorbadminton-gallery2.jpg";
+
+import expBadmintonrallyMain from "@/assets/exp-badmintonrally-main.webp";
+import expBadmintonrallyGallery1 from "@/assets/exp-badmintonrally-gallery1.webp";
+import expBadmintonrallyGallery2 from "@/assets/exp-badmintonrally-gallery2.webp";
+import expBadmintonrallyGallery3 from "@/assets/exp-badmintondrive-gallery3.webp";
+import expBadmintonrallyGallery4 from "@/assets/exp-badmintonrally-gallery4.webp";
+
+import expBadmintondriveMain from "@/assets/exp-badmintondrive-main.webp";
+import expBadmintondriveGallery1 from "@/assets/exp-badmintondrive-gallery1.webp";
+import expBadmintondriveGallery2 from "@/assets/exp-badmintondrive-gallery2.webp";
+import expBadmintondriveGallery3 from "@/assets/exp-badmintondrive-gallery3.webp";
+import expBadmintondriveGallery4 from "@/assets/exp-badmintondrive-gallery4.webp";
+import expBadmintondriveGallery5 from "@/assets/exp-badmintondrive-gallery5.webp";
+
+import expPsconsoleMain from "@/assets/exp-psconsole-main.webp";
+import expPsconsoleGallery1 from "@/assets/exp-psconsole-gallery1.webp";
+import expPsconsoleGallery2 from "@/assets/exp-psconsole-gallery2.webp";
+import expPsconsoleGallery3 from "@/assets/exp-psconsole-gallery3.webp";
+import expPsconsoleGallery4 from "@/assets/exp-psconsole-gallery4.webp";
+import expPsconsoleGallery5 from "@/assets/exp-psconsole-gallery5.webp";
+import expPsconsoleGallery6 from "@/assets/exp-psconsole-gallery6.webp";
+import expPsconsoleGallery7 from "@/assets/exp-psconsole-gallery7.webp";
+import expPsconsoleGallery8 from "@/assets/exp-psconsole-gallery8.webp";
 
 export interface Experience {
   id: string;
@@ -403,8 +509,8 @@ export const experiences: Experience[] = [
     groupSize: "1–25",
     minAge: 5,
     location: "Cherukulam",
-    image: expSwimmingMain,
-    gallery: [expSwimmingMain, expSwimmingGallery1, expSwimmingGallery2],
+    image: expPoolaccessMain,
+    gallery: [expPoolaccessMain, expPoolaccessGallery1, expPoolaccessGallery2, expPoolaccessGallery3, expPoolaccessGallery4, expPoolaccessGallery5],
     description: "General access to a public swimming pool.",
     fullDescription: "This option provides timed access to a public swimming pool suitable for both fitness swimming and casual use. Ideal for individuals, families, and regular swimmers. Children below 10 may require adult supervision.",
     included: ["Pool entry", "Timed access"],
@@ -423,8 +529,8 @@ export const experiences: Experience[] = [
     groupSize: "1–25",
     minAge: 5,
     location: "Pantheerankavu",
-    image: expSwimmingMain,
-    gallery: [expSwimmingMain, expSwimmingGallery1, expSwimmingGallery2],
+    image: expSwimretreatMain,
+    gallery: [expSwimretreatMain, expSwimretreatGallery1, expSwimretreatGallery2, expSwimretreatGallery3, expSwimretreatGallery4, expSwimretreatGallery5, expSwimretreatGallery6],
     description: "A relaxed swimming experience in a calm setting.",
     fullDescription: "Swimming Retreat focuses on a quieter swimming environment with a relaxed atmosphere. Well-suited for those who prefer calm surroundings rather than crowded pool sessions. Children below 10 may require adult supervision.",
     included: ["Pool access", "Calm swimming slot"],
@@ -443,8 +549,8 @@ export const experiences: Experience[] = [
     groupSize: "1–25",
     minAge: 5,
     location: "Kannadikkal",
-    image: expSwimmingMain,
-    gallery: [expSwimmingMain, expSwimmingGallery1, expSwimmingGallery2],
+    image: expSwimloopMain,
+    gallery: [expSwimloopMain, expSwimloopGallery1, expSwimloopGallery2, expSwimloopGallery3, expSwimloopGallery4],
     description: "Community swimming pool access for casual swimming.",
     fullDescription: "Swim in Loop is a neighbourhood-style swimming experience designed for everyday use. Suitable for beginners, families, and regular swimmers. Children below 10 may require adult supervision.",
     included: ["Community pool access", "Timed slot"],
@@ -463,8 +569,8 @@ export const experiences: Experience[] = [
     groupSize: "2–4",
     minAge: 8,
     location: "Kannadikkal",
-    image: expBadmintonMain,
-    gallery: [expBadmintonMain, expBadmintonGallery1, expBadmintonGallery2],
+    image: expSynthbadmintonMain,
+    gallery: [expSynthbadmintonMain, expSynthbadmintonGallery1, expSynthbadmintonGallery2],
     description: "Book an indoor synthetic badminton court.",
     fullDescription: "This indoor badminton court features synthetic flooring suitable for both casual games and practice sessions. Bookings are done in hourly slots.",
     included: ["Synthetic court access", "One-hour slot"],
@@ -483,8 +589,8 @@ export const experiences: Experience[] = [
     groupSize: "2–4",
     minAge: 8,
     location: "Kuttichira",
-    image: expBadmintonMain,
-    gallery: [expBadmintonMain, expBadmintonGallery1, expBadmintonGallery2],
+    image: expIndoorbadmintonMain,
+    gallery: [expIndoorbadmintonMain, expIndoorbadmintonGallery1, expIndoorbadmintonGallery2],
     description: "Indoor badminton session in a dedicated court.",
     fullDescription: "A standard indoor badminton court designed for consistent play. Lighting and court layout are suitable for regular games and practice.",
     included: ["Indoor court access", "One-hour slot"],
@@ -503,8 +609,8 @@ export const experiences: Experience[] = [
     groupSize: "2–4",
     minAge: 8,
     location: "Chevayoor",
-    image: expBadmintonMain,
-    gallery: [expBadmintonMain, expBadmintonGallery1, expBadmintonGallery2],
+    image: expBadmintonrallyMain,
+    gallery: [expBadmintonrallyMain, expBadmintonrallyGallery1, expBadmintonrallyGallery2, expBadmintonrallyGallery3, expBadmintonrallyGallery4],
     description: "Indoor badminton session for friendly rallies.",
     fullDescription: "Badminton Rally is ideal for players looking to enjoy relaxed rallies rather than competitive matches. Suitable for friends and casual groups.",
     included: ["Indoor court access", "Timed play"],
@@ -523,8 +629,8 @@ export const experiences: Experience[] = [
     groupSize: "2–4",
     minAge: 8,
     location: "Ozhukkara",
-    image: expBadmintonMain,
-    gallery: [expBadmintonMain, expBadmintonGallery1, expBadmintonGallery2],
+    image: expBadmintondriveMain,
+    gallery: [expBadmintondriveMain, expBadmintondriveGallery1, expBadmintondriveGallery2, expBadmintondriveGallery3, expBadmintondriveGallery4, expBadmintondriveGallery5],
     description: "Book a badminton court for focused play.",
     fullDescription: "This badminton court option is preferred by regular players who want uninterrupted court time in a functional playing environment.",
     included: ["Indoor court access", "Focused play slot"],
@@ -543,8 +649,8 @@ export const experiences: Experience[] = [
     groupSize: "2–4",
     minAge: 8,
     location: "Govindapuram",
-    image: expPickleballMain,
-    gallery: [expPickleballMain, expPickleballGallery1, expPickleballGallery2],
+    image: expPickleclubMain,
+    gallery: [expPickleclubMain, expPickleclubGallery1, expPickleclubGallery2, expPickleclubGallery3, expPickleclubGallery4],
     description: "Pickleball court booking for casual play.",
     fullDescription: "Pickleball is a fast-growing sport that's easy to learn and fun to play. This session provides access to a dedicated court for beginners and groups.",
     included: ["Pickleball court access", "Net setup"],
@@ -563,8 +669,8 @@ export const experiences: Experience[] = [
     groupSize: "2–4",
     minAge: 8,
     location: "Hilite Mall",
-    image: expPickleballMain,
-    gallery: [expPickleballMain, expPickleballGallery1, expPickleballGallery2],
+    image: expPicklehubMain,
+    gallery: [expPicklehubMain, expPicklehubGallery1, expPicklehubGallery2, expPicklehubGallery3, expPicklehubGallery4, expPicklehubGallery5, expPicklehubGallery6, expPicklehubGallery7],
     description: "Casual pickleball session for beginners and groups.",
     fullDescription: "Let's Pickleball is designed as a friendly introduction to the sport. The session encourages relaxed play and learning through experience.",
     included: ["Court access", "Casual play setup"],
@@ -603,8 +709,8 @@ export const experiences: Experience[] = [
     groupSize: "1–2",
     minAge: 6,
     location: "Methotuthazham",
-    image: expPlaystationMain,
-    gallery: [expPlaystationMain, expPlaystationGallery1, expPlaystationGallery2],
+    image: expPsconsoleMain,
+    gallery: [expPsconsoleMain, expPsconsoleGallery1, expPsconsoleGallery2, expPsconsoleGallery3, expPsconsoleGallery4, expPsconsoleGallery5, expPsconsoleGallery6, expPsconsoleGallery7, expPsconsoleGallery8],
     description: "Console and PC gaming session in a gaming zone.",
     fullDescription: "This gaming session provides access to console and PC setups for a fixed time slot in a comfortable indoor environment.",
     included: ["Console/PC access", "Gaming controllers"],
@@ -643,8 +749,8 @@ export const experiences: Experience[] = [
     groupSize: "1–6",
     minAge: 12,
     location: "Hilite Mall",
-    image: expSnookerMain,
-    gallery: [expSnookerMain, expSnookerGallery1, expSnookerGallery2],
+    image: expBilliardsclubMain,
+    gallery: [expBilliardsclubMain, expBilliardsclubGallery1, expBilliardsclubGallery2, expBilliardsclubGallery3, expBilliardsclubGallery4, expBilliardsclubGallery5, expBilliardsclubGallery6, expBilliardsclubGallery7],
     description: "Professional billiards table access.",
     fullDescription: "This billiards session gives access to a professional table suitable for casual play, practice, or friendly competition.",
     included: ["Billiards table access", "Cue sticks"],
@@ -663,8 +769,8 @@ export const experiences: Experience[] = [
     groupSize: "1–6",
     minAge: 12,
     location: "Thondayad",
-    image: expSnookerMain,
-    gallery: [expSnookerMain, expSnookerGallery1, expSnookerGallery2],
+    image: expBilliardsvibeMain,
+    gallery: [expBilliardsvibeMain, expBilliardsvibeGallery1, expBilliardsvibeGallery2],
     description: "Late-evening billiards hangout with friends.",
     fullDescription: "Billiards Vibe is designed for evening social play in a relaxed atmosphere, ideal for groups.",
     included: ["Table access", "Evening slot"],
@@ -683,8 +789,8 @@ export const experiences: Experience[] = [
     groupSize: "1–6",
     minAge: 18,
     location: "Ummalathoor",
-    image: expHookahMain,
-    gallery: [expHookahMain, expHookahGallery1, expHookahGallery2],
+    image: expHookahprimeMain,
+    gallery: [expHookahprimeMain, expHookahprimeGallery1, expHookahprimeGallery2, expHookahprimeGallery3, expHookahprimeGallery4, expHookahprimeGallery5, expHookahprimeGallery6, expHookahprimeGallery7, expHookahprimeGallery8, expHookahprimeGallery9, expHookahprimeGallery10],
     description: "Premium shisha lounge experience with reserved seating.",
     fullDescription: "Smoke Hookah Prime focuses on ambience and comfort in a premium lounge setting suitable for evening gatherings.",
     included: ["Reserved seating", "Lounge access"],
@@ -703,8 +809,8 @@ export const experiences: Experience[] = [
     groupSize: "1–6",
     minAge: 18,
     location: "PT Usha Road",
-    image: expHookahMain,
-    gallery: [expHookahMain, expHookahGallery1, expHookahGallery2],
+    image: expClassichookahMain,
+    gallery: [expClassichookahMain, expClassichookahGallery1, expClassichookahGallery2, expClassichookahGallery3, expClassichookahGallery4, expClassichookahGallery5, expClassichookahGallery6, expClassichookahGallery7, expClassichookahGallery8, expClassichookahGallery9],
     description: "A relaxed shisha lounge session.",
     fullDescription: "Classic Hookah Time offers a simple and comfortable lounge environment designed for conversation and unhurried social time.",
     included: ["Seating area", "Lounge access"],
@@ -723,8 +829,8 @@ export const experiences: Experience[] = [
     groupSize: "1–6",
     minAge: 18,
     location: "Thondayad",
-    image: expHookahMain,
-    gallery: [expHookahMain, expHookahGallery1, expHookahGallery2],
+    image: expHookahambienceMain,
+    gallery: [expHookahambienceMain, expHookahambienceGallery1, expHookahambienceGallery2, expHookahambienceGallery3, expHookahambienceGallery4, expHookahambienceGallery5, expHookahambienceGallery6, expHookahambienceGallery7, expHookahambienceGallery8, expHookahambienceGallery9, expHookahambienceGallery10, expHookahambienceGallery11, expHookahambienceGallery12],
     description: "Casual shisha lounge hangout.",
     fullDescription: "This experience focuses on the overall ambience of a shisha lounge, allowing guests to relax and enjoy the setting at their own pace.",
     included: ["Seating space", "Lounge environment"],
@@ -743,8 +849,8 @@ export const experiences: Experience[] = [
     groupSize: "1–6",
     minAge: 18,
     location: "Velliparamba",
-    image: expHookahMain,
-    gallery: [expHookahMain, expHookahGallery1, expHookahGallery2],
+    image: expShishabetterMain,
+    gallery: [expShishabetterMain, expShishabetterGallery1, expShishabetterGallery2, expShishabetterGallery3, expShishabetterGallery4, expShishabetterGallery5],
     description: "Late-evening shisha lounge experience.",
     fullDescription: "Shisha Got Better is suited for late-evening visits when the atmosphere is calmer and more relaxed.",
     included: ["Seating space", "Evening slot"],
@@ -763,8 +869,8 @@ export const experiences: Experience[] = [
     groupSize: "1–6",
     minAge: 18,
     location: "Pottammal",
-    image: expHookahMain,
-    gallery: [expHookahMain, expHookahGallery1, expHookahGallery2],
+    image: expLetsshishaMain,
+    gallery: [expLetsshishaMain, expLetsshishaGallery1, expLetsshishaGallery2, expLetsshishaGallery3],
     description: "Night-time shisha lounge hangout.",
     fullDescription: "Late Night Shisha caters to guests who prefer going out later in the night, offering a calm and social lounge environment.",
     included: ["Lounge seating", "Late-night access"],
@@ -784,7 +890,7 @@ export const experiences: Experience[] = [
     minAge: 10,
     location: "Beach Road",
     image: expPotteryMain,
-    gallery: [expPotteryMain, expPotteryGallery1, expPotteryGallery2, expPotteryGallery3, expPotteryGallery4],
+    gallery: [expPotteryMain, expPotteryGallery1, expPotteryGallery2, expPotteryGallery3, expPotteryGallery4, expPotteryGallery5, expPotteryGallery6, expPotteryGallery7, expPotteryGallery8, expPotteryGallery9],
     description: "Hands-on pottery workshop for beginners.",
     fullDescription: "This pottery workshop introduces participants to basic clay techniques in a relaxed, guided setting where they can create their own piece.",
     included: ["Clay materials", "Pottery tools", "Guided session"],
