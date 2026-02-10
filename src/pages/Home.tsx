@@ -4,8 +4,43 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getFeaturedExperiences } from "@/data/experiencesData";
+import { getFeaturedExperiences, experiences } from "@/data/experiencesData";
 import { Heart, Waves, Droplets, Trophy, Car, Gamepad2, Sofa, Palette } from "lucide-react";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+
+// We'll build banners dynamically from experience images
+const getBanners = () => {
+  const waterExp = experiences.find(e => e.category === "Water Activity");
+  const wellnessExp = experiences.find(e => e.category === "Wellness");
+  const gamingExp = experiences.find(e => e.category === "Gaming");
+  const creativeExp = experiences.find(e => e.category === "Creative");
+  return [
+    {
+      image: waterExp?.image || "",
+      title: "Weekend Water Adventures",
+      subtitle: "Kayaking, rafting & more",
+      link: "/explore?category=water%20activity",
+    },
+    {
+      image: wellnessExp?.image || "",
+      title: "Chill & Recover",
+      subtitle: "Ice baths, steam rooms, wellness",
+      link: "/explore?category=wellness",
+    },
+    {
+      image: gamingExp?.image || "",
+      title: "Game On",
+      subtitle: "VR, PlayStation, bowling",
+      link: "/explore?category=gaming",
+    },
+    {
+      image: creativeExp?.image || "",
+      title: "Get Creative",
+      subtitle: "Pottery, workshops & art",
+      link: "/explore?category=creative",
+    },
+  ];
+};
 const categoryIcons: Record<string, React.ReactNode> = {
   "Wellness": <Heart className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
   "Water Activity": <Waves className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
@@ -44,82 +79,45 @@ const Home = () => {
     desc: "Pottery, workshops, art"
   }];
   const featuredExperiences = getFeaturedExperiences();
+  const banners = getBanners();
   return <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] md:min-h-screen flex items-center pt-16 md:pt-20 overflow-hidden">
-        {/* Adventure Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(204,255,0,0.06),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(204,255,0,0.04),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDIpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
-        </div>
-        
-        <div className="container mx-auto px-4 lg:px-12 xl:px-20 relative z-10">
-          <div className="max-w-5xl">
-            <motion.div initial={{
-            opacity: 0,
-            y: 30
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 1,
-            ease: "easeOut"
-          }}>
-              <motion.h1 initial={{
-              opacity: 0,
-              scale: 0.9
-            }} animate={{
-              opacity: 1,
-              scale: 1
-            }} transition={{
-              duration: 1.2,
-              ease: "easeOut"
-            }} className="mb-4 md:mb-8">
-                <span className="block text-5xl font-edo mb-1 md:mb-2 md:text-7xl">Life's</span>
-                <span className="block font-bahianita md:text-[12rem] lg:text-[14rem] leading-none text-primary text-9xl">
-                  Out There 
-                </span>
-              </motion.h1>
-              
-              <motion.div className="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-12" initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.8,
-              delay: 0.3
-            }}>
-                <Link to="/explore">
-                  <Button size="lg" className="bg-primary text-primary-foreground font-bold text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:scale-105 hover:shadow-[0_0_30px_rgba(204,255,0,0.4)] transition-all">
-                    START EXPLORING
-                  </Button>
-                </Link>
-              </motion.div>
-            </motion.div>
+      {/* Scrollable Banner Section */}
+      <section className="pt-24 md:pt-28 pb-6 md:pb-10">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="relative">
+            <ScrollArea className="w-full">
+              <div className="flex gap-4 pb-4">
+                {banners.map((banner, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="flex-shrink-0 w-[85vw] md:w-[45vw] lg:w-[30vw]"
+                  >
+                    <Link to={banner.link}>
+                      <div className="relative h-48 md:h-64 rounded-xl overflow-hidden border border-border hover:border-primary transition-all group">
+                        <img
+                          src={banner.image}
+                          alt={banner.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <h3 className="text-lg md:text-xl font-bold text-white">{banner.title}</h3>
+                          <p className="text-sm text-white/70">{banner.subtitle}</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
           </div>
         </div>
-        
-        {/* Floating Elements */}
-        <motion.div className="absolute top-1/4 right-[10%] w-2 h-2 bg-primary rounded-full blur-sm" animate={{
-        y: [0, -20, 0],
-        opacity: [0.3, 0.7, 0.3]
-      }} transition={{
-        duration: 4,
-        repeat: Infinity
-      }} />
-        <motion.div className="absolute bottom-1/3 left-[15%] w-3 h-3 bg-primary rounded-full blur-sm" animate={{
-        y: [0, 20, 0],
-        opacity: [0.4, 0.8, 0.4]
-      }} transition={{
-        duration: 5,
-        repeat: Infinity,
-        delay: 1
-      }} />
       </section>
 
       {/* Categories Section */}
@@ -192,12 +190,10 @@ const Home = () => {
         }}>
             <div className="flex justify-between items-end mb-6 md:mb-16">
               <div>
-                <h2 className="text-4xl md:text-8xl font-display font-bold mb-2 md:mb-4 text-primary">QUICK ESCAPES
-                <br />
-                    <span className="text-primary">
-                    ​
-                  </span>
-                </h2>
+              <h2 className="text-4xl md:text-8xl font-display font-bold mb-2 md:mb-4">
+                <span className="text-foreground">QUICK </span>
+                <span className="text-primary">ESCAPES</span>
+              </h2>
                 <p className="text-sm md:text-xl text-muted-foreground">
                   Everyday activities. Zero planning.
                 </p>
@@ -209,7 +205,7 @@ const Home = () => {
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
               {featuredExperiences.map((experience, index) => <motion.div key={experience.id} initial={{
               opacity: 0,
               y: 30
@@ -262,37 +258,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-primary/5" />
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full blur-[150px] opacity-10" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary rounded-full blur-[150px] opacity-10" />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }} className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-8xl font-display font-bold mb-6 md:mb-12 leading-tight">
-              BECOME A HOST
-            </h2>
-            <Link to="/host">
-              <Button size="lg" className="bg-primary text-primary-foreground font-bold text-lg md:text-xl px-10 md:px-12 py-6 md:py-8 hover:scale-105 hover:shadow-[0_0_40px_rgba(204,255,0,0.5)] transition-all">
-                Share Your Idea
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
 
       <Footer />
     </div>;

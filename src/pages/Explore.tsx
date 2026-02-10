@@ -6,11 +6,11 @@ import Footer from "@/components/Footer";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { experiences } from "@/data/experiencesData";
 const Explore = () => {
   const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [vibeBanner, setVibeBanner] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const categories = ["Wellness", "Water Activity", "Swimming", "Sports", "Riding", "Gaming", "Lounges", "Creative"];
   const vibeToCategory: Record<string, string> = {
@@ -29,12 +29,10 @@ const Explore = () => {
       const directMatch = categories.find(c => c.toLowerCase() === categoryParam.toLowerCase());
       if (directMatch) {
         setSelectedCategory(directMatch);
-        setVibeBanner(categoryParam);
       } else {
         const mappedCategory = vibeToCategory[categoryParam.toLowerCase()];
         if (mappedCategory && categories.includes(mappedCategory)) {
           setSelectedCategory(mappedCategory);
-          setVibeBanner(categoryParam);
         }
       }
     }
@@ -58,16 +56,11 @@ const Explore = () => {
         }} transition={{
           duration: 0.6
         }}>
-            {vibeBanner && <div className="mb-6 p-4 bg-primary/10 border border-primary/30 rounded-xl">
-                <p className="text-lg font-semibold">
-                  Showing <span className="text-primary">{selectedCategory}</span> experiences based on your quiz result!
-                </p>
-              </div>}
 
-            <div className="mb-12 md:mb-16">
-              <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-bold mb-4 md:mb-6 leading-none break-words text-primary">BUNK Routine
-              <br />
-                <span className="text-primary">​</span>
+            <div className="mb-8 md:mb-12">
+              <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-bold mb-4 md:mb-6 leading-none break-words">
+                <span className="text-foreground">BUNK </span>
+                <span className="text-primary">Routine</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">Quick everyday escapes. No planning stress. Just go.</p>
             </div>
@@ -79,11 +72,28 @@ const Explore = () => {
               </Button>
             </div>
             
-            <div className="flex flex-wrap gap-3 mb-16">
-              {categories.map(category => <Badge key={category} variant={selectedCategory === category ? "default" : "outline"} className={`cursor-pointer px-8 py-3 text-sm uppercase tracking-widest transition-all border-2 ${selectedCategory === category ? "bg-primary text-primary-foreground border-transparent" : "hover:border-accent hover:bg-accent/10"}`} onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}>
-                  {category}
-                </Badge>)}
-            </div>
+            <ScrollArea className="w-full mb-10">
+              <div className="flex gap-2 pb-3">
+                <Badge
+                  variant={selectedCategory === null ? "default" : "outline"}
+                  className={`cursor-pointer px-5 py-2 text-xs uppercase tracking-wider whitespace-nowrap transition-all flex-shrink-0 ${selectedCategory === null ? "bg-primary text-primary-foreground" : "hover:border-primary"}`}
+                  onClick={() => setSelectedCategory(null)}
+                >
+                  All
+                </Badge>
+                {categories.map(category => (
+                  <Badge
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    className={`cursor-pointer px-5 py-2 text-xs uppercase tracking-wider whitespace-nowrap transition-all flex-shrink-0 ${selectedCategory === category ? "bg-primary text-primary-foreground" : "hover:border-primary"}`}
+                    onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
+                  >
+                    {category}
+                  </Badge>
+                ))}
+              </div>
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredExperiences.map((experience, index) => <motion.div key={experience.id} initial={{
