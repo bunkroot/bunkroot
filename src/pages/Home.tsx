@@ -1,3 +1,4 @@
+import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -5,8 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getFeaturedExperiences, experiences } from "@/data/experiencesData";
-import { Heart, Waves, Droplets, Trophy, Car, Gamepad2, Sofa, Palette } from "lucide-react";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Heart, Waves, Droplets, Trophy, Car, Gamepad2, Sofa, Palette, ChevronLeft, ChevronRight } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
 
 // We'll build banners dynamically from experience images
 const getBanners = () => {
@@ -80,48 +81,80 @@ const Home = () => {
   }];
   const featuredExperiences = getFeaturedExperiences();
   const banners = getBanners();
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi]);
   return <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Scrollable Banner Section */}
-      <section className="pt-24 md:pt-28 pb-6 md:pb-10">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="relative">
-            <ScrollArea className="w-full">
-              <div className="flex gap-4 pb-4">
-                {banners.map((banner, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex-shrink-0 w-[85vw] md:w-[45vw] lg:w-[30vw]"
-                  >
-                    <Link to={banner.link}>
-                      <div className="relative h-48 md:h-64 rounded-xl overflow-hidden border border-border hover:border-primary transition-all group">
-                        <img
-                          src={banner.image}
-                          alt={banner.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <h3 className="text-lg md:text-xl font-bold text-white">{banner.title}</h3>
-                          <p className="text-sm text-white/70">{banner.subtitle}</p>
-                        </div>
+      {/* Banner Carousel Section */}
+      <section className="pt-20 md:pt-24 pb-4 md:pb-8">
+        <div className="container mx-auto px-4 max-w-7xl relative">
+          <div className="overflow-hidden rounded-xl" ref={emblaRef}>
+            <div className="flex">
+              {banners.map((banner, index) => (
+                <div key={index} className="flex-[0_0_100%] min-w-0">
+                  <Link to={banner.link}>
+                    <div className="relative h-48 md:h-80 lg:h-96 overflow-hidden rounded-xl group">
+                      <img
+                        src={banner.image}
+                        alt={banner.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                      <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10">
+                        <h3 className="text-xl md:text-3xl font-bold text-white mb-1">{banner.title}</h3>
+                        <p className="text-sm md:text-base text-white/70">{banner.subtitle}</p>
                       </div>
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-              <ScrollBar orientation="horizontal" />
-            </ScrollArea>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Arrows */}
+          <button
+            onClick={scrollPrev}
+            className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 border border-border flex items-center justify-center hover:bg-black/80 transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
+          </button>
+          <button
+            onClick={scrollNext}
+            className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 border border-border flex items-center justify-center hover:bg-black/80 transition-colors"
+          >
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
+          </button>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-4">
+            {banners.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => emblaApi?.scrollTo(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  selectedIndex === index ? "bg-primary w-6" : "bg-muted-foreground/40"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </section>
 
       {/* Categories Section */}
-      <section className="py-10 md:py-24 bg-gradient-to-b from-background via-card to-background relative overflow-hidden">
+      <section className="py-8 md:py-16 bg-gradient-to-b from-background via-card to-background relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImRvdHMiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjA0LDI1NSwwLDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2RvdHMpIi8+PC9zdmc+')] opacity-40" />
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
           <motion.div initial={{
@@ -174,7 +207,7 @@ const Home = () => {
       </section>
 
       {/* Featured Experiences Section */}
-      <section className="py-10 md:py-32 relative overflow-hidden">
+      <section className="py-8 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
           <motion.div initial={{
