@@ -796,9 +796,9 @@ export const experiences: Experience[] = [
 
 // Helper function to get featured experiences for home page
 export const getFeaturedExperiences = () => {
-  // Return a curated selection of 4 diverse experiences across categories
+  // Return a curated selection of 6 diverse experiences across categories
   return experiences.filter(exp => 
-    ["1", "5", "15", "23"].includes(exp.id)
+    ["1", "5", "10", "15", "23", "28"].includes(exp.id)
   );
 };
 
