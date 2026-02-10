@@ -96,7 +96,7 @@ const Home = () => {
       
       {/* Banner Carousel Section */}
       <section className="pt-20 md:pt-24 pb-4 md:pb-8">
-        <div className="container mx-auto px-4 max-w-7xl relative">
+        <div className="container mx-auto max-w-7xl relative rounded-none px-0">
           <div className="overflow-hidden rounded-xl" ref={emblaRef}>
             <div className="flex">
               {banners.map((banner, index) => <div key={index} className="flex-[0_0_100%] min-w-0">
