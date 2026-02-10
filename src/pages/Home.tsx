@@ -118,9 +118,7 @@ const Home = () => {
           <button onClick={scrollPrev} className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border-border flex items-center justify-center transition-colors bg-transparent border-0">
             <ChevronLeft className="w-5 h-5 text-white md:w-[18px] md:h-[18px]" />
           </button>
-          <button onClick={scrollNext} className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border-border flex items-center justify-center transition-colors bg-transparent border-0">
-            <ChevronRight className="w-5 h-5 text-white md:w-[18px] md:h-[18px]" />
-          </button>
+          
 
           {/* Dots */}
           <div className="flex justify-center gap-2 mt-4">
