@@ -55,7 +55,7 @@ const Header = () => {
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <SheetHeader>
                   <SheetTitle>
-                    <img src={logo} alt="BunkRoot" className="h-6" />
+                    <img alt="BunkRoot" className="h-6" src="/lovable-uploads/b72498f9-8af4-470e-bd34-5b7bc228d3a4.png" />
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-6 mt-8">
