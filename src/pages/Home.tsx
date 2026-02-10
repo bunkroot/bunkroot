@@ -15,32 +15,27 @@ const getBanners = () => {
   const wellnessExp = experiences.find(e => e.category === "Wellness");
   const gamingExp = experiences.find(e => e.category === "Gaming");
   const creativeExp = experiences.find(e => e.category === "Creative");
-  return [
-    {
-      image: waterExp?.image || "",
-      title: "Weekend Water Adventures",
-      subtitle: "Kayaking, rafting & more",
-      link: "/explore?category=water%20activity",
-    },
-    {
-      image: wellnessExp?.image || "",
-      title: "Chill & Recover",
-      subtitle: "Ice baths, steam rooms, wellness",
-      link: "/explore?category=wellness",
-    },
-    {
-      image: gamingExp?.image || "",
-      title: "Game On",
-      subtitle: "VR, PlayStation, bowling",
-      link: "/explore?category=gaming",
-    },
-    {
-      image: creativeExp?.image || "",
-      title: "Get Creative",
-      subtitle: "Pottery, workshops & art",
-      link: "/explore?category=creative",
-    },
-  ];
+  return [{
+    image: waterExp?.image || "",
+    title: "Weekend Water Adventures",
+    subtitle: "Kayaking, rafting & more",
+    link: "/explore?category=water%20activity"
+  }, {
+    image: wellnessExp?.image || "",
+    title: "Chill & Recover",
+    subtitle: "Ice baths, steam rooms, wellness",
+    link: "/explore?category=wellness"
+  }, {
+    image: gamingExp?.image || "",
+    title: "Game On",
+    subtitle: "VR, PlayStation, bowling",
+    link: "/explore?category=gaming"
+  }, {
+    image: creativeExp?.image || "",
+    title: "Get Creative",
+    subtitle: "Pottery, workshops & art",
+    link: "/explore?category=creative"
+  }];
 };
 const categoryIcons: Record<string, React.ReactNode> = {
   "Wellness": <Heart className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
@@ -81,19 +76,20 @@ const Home = () => {
   }];
   const featuredExperiences = getFeaturedExperiences();
   const banners = getBanners();
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true
+  });
   const [selectedIndex, setSelectedIndex] = useState(0);
-
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-
   useEffect(() => {
     if (!emblaApi) return;
     const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
     emblaApi.on("select", onSelect);
     onSelect();
-    return () => { emblaApi.off("select", onSelect); };
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
   }, [emblaApi]);
   return <div className="min-h-screen bg-background">
       <Header />
@@ -103,15 +99,10 @@ const Home = () => {
         <div className="container mx-auto px-4 max-w-7xl relative">
           <div className="overflow-hidden rounded-xl" ref={emblaRef}>
             <div className="flex">
-              {banners.map((banner, index) => (
-                <div key={index} className="flex-[0_0_100%] min-w-0">
+              {banners.map((banner, index) => <div key={index} className="flex-[0_0_100%] min-w-0">
                   <Link to={banner.link}>
                     <div className="relative h-48 md:h-80 lg:h-96 overflow-hidden rounded-xl group">
-                      <img
-                        src={banner.image}
-                        alt={banner.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
+                      <img src={banner.image} alt={banner.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                       <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10">
                         <h3 className="text-xl md:text-3xl font-bold text-white mb-1">{banner.title}</h3>
@@ -119,36 +110,21 @@ const Home = () => {
                       </div>
                     </div>
                   </Link>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
           {/* Arrows */}
-          <button
-            onClick={scrollPrev}
-            className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 border border-border flex items-center justify-center hover:bg-black/80 transition-colors"
-          >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
+          <button onClick={scrollPrev} className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border-border flex items-center justify-center transition-colors bg-transparent border-0">
+            <ChevronLeft className="w-5 h-5 text-white md:w-[18px] md:h-[18px]" />
           </button>
-          <button
-            onClick={scrollNext}
-            className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 border border-border flex items-center justify-center hover:bg-black/80 transition-colors"
-          >
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
+          <button onClick={scrollNext} className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full border-border flex items-center justify-center transition-colors bg-transparent border-0">
+            <ChevronRight className="w-5 h-5 text-white md:w-[18px] md:h-[18px]" />
           </button>
 
           {/* Dots */}
           <div className="flex justify-center gap-2 mt-4">
-            {banners.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => emblaApi?.scrollTo(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  selectedIndex === index ? "bg-primary w-6" : "bg-muted-foreground/40"
-                }`}
-              />
-            ))}
+            {banners.map((_, index) => <button key={index} onClick={() => emblaApi?.scrollTo(index)} className={`w-2 h-2 rounded-full transition-all ${selectedIndex === index ? "bg-primary w-6" : "bg-muted-foreground/40"}`} />)}
           </div>
         </div>
       </section>
