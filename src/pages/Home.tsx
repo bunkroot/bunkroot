@@ -148,17 +148,19 @@ const Home = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     whileHover={{ scale: 1.03, y: -3 }}
-                    className="bg-card border border-border rounded-xl p-4 md:p-6 text-center cursor-pointer transition-all group"
+                    className="bg-card border border-border rounded-xl p-4 md:p-6 cursor-pointer transition-all group relative overflow-hidden h-28 md:h-40"
                   >
-                    <div className="w-16 h-16 md:w-24 md:h-24 mx-auto mb-2 md:mb-3 group-hover:scale-105 transition-transform duration-300">
-                      <img src={categoryImages[category.name]} alt={category.name} className="w-full h-full object-contain" />
+                    <div className="absolute -top-2 -left-2 w-20 h-20 md:w-28 md:h-28 group-hover:scale-110 transition-transform duration-300">
+                      <img src={categoryImages[category.name]} alt={category.name} className="w-full h-full object-contain mix-blend-lighten" />
                     </div>
-                    <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider group-hover:text-primary transition-colors">
-                      {category.name}
-                    </h3>
-                    <p className="text-[10px] md:text-xs text-muted-foreground mt-1 hidden md:block">
-                      {category.desc}
-                    </p>
+                    <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 text-right">
+                      <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider group-hover:text-primary transition-colors">
+                        {category.name}
+                      </h3>
+                      <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5 hidden md:block">
+                        {category.desc}
+                      </p>
+                    </div>
                   </motion.div>
                 </Link>
               ))}
