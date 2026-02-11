@@ -111,10 +111,10 @@ const Home = () => {
           </div>
 
           {/* Arrows */}
-          <button onClick={scrollPrev} className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
+          <button onClick={scrollPrev} className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors hidden md:flex">
             <ChevronLeft className="w-5 h-5" />
           </button>
-          <button onClick={scrollNext} className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
+          <button onClick={scrollNext} className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors hidden md:flex">
             <ChevronRight className="w-5 h-5" />
           </button>
 
