@@ -18,7 +18,6 @@ import catRiding from "@/assets/cat-riding.png";
 import catGaming from "@/assets/cat-gaming.png";
 import catLounges from "@/assets/cat-lounges.png";
 import catCreative from "@/assets/cat-creative.png";
-
 const getBanners = () => {
   const waterExp = experiences.find(e => e.category === "Water Activity");
   const wellnessExp = experiences.find(e => e.category === "Wellness");
@@ -46,7 +45,6 @@ const getBanners = () => {
     link: "/explore?category=creative"
   }];
 };
-
 const categoryImages: Record<string, string> = {
   "Wellness": catWellness,
   "Water Activity": catWater,
@@ -55,37 +53,52 @@ const categoryImages: Record<string, string> = {
   "Riding": catRiding,
   "Gaming": catGaming,
   "Lounges": catLounges,
-  "Creative": catCreative,
+  "Creative": catCreative
 };
-
 const Home = () => {
-  const categories = [
-    { name: "Wellness", desc: "Ice bath, steam, recovery" },
-    { name: "Water Activity", desc: "Kayaking, rafting, paddling" },
-    { name: "Swimming", desc: "Pool access, calm sessions" },
-    { name: "Sports", desc: "Badminton, pickleball courts" },
-    { name: "Riding", desc: "Go-karting, track rides" },
-    { name: "Gaming", desc: "Console, PC, VR gaming" },
-    { name: "Lounges", desc: "Billiards, shisha, hangouts" },
-    { name: "Creative", desc: "Pottery, workshops, art" },
-  ];
+  const categories = [{
+    name: "Wellness",
+    desc: "Ice bath, steam, recovery"
+  }, {
+    name: "Water Activity",
+    desc: "Kayaking, rafting, paddling"
+  }, {
+    name: "Swimming",
+    desc: "Pool access, calm sessions"
+  }, {
+    name: "Sports",
+    desc: "Badminton, pickleball courts"
+  }, {
+    name: "Riding",
+    desc: "Go-karting, track rides"
+  }, {
+    name: "Gaming",
+    desc: "Console, PC, VR gaming"
+  }, {
+    name: "Lounges",
+    desc: "Billiards, shisha, hangouts"
+  }, {
+    name: "Creative",
+    desc: "Pottery, workshops, art"
+  }];
   const featuredExperiences = getFeaturedExperiences();
   const banners = getBanners();
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true
+  });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-
   useEffect(() => {
     if (!emblaApi) return;
     const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
     emblaApi.on("select", onSelect);
     onSelect();
-    return () => { emblaApi.off("select", onSelect); };
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
   }, [emblaApi]);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
 
       {/* Banner Carousel - no top radius, blends with header */}
@@ -93,8 +106,7 @@ const Home = () => {
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
-              {banners.map((banner, index) => (
-                <div key={index} className="flex-[0_0_100%] min-w-0">
+              {banners.map((banner, index) => <div key={index} className="flex-[0_0_100%] min-w-0">
                   <Link to={banner.link}>
                     <div className="relative h-56 md:h-[28rem] lg:h-[32rem] overflow-hidden group">
                       <img src={banner.image} alt={banner.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -105,8 +117,7 @@ const Home = () => {
                       </div>
                     </div>
                   </Link>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
@@ -120,13 +131,7 @@ const Home = () => {
 
           {/* Dots inside the banner */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
-            {banners.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => emblaApi?.scrollTo(index)}
-                className={`rounded-full transition-all ${selectedIndex === index ? "bg-white w-4 h-1.5" : "bg-white/50 w-1.5 h-1.5"}`}
-              />
-            ))}
+            {banners.map((_, index) => <button key={index} onClick={() => emblaApi?.scrollTo(index)} className={`rounded-full transition-all ${selectedIndex === index ? "bg-white w-4 h-1.5" : "bg-white/50 w-1.5 h-1.5"}`} />)}
           </div>
         </div>
       </section>
@@ -134,24 +139,40 @@ const Home = () => {
       {/* Categories Section */}
       <section className="py-8 md:py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6
+        }}>
             <h2 className="text-4xl md:text-7xl font-display font-bold mb-6 md:mb-12">
               PICK YOUR VIBE
             </h2>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-              {categories.map((category, index) => (
-                <Link key={category.name} to={`/explore?category=${category.name.toLowerCase()}`}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    whileHover={{ scale: 1.03, y: -3 }}
-                    className="bg-card border border-border rounded-xl p-4 md:p-6 cursor-pointer transition-all group relative overflow-hidden h-28 md:h-40"
-                  >
+              {categories.map((category, index) => <Link key={category.name} to={`/explore?category=${category.name.toLowerCase()}`}>
+                  <motion.div initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} viewport={{
+                once: true
+              }} transition={{
+                duration: 0.4,
+                delay: index * 0.05
+              }} whileHover={{
+                scale: 1.03,
+                y: -3
+              }} className="bg-card border border-border rounded-xl p-4 md:p-6 cursor-pointer transition-all group relative overflow-hidden h-28 md:h-40 mx-0 py-[26px] px-px pl-px">
                     <div className="absolute -top-2 -left-2 w-20 h-20 md:w-28 md:h-28 group-hover:scale-110 transition-transform duration-300">
-                      <img src={categoryImages[category.name]} alt={category.name} className="w-full h-full object-contain mix-blend-lighten" />
+                      <img src={categoryImages[category.name]} alt={category.name} className="w-full h-full mix-blend-lighten object-cover border-8 border-transparent" />
                     </div>
                     <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 text-right">
                       <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider group-hover:text-primary transition-colors">
@@ -162,8 +183,7 @@ const Home = () => {
                       </p>
                     </div>
                   </motion.div>
-                </Link>
-              ))}
+                </Link>)}
             </div>
           </motion.div>
         </div>
@@ -173,7 +193,17 @@ const Home = () => {
       <section className="py-8 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6
+        }}>
             <div className="flex justify-between items-end mb-6 md:mb-12">
               <div>
                 <h2 className="text-4xl md:text-8xl font-display font-bold mb-2 md:mb-4">
@@ -192,16 +222,20 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
-              {featuredExperiences.map((experience, index) => (
-                <motion.div
-                  key={experience.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="group cursor-pointer"
-                >
+              {featuredExperiences.map((experience, index) => <motion.div key={experience.id} initial={{
+              opacity: 0,
+              y: 30
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }} whileHover={{
+              y: -5
+            }} className="group cursor-pointer">
                   <Link to={`/experience/${experience.id}`}>
                     <div className="relative h-48 md:h-80 overflow-hidden rounded-lg border border-border transition-all">
                       <img src={experience.image} alt={experience.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -222,8 +256,7 @@ const Home = () => {
                       </div>
                     </div>
                   </Link>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
 
             <div className="mt-6 text-center md:hidden">
@@ -238,7 +271,6 @@ const Home = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
 export default Home;
