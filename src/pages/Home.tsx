@@ -6,10 +6,19 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getFeaturedExperiences, experiences } from "@/data/experiencesData";
-import { Heart, Waves, Droplets, Trophy, Car, Gamepad2, Sofa, Palette, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
-// We'll build banners dynamically from experience images
+// Category illustration imports
+import catWellness from "@/assets/cat-wellness.png";
+import catWater from "@/assets/cat-water.png";
+import catSwimming from "@/assets/cat-swimming.png";
+import catSports from "@/assets/cat-sports.png";
+import catRiding from "@/assets/cat-riding.png";
+import catGaming from "@/assets/cat-gaming.png";
+import catLounges from "@/assets/cat-lounges.png";
+import catCreative from "@/assets/cat-creative.png";
+
 const getBanners = () => {
   const waterExp = experiences.find(e => e.category === "Water Activity");
   const wellnessExp = experiences.find(e => e.category === "Wellness");
@@ -37,142 +46,122 @@ const getBanners = () => {
     link: "/explore?category=creative"
   }];
 };
-const categoryIcons: Record<string, React.ReactNode> = {
-  "Wellness": <Heart className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
-  "Water Activity": <Waves className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
-  "Swimming": <Droplets className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
-  "Sports": <Trophy className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
-  "Riding": <Car className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
-  "Gaming": <Gamepad2 className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
-  "Lounges": <Sofa className="w-8 h-8 md:w-12 md:h-12 text-accent" />,
-  "Creative": <Palette className="w-8 h-8 md:w-12 md:h-12 text-accent" />
+
+const categoryImages: Record<string, string> = {
+  "Wellness": catWellness,
+  "Water Activity": catWater,
+  "Swimming": catSwimming,
+  "Sports": catSports,
+  "Riding": catRiding,
+  "Gaming": catGaming,
+  "Lounges": catLounges,
+  "Creative": catCreative,
 };
-const getCategoryIcon = (name: string) => categoryIcons[name] || null;
+
 const Home = () => {
-  const categories = [{
-    name: "Wellness",
-    desc: "Ice bath, steam, recovery"
-  }, {
-    name: "Water Activity",
-    desc: "Kayaking, rafting, paddling"
-  }, {
-    name: "Swimming",
-    desc: "Pool access, calm sessions"
-  }, {
-    name: "Sports",
-    desc: "Badminton, pickleball courts"
-  }, {
-    name: "Riding",
-    desc: "Go-karting, track rides"
-  }, {
-    name: "Gaming",
-    desc: "Console, PC, VR gaming"
-  }, {
-    name: "Lounges",
-    desc: "Billiards, shisha, hangouts"
-  }, {
-    name: "Creative",
-    desc: "Pottery, workshops, art"
-  }];
+  const categories = [
+    { name: "Wellness", desc: "Ice bath, steam, recovery" },
+    { name: "Water Activity", desc: "Kayaking, rafting, paddling" },
+    { name: "Swimming", desc: "Pool access, calm sessions" },
+    { name: "Sports", desc: "Badminton, pickleball courts" },
+    { name: "Riding", desc: "Go-karting, track rides" },
+    { name: "Gaming", desc: "Console, PC, VR gaming" },
+    { name: "Lounges", desc: "Billiards, shisha, hangouts" },
+    { name: "Creative", desc: "Pottery, workshops, art" },
+  ];
   const featuredExperiences = getFeaturedExperiences();
   const banners = getBanners();
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true
-  });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
   useEffect(() => {
     if (!emblaApi) return;
     const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
     emblaApi.on("select", onSelect);
     onSelect();
-    return () => {
-      emblaApi.off("select", onSelect);
-    };
+    return () => { emblaApi.off("select", onSelect); };
   }, [emblaApi]);
-  return <div className="min-h-screen bg-background">
+
+  return (
+    <div className="min-h-screen bg-background">
       <Header />
-      
-      {/* Banner Carousel Section */}
-      <section className="pt-20 md:pt-24 pb-4 md:pb-8">
-        <div className="container mx-auto max-w-7xl relative rounded-none px-0">
-          <div className="overflow-hidden rounded-xl" ref={emblaRef}>
+
+      {/* Banner Carousel - no top radius, blends with header */}
+      <section className="pt-16 md:pt-20">
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
-              {banners.map((banner, index) => <div key={index} className="flex-[0_0_100%] min-w-0">
+              {banners.map((banner, index) => (
+                <div key={index} className="flex-[0_0_100%] min-w-0">
                   <Link to={banner.link}>
-                    <div className="relative h-48 md:h-80 lg:h-96 overflow-hidden rounded-xl group">
+                    <div className="relative h-56 md:h-[28rem] lg:h-[32rem] overflow-hidden group">
                       <img src={banner.image} alt={banner.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                      <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10">
-                        <h3 className="md:text-3xl font-bold text-white mb-1 text-3xl">{banner.title}</h3>
+                      <div className="absolute bottom-10 left-6 right-6 md:bottom-14 md:left-10">
+                        <h3 className="text-2xl md:text-4xl font-bold text-white mb-1">{banner.title}</h3>
                         <p className="text-sm md:text-base text-white/70">{banner.subtitle}</p>
                       </div>
                     </div>
                   </Link>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Arrows */}
-          
-          
+          <button onClick={scrollPrev} className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button onClick={scrollNext} className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
+            <ChevronRight className="w-5 h-5" />
+          </button>
 
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-4">
-            {banners.map((_, index) => <button key={index} onClick={() => emblaApi?.scrollTo(index)} className={`w-2 h-2 rounded-full transition-all ${selectedIndex === index ? "bg-primary w-6" : "bg-muted-foreground/40"}`} />)}
+          {/* Dots inside the banner */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+            {banners.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => emblaApi?.scrollTo(index)}
+                className={`rounded-full transition-all ${selectedIndex === index ? "bg-white w-4 h-1.5" : "bg-white/50 w-1.5 h-1.5"}`}
+              />
+            ))}
           </div>
         </div>
       </section>
 
       {/* Categories Section */}
-      <section className="py-8 md:py-16 bg-gradient-to-b from-background via-card to-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImRvdHMiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjA0LDI1NSwwLDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2RvdHMpIi8+PC9zdmc+')] opacity-40" />
+      <section className="py-8 md:py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }}>
-            <h2 className="text-4xl md:text-7xl font-display font-bold mb-6 md:mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <h2 className="text-4xl md:text-7xl font-display font-bold mb-6 md:mb-12">
               PICK YOUR VIBE
             </h2>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-              {categories.map((category, index) => <Link key={category.name} to={`/explore?category=${category.name.toLowerCase()}`}>
-                  <motion.div initial={{
-                opacity: 0,
-                y: 20
-              }} whileInView={{
-                opacity: 1,
-                y: 0
-              }} viewport={{
-                once: true
-              }} transition={{
-                duration: 0.4,
-                delay: index * 0.05
-              }} whileHover={{
-                scale: 1.05,
-                y: -5
-              }} className="bg-gradient-to-br from-card to-background border border-border hover:border-primary rounded-xl p-4 md:p-6 text-center cursor-pointer transition-all group relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(204,255,0,0.15)]">
-                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="text-3xl md:text-5xl mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300 relative z-10 filter drop-shadow-[0_0_8px_rgba(204,255,0,0.3)]">
-                      {getCategoryIcon(category.name)}
+              {categories.map((category, index) => (
+                <Link key={category.name} to={`/explore?category=${category.name.toLowerCase()}`}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    whileHover={{ scale: 1.03, y: -3 }}
+                    className="bg-card border border-border rounded-xl p-4 md:p-6 text-center cursor-pointer transition-all group"
+                  >
+                    <div className="w-16 h-16 md:w-24 md:h-24 mx-auto mb-2 md:mb-3 group-hover:scale-105 transition-transform duration-300">
+                      <img src={categoryImages[category.name]} alt={category.name} className="w-full h-full object-contain" />
                     </div>
-                    <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider relative z-10 group-hover:text-primary transition-colors">
+                    <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider group-hover:text-primary transition-colors">
                       {category.name}
                     </h3>
-                    <p className="text-[10px] md:text-xs text-muted-foreground mt-1 relative z-10 hidden md:block">
+                    <p className="text-[10px] md:text-xs text-muted-foreground mt-1 hidden md:block">
                       {category.desc}
                     </p>
                   </motion.div>
-                </Link>)}
+                </Link>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -182,23 +171,13 @@ const Home = () => {
       <section className="py-8 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }}>
-            <div className="flex justify-between items-end mb-6 md:mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="flex justify-between items-end mb-6 md:mb-12">
               <div>
-              <h2 className="text-4xl md:text-8xl font-display font-bold mb-2 md:mb-4">
-                <span className="text-foreground">QUICK </span>
-                <span className="text-primary">ESCAPES</span>
-              </h2>
+                <h2 className="text-4xl md:text-8xl font-display font-bold mb-2 md:mb-4">
+                  <span className="text-foreground">QUICK </span>
+                  <span className="text-primary">ESCAPES</span>
+                </h2>
                 <p className="text-sm md:text-xl text-muted-foreground">
                   Everyday activities. Zero planning.
                 </p>
@@ -211,32 +190,25 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
-              {featuredExperiences.map((experience, index) => <motion.div key={experience.id} initial={{
-              opacity: 0,
-              y: 30
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              duration: 0.5,
-              delay: index * 0.1
-            }} whileHover={{
-              y: -8
-            }} className="group cursor-pointer">
+              {featuredExperiences.map((experience, index) => (
+                <motion.div
+                  key={experience.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                  className="group cursor-pointer"
+                >
                   <Link to={`/experience/${experience.id}`}>
-                    <div className="relative h-48 md:h-80 overflow-hidden rounded-lg border-2 border-border group-hover:border-accent transition-all">
-                      <img src={experience.image} alt={experience.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                      {/* Gradient Overlay */}
+                    <div className="relative h-48 md:h-80 overflow-hidden rounded-lg border border-border transition-all">
+                      <img src={experience.image} alt={experience.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-                      
-                      {/* Category Badge */}
+
                       <Badge className="absolute top-2 left-2 md:top-4 md:left-4 bg-black/80 text-accent border border-accent/50 px-2 md:px-4 py-0.5 md:py-1 text-[10px] md:text-xs uppercase tracking-wider">
                         {experience.category}
                       </Badge>
-                      
-                      {/* Content */}
+
                       <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
                         <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-2 leading-tight group-hover:text-primary transition-colors">
                           {experience.title}
@@ -248,10 +220,10 @@ const Home = () => {
                       </div>
                     </div>
                   </Link>
-                </motion.div>)}
+                </motion.div>
+              ))}
             </div>
 
-            {/* Mobile See All Button */}
             <div className="mt-6 text-center md:hidden">
               <Link to="/explore">
                 <Button size="lg" className="bg-primary text-primary-foreground font-bold w-full">
@@ -263,8 +235,8 @@ const Home = () => {
         </div>
       </section>
 
-
       <Footer />
-    </div>;
+    </div>
+  );
 };
 export default Home;

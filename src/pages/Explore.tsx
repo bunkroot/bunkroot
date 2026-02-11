@@ -107,9 +107,9 @@ const Explore = () => {
               delay: index * 0.1
             }}>
                   <Link to={`/experience/${experience.id}`}>
-                    <div className="group relative overflow-hidden rounded-lg border-2 border-border hover:border-accent transition-all duration-300 cursor-pointer">
+                    <div className="group relative overflow-hidden rounded-lg border border-border transition-all duration-300 cursor-pointer">
                       <div className="relative h-80 overflow-hidden">
-                        <img src={experience.image} alt={experience.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <img src={experience.image} alt={experience.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                         
                         <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
@@ -121,7 +121,7 @@ const Explore = () => {
                             {experience.title}
                           </h3>
                           <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">
-                            {experience.host}
+                            {experience.location}
                           </p>
                           <div className="flex items-end justify-between">
                             <div>
@@ -130,9 +130,6 @@ const Explore = () => {
                                 {experience.price}
                               </div>
                             </div>
-                            <Button size="sm" className="bg-primary text-primary-foreground font-bold opacity-0 group-hover:opacity-100 transition-opacity">
-                              View Details
-                            </Button>
                           </div>
                         </div>
                       </div>
