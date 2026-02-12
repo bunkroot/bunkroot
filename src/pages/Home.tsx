@@ -170,15 +170,15 @@ const Home = () => {
               }} whileHover={{
                 scale: 1.03,
                 y: -3
-              }} className="bg-card border border-border rounded-xl p-4 md:p-6 cursor-pointer transition-all group relative overflow-hidden h-28 md:h-40 mx-0 py-[26px] px-px pl-px">
-                    <div className="absolute -top-2 -left-2 w-20 h-20 md:w-28 md:h-28 group-hover:scale-110 transition-transform duration-300">
-                      <img src={categoryImages[category.name]} alt={category.name} className="w-full h-full mix-blend-lighten object-cover border-8 border-transparent" />
+              }} className="rounded-xl cursor-pointer transition-all group overflow-hidden flex flex-col items-center justify-between h-36 md:h-48 p-3 md:p-5" style={{ background: 'linear-gradient(135deg, #333333, #111111)', border: '1px solid #333333' }}>
+                    <div className="flex-1 flex items-center justify-center w-full">
+                      <img src={categoryImages[category.name]} alt={category.name} className="h-16 w-16 md:h-24 md:w-24 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" />
                     </div>
-                    <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 text-right">
-                      <h3 className="font-bold text-xs md:text-lg uppercase tracking-wider group-hover:text-primary transition-colors">
+                    <div className="text-center mt-1">
+                      <h3 className="font-bold text-[11px] md:text-sm uppercase tracking-wider group-hover:text-primary transition-colors">
                         {category.name}
                       </h3>
-                      <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5 hidden md:block">
+                      <p className="text-[9px] md:text-xs text-muted-foreground mt-0.5 hidden md:block">
                         {category.desc}
                       </p>
                     </div>
