@@ -90,14 +90,6 @@ const ExperienceDetail = () => {
       <Header />
       
       <div className="pt-24">
-        <div className="container mx-auto px-4 lg:px-12 py-6">
-          <Link to="/explore">
-            <Button variant="ghost" size="sm" className="gap-2">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Explore
-            </Button>
-          </Link>
-        </div>
 
         <motion.div 
           className="relative w-full h-[70vh] overflow-hidden"
