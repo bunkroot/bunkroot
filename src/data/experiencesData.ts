@@ -65,11 +65,6 @@ import expShishabetterGallery3 from "@/assets/exp-shishabetter-gallery3.webp";
 import expShishabetterGallery4 from "@/assets/exp-shishabetter-gallery4.webp";
 import expShishabetterGallery5 from "@/assets/exp-shishabetter-gallery5.webp";
 
-import expLetsshishaMain from "@/assets/exp-letsshisha-main.png";
-import expLetsshishaGallery1 from "@/assets/exp-letsshisha-gallery1.webp";
-import expLetsshishaGallery2 from "@/assets/exp-letsshisha-gallery2.jpg";
-import expLetsshishaGallery3 from "@/assets/exp-letsshisha-gallery3.jpg";
-
 import expBackkayakMain from "@/assets/exp-backkayak-main.webp";
 import expBackkayakGallery1 from "@/assets/exp-backkayak-gallery1.webp";
 import expBackkayakGallery2 from "@/assets/exp-backkayak-gallery2.webp";
@@ -860,26 +855,6 @@ export const experiences: Experience[] = [
   },
   {
     id: "30",
-    title: "Let's Shisha",
-    category: "Lounges",
-    host: "Shisha Lounge",
-    price: "₹999",
-    priceType: "per slot",
-    duration: "2 hours",
-    groupSize: "1–6",
-    minAge: 18,
-    location: "Pottammal",
-    image: expLetsshishaMain,
-    gallery: [expLetsshishaMain, expLetsshishaGallery1, expLetsshishaGallery2, expLetsshishaGallery3],
-    description: "Night-time shisha lounge hangout.",
-    fullDescription: "Late Night Shisha caters to guests who prefer going out later in the night, offering a calm and social lounge environment.",
-    included: ["Lounge seating", "Late-night access"],
-    whatToBring: ["Nothing much"],
-    amenities: ["AC", "Seating area", "Washroom", "Drinking water"],
-    availableTimes: ["02:30 PM", "03:00 PM", "03:30 PM", "04:00 PM", "04:30 PM", "05:00 PM", "05:30 PM", "06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM", "08:00 PM", "08:30 PM", "09:00 PM", "09:30 PM", "10:00 PM", "10:30 PM", "11:00 PM", "11:30 PM"]
-  },
-  {
-    id: "31",
     title: "Pottery Workshop",
     category: "Creative",
     host: "Clay Studio",
