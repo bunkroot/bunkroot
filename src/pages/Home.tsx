@@ -9,6 +9,8 @@ import { getFeaturedExperiences, experiences } from "@/data/experiencesData";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
+import banner1Liveincalicut from "@/assets/banner-1-liveincalicut.png";
+
 // Category illustration imports
 import catWellness from "@/assets/cat-wellness.png";
 import catWater from "@/assets/cat-water.png";
@@ -24,10 +26,8 @@ const getBanners = () => {
   const gamingExp = experiences.find(e => e.category === "Gaming");
   const creativeExp = experiences.find(e => e.category === "Creative");
   return [{
-    image: waterExp?.image || "",
-    title: "Weekend Water Adventures",
-    subtitle: "Kayaking, rafting & more",
-    link: "/explore?category=water%20activity"
+    image: banner1Liveincalicut || "",
+    link: "/explore"
   }, {
     image: wellnessExp?.image || "",
     title: "Chill & Recover",
