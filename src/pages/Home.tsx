@@ -10,6 +10,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 import banner1Liveincalicut from "@/assets/banner-1-liveincalicut.png";
+import banner2Hitthewater from "@/assets/banner-2-hitthewater.png";
+import banner3Rematch from "@/assets/banner-3-rematch.png";
 
 // Category illustration imports
 import catWellness from "@/assets/cat-wellness.png";
@@ -29,20 +31,11 @@ const getBanners = () => {
     image: banner1Liveincalicut || "",
     link: "/explore"
   }, {
-    image: wellnessExp?.image || "",
-    title: "Chill & Recover",
-    subtitle: "Ice baths, steam rooms, wellness",
-    link: "/explore?category=wellness"
+    image: banner2Hitthewater || "",
+    link: "/explore?category=water%20activity"
   }, {
-    image: gamingExp?.image || "",
-    title: "Game On",
-    subtitle: "VR, PlayStation, bowling",
+    image: banner3Rematch || "",
     link: "/explore?category=gaming"
-  }, {
-    image: creativeExp?.image || "",
-    title: "Get Creative",
-    subtitle: "Pottery, workshops & art",
-    link: "/explore?category=creative"
   }];
 };
 const categoryImages: Record<string, string> = {
