@@ -108,9 +108,10 @@ const Home = () => {
             <div className="flex">
               {banners.map((banner, index) => <div key={index} className="flex-[0_0_100%] min-w-0">
                   <Link to={banner.link}>
-                    <div className="relative h-56 md:h-[28rem] lg:h-[32rem] overflow-hidden group">
+                    <div className="relative h-56 md:h-[28rem] lg:h-[32rem] overflow-hidden group rounded-b-2xl">
                       <img src={banner.image} alt={banner.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                      <div className="absolute inset-x-0 top-0 h-24 md:h-32 bg-gradient-to-b from-[#111111] to-transparent" />
                       <div className="absolute bottom-10 left-6 right-6 md:bottom-14 md:left-10">
                         <h3 className="text-2xl md:text-4xl font-bold text-white mb-1">{banner.title}</h3>
                         <p className="text-sm md:text-base text-white/70">{banner.subtitle}</p>
@@ -172,7 +173,7 @@ const Home = () => {
                 y: -3
               }} className="rounded-xl cursor-pointer transition-all group overflow-hidden flex flex-col items-center justify-between h-36 md:h-48 p-3 md:p-5" style={{ background: 'linear-gradient(135deg, #333333, #111111)', border: '1px solid #333333' }}>
                     <div className="flex-1 flex items-center justify-center w-full">
-                      <img src={categoryImages[category.name]} alt={category.name} className="h-16 w-16 md:h-24 md:w-24 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" />
+                      <img src={categoryImages[category.name]} alt={category.name} className="h-20 w-20 md:h-24 md:w-24 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" />
                     </div>
                     <div className="text-center mt-1">
                       <h3 className="font-bold text-[11px] md:text-sm uppercase tracking-wider group-hover:text-primary transition-colors">
