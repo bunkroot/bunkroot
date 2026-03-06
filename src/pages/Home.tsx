@@ -161,7 +161,7 @@ const Home = () => {
                 y: -3
               }} className="rounded-xl cursor-pointer transition-all group overflow-hidden flex flex-col items-center justify-between h-36 md:h-48 p-3 md:p-5" style={{ background: 'linear-gradient(135deg, #333333, #111111)', border: '1px solid #333333' }}>
                     <div className="flex-1 flex items-center justify-center w-full">
-                      <img src={categoryImages[category.name]} alt={category.name} className="h-20 w-20 md:h-24 md:w-24 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" />
+                      <img src={categoryImages[category.name]} alt={category.name} className="h-20 w-20 md:h-24 md:w-24 object-contain -rotate-6 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" />
                     </div>
                     <div className="text-center mt-1">
                       <h3 className="font-bold text-[11px] md:text-sm uppercase tracking-wider group-hover:text-primary transition-colors">
