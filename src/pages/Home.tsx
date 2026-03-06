@@ -6,7 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getFeaturedExperiences, experiences } from "@/data/experiencesData";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { getTrendingFood } from "@/data/foodData";
+import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 import banner1Liveincalicut from "@/assets/banner-1-liveincalicut.png";
@@ -178,6 +179,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* What's Trending - Food Teaser */}
+      <FoodTeaser />
+
       {/* Featured Experiences Section */}
       <section className="py-8 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
@@ -262,4 +266,90 @@ const Home = () => {
       <Footer />
     </div>;
 };
+const FoodTeaser = () => {
+  const trendingFood = getTrendingFood();
+  return (
+    <section className="py-8 md:py-16 relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="flex justify-between items-end mb-6 md:mb-10">
+            <div>
+              <h2 className="text-4xl md:text-7xl font-display font-bold mb-2 md:mb-3">
+                WHAT'S <span className="text-primary">TRENDING</span>
+              </h2>
+              <p className="text-sm md:text-xl text-muted-foreground">
+                Best food spots the city can't stop talking about.
+              </p>
+            </div>
+            <Link to="/food">
+              <Button
+                size="lg"
+                variant="outline"
+                className="hidden md:flex border-2 border-accent text-accent hover:bg-accent hover:text-black font-bold px-8 transition-all"
+              >
+                EXPLORE ALL FOOD →
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+            {trendingFood.map((spot, index) => (
+              <motion.div
+                key={spot.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                whileHover={{ y: -5 }}
+                className="group cursor-pointer"
+              >
+                <Link to="/food">
+                  <div className="relative overflow-hidden rounded-lg border border-border bg-card">
+                    <div className="relative h-32 md:h-36 overflow-hidden">
+                      <img
+                        src={spot.image}
+                        alt={spot.dishName}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    </div>
+                    <div className="p-2.5 md:p-3">
+                      <h3 className="font-bold text-xs md:text-sm leading-tight mb-0.5 group-hover:text-primary transition-colors truncate">
+                        {spot.dishName}
+                      </h3>
+                      <p className="text-[10px] md:text-xs text-muted-foreground truncate">
+                        {spot.restaurant}
+                      </p>
+                      <div className="flex justify-between items-center mt-1.5 text-[10px] md:text-xs">
+                        <span className="text-primary font-bold">{spot.pricePerPerson}</span>
+                        <span className="text-muted-foreground flex items-center gap-0.5">
+                          <MapPin className="h-2.5 w-2.5" />
+                          <span className="truncate max-w-[60px]">{spot.location.split(",")[0]}</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-6 text-center md:hidden">
+            <Link to="/food">
+              <Button size="lg" className="bg-primary text-primary-foreground font-bold w-full">
+                EXPLORE ALL FOOD →
+              </Button>
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 export default Home;

@@ -15,6 +15,9 @@ const Header = () => {
     path: "/explore",
     label: "Explore"
   }, {
+    path: "/food",
+    label: "Food"
+  }, {
     path: "/contact",
     label: "Contact"
   }];

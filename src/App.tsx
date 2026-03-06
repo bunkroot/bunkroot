@@ -12,6 +12,7 @@ import Community from "./pages/Community";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Quiz from "./pages/Quiz";
+import Food from "./pages/Food";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/food" element={<Food />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />
