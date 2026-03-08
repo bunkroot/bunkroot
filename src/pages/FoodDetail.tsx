@@ -3,6 +3,7 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, ChevronLeft, ChevronRight, Gift, MessageCircle, Camera, Receipt, Star } from "lucide-react";
 import Header from "@/components/Header";
@@ -39,8 +40,8 @@ const FoodDetail = () => {
     return <Navigate to="/food" replace />;
   }
 
-  const handleScratchCard = () => {
-    const message = `Hi! I just tried "${food.dishName}" at ${food.restaurant} (${food.location}) 🍽️\n\nI'd like to claim my BunkRoot Scratch Card! 🎉\n\nI'll share my proof (bill/photo) here.`;
+  const handleScratchCard = (name: string) => {
+    const message = `Hi! I'm ${name} 👋\n\nI just tried "${food.dishName}" at ${food.restaurant} (${food.location}) 🍽️\n\nI'd like to claim my BunkRoot Scratch Card! 🎉\n\nI'll share my proof (bill/photo) here.`;
     const encoded = encodeURIComponent(message);
     const url = `https://wa.me/917907536782?text=${encoded}`;
     window.open(url, "_blank");
@@ -229,66 +230,81 @@ const FoodDetail = () => {
 
 };
 
-const ScratchCardWidget = ({ onClaim, restaurant }: {onClaim: () => void;restaurant: string;}) =>
-<div className="bg-card border-2 border-border rounded-lg p-6 md:p-8 space-y-6 overflow-hidden">
-    <div className="text-center">
-      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-        <Gift className="w-8 h-8 text-primary" />
+const ScratchCardWidget = ({ onClaim, restaurant }: {onClaim: (name: string) => void;restaurant: string;}) => {
+  const [name, setName] = useState("");
+
+  return (
+    <div className="bg-card border-2 border-border rounded-lg p-6 md:p-8 space-y-6 overflow-hidden">
+      <div className="text-center">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+          <Gift className="w-8 h-8 text-primary" />
+        </div>
+        <h3 className="text-2xl font-display font-bold mb-2">Win a Scratch Card!</h3>
+        <p className="text-sm text-muted-foreground font-sans">
+          Try this dish and win cashbacks & exclusive offers from BunkRoot
+        </p>
       </div>
-      <h3 className="text-2xl font-display font-bold mb-2">Win a Scratch Card!</h3>
-      <p className="text-sm text-muted-foreground font-sans">
-        Try this dish and win cashbacks & exclusive offers from BunkRoot
+
+      <div className="border-t border-border pt-6 space-y-4">
+        <h4 className="text-sm uppercase tracking-wide text-muted-foreground font-bold">How it works</h4>
+        <div className="space-y-4">
+          <div className="flex items-start gap-3">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+              <span className="text-accent font-bold text-sm">1</span>
+            </div>
+            <div>
+              <p className="text-sm font-bold">Visit the restaurant</p>
+              <p className="text-xs text-muted-foreground font-sans">Head to {restaurant} and try this dish</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+              <span className="text-accent font-bold text-sm">2</span>
+            </div>
+            <div>
+              <p className="text-sm font-bold">Share your proof</p>
+              <p className="text-xs text-muted-foreground font-sans flex items-center gap-1">
+                Send a bill <Receipt className="w-3 h-3 inline" /> or photo <Camera className="w-3 h-3 inline" /> via WhatsApp
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+              <span className="text-accent font-bold text-sm">3</span>
+            </div>
+            <div>
+              <p className="text-sm font-bold">Get your scratch card</p>
+              <p className="text-xs text-muted-foreground font-sans">Win cashbacks, discounts & more! 🎉</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <label className="text-sm font-bold">Your Name</label>
+        <Input
+          placeholder="Enter your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="border-2 border-border"
+        />
+      </div>
+
+      <Button
+        size="lg"
+        className="w-full bg-primary text-primary-foreground font-bold text-lg h-14 hover:opacity-90"
+        disabled={!name.trim()}
+        onClick={() => onClaim(name.trim())}>
+        <MessageCircle className="w-5 h-5 mr-2" />
+        Claim Scratch Card
+      </Button>
+
+      <p className="text-xs text-muted-foreground text-center font-sans">
+        You'll be redirected to WhatsApp to share your proof
       </p>
     </div>
-
-    <div className="border-t border-border pt-6 space-y-4">
-      <h4 className="text-sm uppercase tracking-wide text-muted-foreground font-bold">How it works</h4>
-      <div className="space-y-4">
-        <div className="flex items-start gap-3">
-          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-            <span className="text-accent font-bold text-sm">1</span>
-          </div>
-          <div>
-            <p className="text-sm font-bold">Visit the restaurant</p>
-            <p className="text-xs text-muted-foreground font-sans">Head to {restaurant} and try this dish</p>
-          </div>
-        </div>
-        <div className="flex items-start gap-3">
-          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-            <span className="text-accent font-bold text-sm">2</span>
-          </div>
-          <div>
-            <p className="text-sm font-bold">Share your proof</p>
-            <p className="text-xs text-muted-foreground font-sans flex items-center gap-1">
-              Send a bill <Receipt className="w-3 h-3 inline" /> or photo <Camera className="w-3 h-3 inline" /> via WhatsApp
-            </p>
-          </div>
-        </div>
-        <div className="flex items-start gap-3">
-          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-            <span className="text-accent font-bold text-sm">3</span>
-          </div>
-          <div>
-            <p className="text-sm font-bold">Get your scratch card</p>
-            <p className="text-xs text-muted-foreground font-sans">Win cashbacks, discounts & more! 🎉</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <Button
-    size="lg"
-    className="w-full bg-primary text-primary-foreground font-bold text-lg h-14 hover:opacity-90"
-    onClick={onClaim}>
-    
-      <MessageCircle className="w-5 h-5 mr-2" />
-      Claim Scratch Card
-    </Button>
-
-    <p className="text-xs text-muted-foreground text-center font-sans">
-      You'll be redirected to WhatsApp to share your proof
-    </p>
-  </div>;
+  );
+};
 
 
 export default FoodDetail;
