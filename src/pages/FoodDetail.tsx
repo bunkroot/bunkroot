@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, ChevronLeft, ChevronRight, Gift, MessageCircle, Camera, Receipt } from "lucide-react";
+import { MapPin, ChevronLeft, ChevronRight, Gift, MessageCircle, Camera, Receipt, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getFoodById } from "@/data/foodData";
