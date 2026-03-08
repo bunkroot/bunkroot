@@ -325,7 +325,7 @@ const FoodTeaser = () => {
                       transition={{ duration: 0.4, delay: index * 0.08 }}
                       className="group cursor-pointer"
                     >
-                      <Link to="/food">
+                      <Link to={`/food/${spot.id}`}>
                         <div className="relative h-56 md:h-72 overflow-hidden rounded-lg border border-border transition-all">
                           <img
                             src={spot.image}
