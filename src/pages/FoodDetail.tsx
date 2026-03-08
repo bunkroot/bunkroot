@@ -109,7 +109,7 @@ const FoodDetail = () => {
 
               {/* Mobile Scratch Card CTA */}
               <div className="lg:hidden">
-                <ScratchCardWidget onClaim={handleScratchCard} dishName={food.dishName} />
+                <ScratchCardWidget onClaim={handleScratchCard} restaurant={food.restaurant} />
               </div>
 
               {/* Gallery */}
@@ -200,7 +200,7 @@ const FoodDetail = () => {
               transition={{ delay: 0.4 }}
             >
               <div className="sticky top-24">
-                <ScratchCardWidget onClaim={handleScratchCard} dishName={food.dishName} />
+                <ScratchCardWidget onClaim={handleScratchCard} restaurant={food.restaurant} />
               </div>
             </motion.div>
           </div>
@@ -212,7 +212,7 @@ const FoodDetail = () => {
   );
 };
 
-const ScratchCardWidget = ({ onClaim, dishName }: { onClaim: () => void; dishName: string }) => (
+const ScratchCardWidget = ({ onClaim, restaurant }: { onClaim: () => void; restaurant: string }) => (
   <div className="bg-card border-2 border-border rounded-lg p-6 md:p-8 space-y-6 overflow-hidden">
     <div className="text-center">
       <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
@@ -233,7 +233,7 @@ const ScratchCardWidget = ({ onClaim, dishName }: { onClaim: () => void; dishNam
           </div>
           <div>
             <p className="text-sm font-bold">Visit the restaurant</p>
-            <p className="text-xs text-muted-foreground font-sans">Head to {dishName.split(" ")[0]}... and try this dish</p>
+            <p className="text-xs text-muted-foreground font-sans">Head to {restaurant} and try this dish</p>
           </div>
         </div>
         <div className="flex items-start gap-3">
