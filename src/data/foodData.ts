@@ -219,6 +219,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹120",
     location: "SM Street, Calicut",
     category: "Drinks",
+    googleRating: 4.0,
     trending: false,
     description: "Thick, creamy mango milkshake made with real Alphonso mangoes and fresh whole milk. Juice Junction keeps it simple and lets the fruit do the talking — no artificial flavours, just pure mango bliss.",
     highlights: ["Real Alphonso mangoes", "Fresh whole milk", "No artificial flavours", "Thick & creamy"],
