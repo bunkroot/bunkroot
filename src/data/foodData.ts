@@ -120,6 +120,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹180",
     location: "Beach Road, Calicut",
     category: "Drinks",
+    googleRating: 4.0,
     trending: true,
     description: "A refreshing virgin mojito with muddled fresh lime, mint leaves, and a hint of ginger — perfect for Calicut's warm evenings. The Wayfarer's beachside setting makes this drink even more enjoyable.",
     highlights: ["Fresh mint & lime", "Ginger twist", "Beachside vibes", "Perfect evening drink"],
