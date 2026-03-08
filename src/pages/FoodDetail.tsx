@@ -27,7 +27,7 @@ const FoodDetail = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     slidesToScroll: 1,
-    containScroll: "trimSnaps",
+    containScroll: "trimSnaps"
   });
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
@@ -56,13 +56,13 @@ const FoodDetail = () => {
           className="relative w-full h-[70vh] overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
+          transition={{ duration: 0.8 }}>
+          
           <img
             src={food.image}
             alt={food.dishName}
-            className="w-full h-full object-cover"
-          />
+            className="w-full h-full object-cover" />
+          
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
           <div className="absolute bottom-12 left-0 right-0 container mx-auto px-4 lg:px-12">
@@ -86,8 +86,8 @@ const FoodDetail = () => {
               className="lg:col-span-2 space-y-8 lg:space-y-12"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+              transition={{ delay: 0.2 }}>
+              
               {/* Info Cards */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                 <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
@@ -113,83 +113,83 @@ const FoodDetail = () => {
               </div>
 
               {/* Gallery */}
-              {food.gallery && food.gallery.length > 0 && (
-                <div className="relative">
+              {food.gallery && food.gallery.length > 0 &&
+              <div className="relative">
                   <h3 className="text-2xl font-display font-bold mb-4">Gallery</h3>
                   <div className="overflow-hidden rounded-lg" ref={emblaRef}>
                     <div className="flex gap-3 md:gap-4">
-                      {food.gallery.map((img, idx) => (
-                        <div
-                          key={idx}
-                          className="flex-shrink-0 w-[85%] sm:w-[48%] lg:w-[32%]"
-                        >
+                      {food.gallery.map((img, idx) =>
+                    <div
+                      key={idx}
+                      className="flex-shrink-0 w-[85%] sm:w-[48%] lg:w-[32%]">
+                      
                           <img
-                            src={img}
-                            alt={`${food.dishName} - Image ${idx + 1}`}
-                            className="w-full h-48 md:h-64 object-cover rounded-lg border-2 border-border hover:border-accent/50 transition-colors"
-                          />
+                        src={img}
+                        alt={`${food.dishName} - Image ${idx + 1}`}
+                        className="w-full h-48 md:h-64 object-cover rounded-lg border-2 border-border hover:border-accent/50 transition-colors" />
+                      
                         </div>
-                      ))}
+                    )}
                     </div>
                   </div>
                   <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute left-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-primary-foreground z-10"
-                    onClick={scrollPrev}
-                  >
+                  variant="outline"
+                  size="icon"
+                  className="absolute left-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-primary-foreground z-10"
+                  onClick={scrollPrev}>
+                  
                     <ChevronLeft className="w-5 h-5" />
                   </Button>
                   <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute right-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-primary-foreground z-10"
-                    onClick={scrollNext}
-                  >
+                  variant="outline"
+                  size="icon"
+                  className="absolute right-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-primary-foreground z-10"
+                  onClick={scrollNext}>
+                  
                     <ChevronRight className="w-5 h-5" />
                   </Button>
                 </div>
-              )}
+              }
 
               {/* Highlights */}
-              {food.highlights && food.highlights.length > 0 && (
-                <div className="bg-card/50 border-2 border-border p-6 md:p-8 rounded-lg">
+              {food.highlights && food.highlights.length > 0 &&
+              <div className="bg-card/50 border-2 border-border p-6 md:p-8 rounded-lg">
                   <h3 className="text-xl md:text-2xl font-display font-bold mb-4 md:mb-6">Highlights</h3>
                   <ul className="space-y-3">
-                    {food.highlights.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
+                    {food.highlights.map((item, idx) =>
+                  <li key={idx} className="flex items-start gap-3">
                         <span className="text-accent text-xl">✓</span>
                         <span className="text-muted-foreground">{item}</span>
                       </li>
-                    ))}
+                  )}
                   </ul>
                 </div>
-              )}
+              }
 
               {/* Description */}
-              {food.description && (
-                <div>
+              {food.description &&
+              <div>
                   <h2 className="text-4xl font-display font-bold mb-6">About This Dish</h2>
                   <div className="relative">
                     <p
-                      ref={descriptionRef}
-                      className={`text-lg text-muted-foreground leading-relaxed font-sans ${
-                        !isDescriptionExpanded && showReadMore ? "line-clamp-3" : ""
-                      }`}
-                    >
+                    ref={descriptionRef}
+                    className={`text-lg text-muted-foreground leading-relaxed font-sans ${
+                    !isDescriptionExpanded && showReadMore ? "line-clamp-3" : ""}`
+                    }>
+                    
                       {food.description}
                     </p>
-                    {showReadMore && (
-                      <button
-                        onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
-                        className="mt-2 text-accent font-medium hover:underline focus:outline-none"
-                      >
+                    {showReadMore &&
+                  <button
+                    onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+                    className="mt-2 font-medium hover:underline focus:outline-none text-primary">
+                    
                         {isDescriptionExpanded ? "Read less" : "Read more"}
                       </button>
-                    )}
+                  }
                   </div>
                 </div>
-              )}
+              }
             </motion.div>
 
             {/* Right Column - Scratch Card Widget (Desktop) */}
@@ -197,8 +197,8 @@ const FoodDetail = () => {
               className="hidden lg:block lg:col-span-1"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-            >
+              transition={{ delay: 0.4 }}>
+              
               <div className="sticky top-24">
                 <ScratchCardWidget onClaim={handleScratchCard} restaurant={food.restaurant} />
               </div>
@@ -208,12 +208,12 @@ const FoodDetail = () => {
       </div>
 
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
-const ScratchCardWidget = ({ onClaim, restaurant }: { onClaim: () => void; restaurant: string }) => (
-  <div className="bg-card border-2 border-border rounded-lg p-6 md:p-8 space-y-6 overflow-hidden">
+const ScratchCardWidget = ({ onClaim, restaurant }: {onClaim: () => void;restaurant: string;}) =>
+<div className="bg-card border-2 border-border rounded-lg p-6 md:p-8 space-y-6 overflow-hidden">
     <div className="text-center">
       <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
         <Gift className="w-8 h-8 text-primary" />
@@ -260,10 +260,10 @@ const ScratchCardWidget = ({ onClaim, restaurant }: { onClaim: () => void; resta
     </div>
 
     <Button
-      size="lg"
-      className="w-full bg-primary text-primary-foreground font-bold text-lg h-14 hover:opacity-90"
-      onClick={onClaim}
-    >
+    size="lg"
+    className="w-full bg-primary text-primary-foreground font-bold text-lg h-14 hover:opacity-90"
+    onClick={onClaim}>
+    
       <MessageCircle className="w-5 h-5 mr-2" />
       Claim Scratch Card
     </Button>
@@ -271,7 +271,7 @@ const ScratchCardWidget = ({ onClaim, restaurant }: { onClaim: () => void; resta
     <p className="text-xs text-muted-foreground text-center font-sans">
       You'll be redirected to WhatsApp to share your proof
     </p>
-  </div>
-);
+  </div>;
+
 
 export default FoodDetail;
