@@ -86,6 +86,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹60",
     location: "Mananchira, Calicut",
     category: "Street Food",
+    googleRating: 4.5,
     trending: true,
     description: "The iconic Calicut combo — flaky, crispy egg puffs with a perfectly spiced egg filling, paired with a cutting chai that hits different at Paris Bakery. A beloved street-side ritual that locals swear by.",
     highlights: ["Flaky pastry crust", "Perfectly spiced filling", "Cutting chai pairing", "Iconic local spot"],
