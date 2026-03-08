@@ -200,7 +200,7 @@ const FoodDetail = () => {
               transition={{ delay: 0.4 }}
             >
               <div className="sticky top-24">
-                <ScratchCardWidget onClaim={handleScratchCard} dishName={food.dishName} />
+                <ScratchCardWidget onClaim={handleScratchCard} restaurant={food.restaurant} />
               </div>
             </motion.div>
           </div>
