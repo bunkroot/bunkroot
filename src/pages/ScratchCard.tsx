@@ -234,7 +234,7 @@ const ScratchCard = () => {
       {/* Footer */}
       <footer className="py-4 px-4 text-center border-t border-border">
         <p className="text-xs text-muted-foreground">
-          *Prizes are subject to terms & conditions. Cashback will be applied to your next booking.
+          *Prizes are subject to terms & conditions.
         </p>
       </footer>
     </div>
