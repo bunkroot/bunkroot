@@ -103,6 +103,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹200",
     location: "Palayam, Calicut",
     category: "Desserts",
+    googleRating: 4.2,
     trending: true,
     description: "A Middle Eastern dessert that Calicut has made its own — crispy shredded phyllo dough layered with gooey melted cheese, soaked in rose-scented sugar syrup. Bait Al Mandi serves it fresh and warm, the way it's meant to be enjoyed.",
     highlights: ["Crispy phyllo layers", "Melted cheese filling", "Rose syrup soaked", "Served warm"],
