@@ -334,7 +334,7 @@ const FoodTeaser = () => {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
                           <div className="absolute bottom-0 left-0 right-0 p-4">
-                            <h3 className="font-bold text-lg md:text-xl leading-tight mb-1 group-hover:text-primary transition-colors">
+                            <h3 className="font-bold font-sans text-lg md:text-xl leading-tight mb-1 group-hover:text-primary transition-colors">
                               {spot.dishName}
                             </h3>
                             <p className="text-xs text-muted-foreground mb-2">
