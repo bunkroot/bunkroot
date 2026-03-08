@@ -268,6 +268,19 @@ const Home = () => {
 };
 const FoodTeaser = () => {
   const trendingFood = getTrendingFood();
+  const [foodEmblaRef, foodEmblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    slidesToScroll: 1,
+    breakpoints: {
+      "(min-width: 768px)": { slidesToScroll: 2 },
+      "(min-width: 1024px)": { slidesToScroll: 3 },
+    },
+  });
+
+  const scrollFoodPrev = useCallback(() => foodEmblaApi?.scrollPrev(), [foodEmblaApi]);
+  const scrollFoodNext = useCallback(() => foodEmblaApi?.scrollNext(), [foodEmblaApi]);
+
   return (
     <section className="py-8 md:py-16 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10 max-w-7xl">
@@ -297,44 +310,65 @@ const FoodTeaser = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
-            {trendingFood.map((spot, index) => (
-              <motion.div
-                key={spot.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                whileHover={{ y: -5 }}
-                className="group cursor-pointer"
-              >
-                <Link to="/food">
-                  <div className="relative h-48 md:h-64 overflow-hidden rounded-lg border border-border transition-all">
-                    <img
-                      src={spot.image}
-                      alt={spot.dishName}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-                      <h3 className="font-bold text-xs md:text-sm leading-tight mb-0.5 group-hover:text-primary transition-colors">
-                        {spot.dishName}
-                      </h3>
-                      <p className="text-[10px] md:text-xs text-muted-foreground mb-1.5">
-                        {spot.restaurant}
-                      </p>
-                      <div className="flex justify-between items-center text-[10px] md:text-xs">
-                        <span className="text-primary font-bold">{spot.pricePerPerson}/person</span>
-                        <span className="text-muted-foreground flex items-center gap-0.5">
-                          <MapPin className="h-2.5 w-2.5" />
-                          <span className="truncate max-w-[60px]">{spot.location.split(",")[0]}</span>
-                        </span>
-                      </div>
-                    </div>
+          <div className="relative">
+            <div className="overflow-hidden -mx-4 px-4" ref={foodEmblaRef}>
+              <div className="flex gap-3 md:gap-4">
+                {trendingFood.map((spot, index) => (
+                  <div
+                    key={spot.id}
+                    className="flex-[0_0_85%] min-w-0 md:flex-[0_0_30%] lg:flex-[0_0_22%]"
+                  >
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: index * 0.08 }}
+                      className="group cursor-pointer"
+                    >
+                      <Link to="/food">
+                        <div className="relative h-56 md:h-72 overflow-hidden rounded-lg border border-border transition-all">
+                          <img
+                            src={spot.image}
+                            alt={spot.dishName}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+                          <div className="absolute bottom-0 left-0 right-0 p-4">
+                            <h3 className="font-bold text-sm md:text-base leading-tight mb-0.5 group-hover:text-primary transition-colors">
+                              {spot.dishName}
+                            </h3>
+                            <p className="text-xs text-muted-foreground mb-2">
+                              {spot.restaurant}
+                            </p>
+                            <div className="flex justify-between items-center text-xs">
+                              <span className="text-primary font-bold">{spot.pricePerPerson}/person</span>
+                              <span className="text-muted-foreground flex items-center gap-0.5">
+                                <MapPin className="h-3 w-3" />
+                                <span className="truncate max-w-[80px]">{spot.location.split(",")[0]}</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
                   </div>
-                </Link>
-              </motion.div>
-            ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation arrows - desktop */}
+            <button
+              onClick={scrollFoodPrev}
+              className="absolute -left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors hidden md:flex"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={scrollFoodNext}
+              className="absolute -right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors hidden md:flex"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
 
           <div className="mt-6 text-center md:hidden">
