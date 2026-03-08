@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Quiz from "./pages/Quiz";
 import Food from "./pages/Food";
 import FoodDetail from "./pages/FoodDetail";
+import ScratchCard from "./pages/ScratchCard";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/food" element={<Food />} />
           <Route path="/food/:id" element={<FoodDetail />} />
+          <Route path="/scratch" element={<ScratchCard />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />
