@@ -40,8 +40,8 @@ const FoodDetail = () => {
     return <Navigate to="/food" replace />;
   }
 
-  const handleScratchCard = () => {
-    const message = `Hi! I just tried "${food.dishName}" at ${food.restaurant} (${food.location}) 🍽️\n\nI'd like to claim my BunkRoot Scratch Card! 🎉\n\nI'll share my proof (bill/photo) here.`;
+  const handleScratchCard = (name: string) => {
+    const message = `Hi! I'm ${name} 👋\n\nI just tried "${food.dishName}" at ${food.restaurant} (${food.location}) 🍽️\n\nI'd like to claim my BunkRoot Scratch Card! 🎉\n\nI'll share my proof (bill/photo) here.`;
     const encoded = encodeURIComponent(message);
     const url = `https://wa.me/917907536782?text=${encoded}`;
     window.open(url, "_blank");
