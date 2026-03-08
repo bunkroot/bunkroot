@@ -68,6 +68,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹220",
     location: "Hilite Mall, Calicut",
     category: "Cafe",
+    googleRating: 4.4,
     trending: true,
     description: "A smooth, velvety cold brew infused with hazelnut syrup and topped with a thin layer of cream. Bean Here Cafe sources single-origin beans and brews them for 18 hours to get that perfect bold yet mellow flavour.",
     highlights: ["18-hour cold brew", "Single-origin beans", "Hazelnut infused", "Cozy cafe vibes"],
