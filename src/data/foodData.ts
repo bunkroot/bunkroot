@@ -203,6 +203,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹250",
     location: "Hilite Mall, Calicut",
     category: "Desserts",
+    googleRating: 4.1,
     trending: false,
     description: "A warm, gooey chocolate lava cake with a molten centre that oozes out at the first cut. Daily Grind pairs it with vanilla ice cream and a dusting of cocoa — pure indulgence.",
     highlights: ["Molten chocolate centre", "Vanilla ice cream", "Warm & gooey", "Perfect dessert finish"],
