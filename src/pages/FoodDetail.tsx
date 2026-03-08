@@ -3,6 +3,7 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, ChevronLeft, ChevronRight, Gift, MessageCircle, Camera, Receipt, Star } from "lucide-react";
 import Header from "@/components/Header";
