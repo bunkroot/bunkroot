@@ -6,6 +6,7 @@ export interface FoodSpot {
   pricePerPerson: string;
   location: string;
   category: string;
+  googleRating: number;
   trending: boolean;
   description?: string;
   highlights?: string[];
