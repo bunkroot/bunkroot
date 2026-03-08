@@ -11,10 +11,10 @@ export interface Prize {
 
 export const prizes: Prize[] = [
   // Cashback prizes
-  { id: "cash10", label: "₹10 Cashback", description: "You won ₹10 cashback on your next booking!", emoji: "💰", type: "cashback", value: 10, weight: 40 },
-  { id: "cash20", label: "₹20 Cashback", description: "You won ₹20 cashback on your next booking!", emoji: "💰", type: "cashback", value: 20, weight: 25 },
-  { id: "cash50", label: "₹50 Cashback", description: "Amazing! You won ₹50 cashback!", emoji: "🤑", type: "cashback", value: 50, weight: 5 },
-  { id: "cash100", label: "₹100 Cashback", description: "Jackpot! You won ₹100 cashback!", emoji: "🎉", type: "cashback", value: 100, weight: 2 },
+  { id: "cash10", label: "₹10 Cashback", description: "You won ₹10 cashback! Claim now to receive it instantly via UPI 💸", emoji: "💰", type: "cashback", value: 10, weight: 40 },
+  { id: "cash20", label: "₹20 Cashback", description: "You won ₹20 cashback! Claim now to receive it instantly via UPI 💸", emoji: "💰", type: "cashback", value: 20, weight: 25 },
+  { id: "cash50", label: "₹50 Cashback", description: "Amazing! You won ₹50 cashback! Claim now to get it via UPI 💸", emoji: "🤑", type: "cashback", value: 50, weight: 5 },
+  { id: "cash100", label: "₹100 Cashback", description: "Jackpot! You won ₹100 cashback! Claim now to get it via UPI 💸", emoji: "🎉", type: "cashback", value: 100, weight: 2 },
   // Discount prizes
   { id: "disc5", label: "5% Off Booking", description: "You got 5% off your next BunkRoot experience!", emoji: "🎟️", type: "discount", value: 5, weight: 15 },
   { id: "disc8", label: "8% Off Booking", description: "Nice! 8% off your next BunkRoot experience!", emoji: "🎫", type: "discount", value: 8, weight: 10 },
