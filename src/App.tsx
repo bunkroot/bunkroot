@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Quiz from "./pages/Quiz";
 import Food from "./pages/Food";
 import FoodDetail from "./pages/FoodDetail";
+import ScratchCard from "./pages/ScratchCard";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
