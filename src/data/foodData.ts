@@ -32,6 +32,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹180",
     location: "SM Street, Calicut",
     category: "Biryani",
+    googleRating: 4.3,
     trending: true,
     description: "The legendary Thalassery Biryani at Rahmath Hotel is a fragrant masterpiece made with kaima rice, slow-cooked spiced meat, and a blend of Malabar spices passed down through generations. Served with raita and pickle, this is the gold standard of biryani in Calicut.",
     highlights: ["Authentic Malabar recipe", "Kaima rice used", "Slow-cooked for hours", "Served with homemade raita"],
