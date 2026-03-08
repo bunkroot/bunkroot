@@ -154,6 +154,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹350",
     location: "East Hill, Calicut",
     category: "Seafood",
+    googleRating: 4.2,
     trending: false,
     description: "A platter of golden crispy fish fry — fresh catch marinated in a fiery Malabar masala and shallow-fried to perfection. Hotel Devi's version comes with a tangy onion salad and their house-special green chutney.",
     highlights: ["Fresh catch daily", "Malabar masala marinade", "Crispy shallow fry", "Green chutney side"],
