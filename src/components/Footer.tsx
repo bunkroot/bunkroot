@@ -15,10 +15,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4 text-accent">Explore</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/explore" className="text-muted-foreground hover:text-accent transition-colors">All Experiences</Link></li>
-              <li><Link to="/explore?category=adventure" className="text-muted-foreground hover:text-accent transition-colors">Adventure</Link></li>
-              <li><Link to="/explore?category=thrill" className="text-muted-foreground hover:text-accent transition-colors">Thrill</Link></li>
-              <li><Link to="/explore?category=mindfulness" className="text-muted-foreground hover:text-accent transition-colors">Mindfulness</Link></li>
+              <li><Link to="/explore" className="text-muted-foreground hover:text-accent transition-colors">Activities</Link></li>
+              <li><Link to="/food" className="text-muted-foreground hover:text-accent transition-colors">Food</Link></li>
+              <li><Link to="/explore?category=Lounges" className="text-muted-foreground hover:text-accent transition-colors">Lounges</Link></li>
+              <li><Link to="/explore?category=Water Activity" className="text-muted-foreground hover:text-accent transition-colors">Water Activities</Link></li>
             </ul>
           </div>
           
