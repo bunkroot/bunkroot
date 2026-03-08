@@ -334,8 +334,8 @@ const FoodTeaser = () => {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
                           <div className="absolute bottom-0 left-0 right-0 p-4">
-                            <h3 className="font-bold text-sm md:text-base leading-tight mb-0.5 group-hover:text-primary transition-colors">
-                              {spot.dishName}
+                            <h3 className="font-bold text-base md:text-lg leading-tight mb-0.5 group-hover:text-primary transition-colors capitalize">
+                              {spot.dishName.toLowerCase()}
                             </h3>
                             <p className="text-xs text-muted-foreground mb-2">
                               {spot.restaurant}
