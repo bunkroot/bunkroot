@@ -187,6 +187,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹90",
     location: "Nadakkavu, Calicut",
     category: "Street Food",
+    googleRating: 4.6,
     trending: false,
     description: "Calicut's obsession — juicy shredded chicken wrapped in a soft parotta with garlic sauce, pickled onions, and a drizzle of hot sauce. Top Form's shawarma is legendary for a reason.",
     highlights: ["Soft parotta wrap", "Garlic sauce loaded", "Juicy chicken filling", "Late-night favourite"],
