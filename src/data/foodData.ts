@@ -137,6 +137,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹220",
     location: "Mavoor Road, Calicut",
     category: "Biryani",
+    googleRating: 4.4,
     trending: false,
     description: "Salkara's Malabar Chicken Biryani is a flavourful, aromatic pot of joy. Tender chicken pieces layered with fragrant basmati rice, caramelized onions, and a generous dose of Malabar spices make this a must-try.",
     highlights: ["Tender chicken pieces", "Caramelized onion layers", "Malabar spice blend", "Generous portions"],
