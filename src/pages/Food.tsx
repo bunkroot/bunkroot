@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Search, MapPin } from "lucide-react";
 import Header from "@/components/Header";
