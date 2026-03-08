@@ -90,30 +90,40 @@ const FoodDetail = () => {
               
               {/* Info Cards */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
-                  <span className="text-2xl mb-2 block">💰</span>
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Price</div>
-                  <div className="text-sm md:text-lg font-bold text-primary">{food.pricePerPerson}/person</div>
-                </div>
-                <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
-                  <MapPin className="w-5 h-5 md:w-6 md:h-6 text-accent mb-2 md:mb-3" />
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Location</div>
-                  <div className="text-sm md:text-lg font-bold break-words">{food.location}</div>
-                </div>
-                <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
-                  <span className="text-2xl mb-2 block">🏪</span>
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Restaurant</div>
-                  <div className="text-sm md:text-lg font-bold break-words">{food.restaurant}</div>
-                </div>
-                <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
-                  <Star className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 fill-yellow-400 mb-2 md:mb-3" />
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Google Rating</div>
-                  <div className="text-sm md:text-lg font-bold flex items-center gap-1">
-                    {food.googleRating}
-                    <span className="text-yellow-400 text-xs">★</span>
-                    <span className="text-xs text-muted-foreground font-normal">/ 5</span>
+                {[
+                  {
+                    icon: <span className="text-lg md:text-xl">💰</span>,
+                    label: "Price",
+                    value: <span className="text-primary">{food.pricePerPerson}/person</span>,
+                  },
+                  {
+                    icon: <MapPin className="w-5 h-5 md:w-6 md:h-6 text-accent" />,
+                    label: "Location",
+                    value: food.location,
+                  },
+                  {
+                    icon: <span className="text-lg md:text-xl">🏪</span>,
+                    label: "Restaurant",
+                    value: food.restaurant,
+                  },
+                  {
+                    icon: <Star className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 fill-yellow-400" />,
+                    label: "Google Rating",
+                    value: (
+                      <span className="flex items-center gap-1">
+                        {food.googleRating}
+                        <span className="text-yellow-400 text-xs">★</span>
+                        <span className="text-xs text-muted-foreground font-normal">/ 5</span>
+                      </span>
+                    ),
+                  },
+                ].map((card, idx) => (
+                  <div key={idx} className="bg-card border-2 border-border p-4 md:p-6 rounded-lg flex flex-col">
+                    <div className="h-6 md:h-7 flex items-center mb-2 md:mb-3">{card.icon}</div>
+                    <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">{card.label}</div>
+                    <div className="text-sm md:text-lg font-bold break-words">{card.value}</div>
                   </div>
-                </div>
+                ))}
               </div>
 
               {/* Mobile Scratch Card CTA */}
