@@ -109,7 +109,7 @@ const FoodDetail = () => {
 
               {/* Mobile Scratch Card CTA */}
               <div className="lg:hidden">
-                <ScratchCardWidget onClaim={handleScratchCard} dishName={food.dishName} />
+                <ScratchCardWidget onClaim={handleScratchCard} restaurant={food.restaurant} />
               </div>
 
               {/* Gallery */}
