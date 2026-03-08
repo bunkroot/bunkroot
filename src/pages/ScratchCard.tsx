@@ -98,7 +98,7 @@ const ScratchCard = () => {
     checkReveal();
   };
 
-  const whatsappMessage = `🎉 I just won "${prize.label}" on BunkRoot Scratch Card! Check out the amazing experiences at bunkroot.lovable.app`;
+  const whatsappMessage = `🎉 I just won "${prize.label}" on BunkRoot Scratch Card! Check out the amazing experiences at https://bunkroot.com`;
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
   const claimMessage = `Hi! 🎉 I just won "${prize.label}" from the BunkRoot Scratch Card. I'd like to claim my reward!`;
   const claimUrl = `https://wa.me/917907536782?text=${encodeURIComponent(claimMessage)}`;
