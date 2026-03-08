@@ -309,24 +309,22 @@ const FoodTeaser = () => {
                 className="group cursor-pointer"
               >
                 <Link to="/food">
-                  <div className="relative overflow-hidden rounded-lg border border-border bg-card">
-                    <div className="relative h-32 md:h-36 overflow-hidden">
-                      <img
-                        src={spot.image}
-                        alt={spot.dishName}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    </div>
-                    <div className="p-2.5 md:p-3">
-                      <h3 className="font-bold text-xs md:text-sm leading-tight mb-0.5 group-hover:text-primary transition-colors truncate">
+                  <div className="relative h-48 md:h-64 overflow-hidden rounded-lg border border-border transition-all">
+                    <img
+                      src={spot.image}
+                      alt={spot.dishName}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+                      <h3 className="font-bold text-xs md:text-sm leading-tight mb-0.5 group-hover:text-primary transition-colors">
                         {spot.dishName}
                       </h3>
-                      <p className="text-[10px] md:text-xs text-muted-foreground truncate">
+                      <p className="text-[10px] md:text-xs text-muted-foreground mb-1.5">
                         {spot.restaurant}
                       </p>
-                      <div className="flex justify-between items-center mt-1.5 text-[10px] md:text-xs">
-                        <span className="text-primary font-bold">{spot.pricePerPerson}</span>
+                      <div className="flex justify-between items-center text-[10px] md:text-xs">
+                        <span className="text-primary font-bold">{spot.pricePerPerson}/person</span>
                         <span className="text-muted-foreground flex items-center gap-0.5">
                           <MapPin className="h-2.5 w-2.5" />
                           <span className="truncate max-w-[60px]">{spot.location.split(",")[0]}</span>

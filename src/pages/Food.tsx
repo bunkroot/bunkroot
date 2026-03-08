@@ -127,28 +127,27 @@ const FoodCard = ({ spot, index }: { spot: FoodSpot; index: number }) => (
     whileHover={{ y: -5 }}
     className="group cursor-pointer"
   >
-    <div className="relative overflow-hidden rounded-lg border border-border bg-card transition-all">
-      <div className="relative h-40 md:h-56 overflow-hidden">
-        <img
-          src={spot.image}
-          alt={spot.dishName}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        <Badge className="absolute top-2 left-2 md:top-3 md:left-3 bg-black/80 text-accent border border-accent/50 px-2 md:px-3 py-0.5 text-[10px] md:text-xs uppercase tracking-wider">
-          {spot.category}
-        </Badge>
-      </div>
+    <div className="relative h-48 md:h-80 overflow-hidden rounded-lg border border-border transition-all">
+      <img
+        src={spot.image}
+        alt={spot.dishName}
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
 
-      <div className="p-3 md:p-4">
-        <h3 className="font-bold text-sm md:text-base leading-tight mb-0.5 group-hover:text-primary transition-colors">
+      <Badge className="absolute top-2 left-2 md:top-4 md:left-4 bg-black/80 text-accent border border-accent/50 px-2 md:px-4 py-0.5 md:py-1 text-[10px] md:text-xs uppercase tracking-wider">
+        {spot.category}
+      </Badge>
+
+      <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
+        <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-2 leading-tight group-hover:text-primary transition-colors">
           {spot.dishName}
         </h3>
-        <p className="text-xs md:text-sm text-muted-foreground mb-2">
+        <p className="text-xs md:text-sm text-muted-foreground mb-1 md:mb-2">
           {spot.restaurant}
         </p>
         <div className="flex justify-between items-center text-xs md:text-sm">
-          <span className="text-primary font-bold">{spot.pricePerPerson}/person</span>
+          <span className="text-primary font-bold text-sm md:text-lg">{spot.pricePerPerson}/person</span>
           <span className="text-muted-foreground flex items-center gap-1">
             <MapPin className="h-3 w-3" />
             <span className="truncate max-w-[80px] md:max-w-[120px]">{spot.location}</span>
