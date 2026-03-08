@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, ChevronLeft, ChevronRight, Gift, MessageCircle, Camera, Receipt } from "lucide-react";
+import { MapPin, ChevronLeft, ChevronRight, Gift, MessageCircle, Camera, Receipt, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getFoodById } from "@/data/foodData";
@@ -89,7 +89,7 @@ const FoodDetail = () => {
               transition={{ delay: 0.2 }}>
               
               {/* Info Cards */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                 <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
                   <span className="text-2xl mb-2 block">💰</span>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Price</div>
@@ -104,6 +104,15 @@ const FoodDetail = () => {
                   <span className="text-2xl mb-2 block">🏪</span>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Restaurant</div>
                   <div className="text-sm md:text-lg font-bold break-words">{food.restaurant}</div>
+                </div>
+                <div className="bg-card border-2 border-border p-4 md:p-6 rounded-lg">
+                  <Star className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 fill-yellow-400 mb-2 md:mb-3" />
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1 md:mb-2">Google Rating</div>
+                  <div className="text-sm md:text-lg font-bold flex items-center gap-1">
+                    {food.googleRating}
+                    <span className="text-yellow-400 text-xs">★</span>
+                    <span className="text-xs text-muted-foreground font-normal">/ 5</span>
+                  </div>
                 </div>
               </div>
 
