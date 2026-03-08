@@ -127,30 +127,33 @@ const FoodCard = ({ spot, index }: { spot: FoodSpot; index: number }) => (
     whileHover={{ y: -5 }}
     className="group cursor-pointer"
   >
-    <div className="relative h-48 md:h-80 overflow-hidden rounded-lg border border-border transition-all">
+    <div className="relative h-80 overflow-hidden rounded-lg border border-border transition-all">
       <img
         src={spot.image}
         alt={spot.dishName}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-      <Badge className="absolute top-2 left-2 md:top-4 md:left-4 bg-black/80 text-accent border border-accent/50 px-2 md:px-4 py-0.5 md:py-1 text-[10px] md:text-xs uppercase tracking-wider">
+      <Badge className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/50 px-4 py-1 text-xs uppercase tracking-widest">
         {spot.category}
       </Badge>
 
-      <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
-        <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-2 leading-tight group-hover:text-primary transition-colors">
+      <div className="absolute bottom-0 left-0 right-0 p-6">
+        <h3 className="text-2xl font-display font-bold mb-1 leading-tight group-hover:text-primary transition-colors">
           {spot.dishName}
         </h3>
-        <p className="text-xs md:text-sm text-muted-foreground mb-1 md:mb-2">
+        <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">
           {spot.restaurant}
         </p>
-        <div className="flex justify-between items-center text-xs md:text-sm">
-          <span className="text-primary font-bold text-sm md:text-lg">{spot.pricePerPerson}/person</span>
-          <span className="text-muted-foreground flex items-center gap-1">
-            <MapPin className="h-3 w-3" />
-            <span className="truncate max-w-[80px] md:max-w-[120px]">{spot.location}</span>
+        <div className="flex justify-between items-end">
+          <div>
+            <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">From</div>
+            <div className="text-2xl font-bold text-primary">{spot.pricePerPerson}/person</div>
+          </div>
+          <span className="text-sm text-muted-foreground flex items-center gap-1">
+            <MapPin className="h-3.5 w-3.5" />
+            {spot.location}
           </span>
         </div>
       </div>
