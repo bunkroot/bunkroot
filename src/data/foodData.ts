@@ -171,6 +171,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹280",
     location: "Fokana Road, Calicut",
     category: "Cafe",
+    googleRating: 4.3,
     trending: false,
     description: "Crispy corn nachos piled high with melted cheese, jalapeños, sour cream, salsa, and seasoned ground meat. Café De Marco's loaded nachos are perfect for sharing — or not.",
     highlights: ["Triple cheese blend", "Jalapeño kick", "Generous portions", "Great for sharing"],
