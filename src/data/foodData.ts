@@ -50,6 +50,7 @@ export const foodSpots: FoodSpot[] = [
     pricePerPerson: "₹450",
     location: "Beach Road, Calicut",
     category: "Seafood",
+    googleRating: 4.1,
     trending: true,
     description: "Juicy tiger prawns sautéed in golden butter and roasted garlic, finished with a squeeze of lime and fresh herbs. Zains serves this coastal classic with perfectly fluffy rice and a side of their signature chili sauce.",
     highlights: ["Fresh tiger prawns", "Butter garlic sauce", "Coastal ambience", "Paired with flavoured rice"],
