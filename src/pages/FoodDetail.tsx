@@ -154,17 +154,15 @@ const FoodDetail = () => {
                   <Button
                   variant="outline"
                   size="icon"
-                  className="absolute left-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-primary-foreground z-10"
+                  className="hidden md:flex absolute left-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-primary-foreground z-10"
                   onClick={scrollPrev}>
-                  
                     <ChevronLeft className="w-5 h-5" />
                   </Button>
                   <Button
                   variant="outline"
                   size="icon"
-                  className="absolute right-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-primary-foreground z-10"
+                  className="hidden md:flex absolute right-2 top-1/2 translate-y-1/2 bg-background/80 backdrop-blur-sm border-2 hover:bg-accent hover:text-primary-foreground z-10"
                   onClick={scrollNext}>
-                  
                     <ChevronRight className="w-5 h-5" />
                   </Button>
                 </div>
