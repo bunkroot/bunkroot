@@ -59,6 +59,7 @@ export const foodSpots: FoodSpot[] = [
     highlights: ["Special secret masala", "Tender, juicy, and well-marinated meat", "Fragrant, mildly flavored rice"],
     gallery: [
       "https://kubaba.in/wp-content/uploads/2026/03/IMG_5386.JPG.jpeg",
+      "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqG0fLGWQAfQ-O2VdgvlBJMQfzdphJHryHXrXSALarRbcmVMhsav9r6Vzr5VN2DlJicOzob9Q8Eghy-tOeXQ9BTXbp0oJdsSmfVvmi1Da2b7jcwwDcqi8_B6jtXjYGsNO7cRpqqYNekE6he=s1360-w1360-h1020-rw",
       "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqXNTzfSEMiYCBAsu7rzv8Ug--ncuWwBEhc-5s8zNkIpeXZObfKs63a6yv-gRbg6WFuBxdw9q3vnxvxmr3HSK9fXP0XviwFYxKMk97HhaJgQ54xdUO7p8oHdly0GJ_FsXBMVl16ljlrPMw=s1360-w1360-h1020-rw",
       "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqJudY39ijDfUa9HSCDOPefn4PPXe6IYx3kYpG8egUQK-gCmr17SPr1tJh233CT4a4g8QoBwpIT6zgoB5TCJh6_dWKI29idoX_vDsw-M6ydLwOSdgdd5PBkeS_yflP1S6oug_c-3pvgXgr8=s1360-w1360-h1020-rw",
       "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerI79gMlp7Oj7-GDwI3Bvt3thD7L5H50RuKCz05JQx1c2R-95aXG8QS62YFAhe5OBTeybXzgQ_Y5IsXHBFTzyModb2htdF0g9wuNFmNtrQsI_gvPGYmbC-OkBJorITszIDQuWCayW_xChI=s1360-w1360-h1020-rw",
@@ -78,7 +79,6 @@ export const foodSpots: FoodSpot[] = [
     highlights: ["18-hour cold brew", "Single-origin beans", "Hazelnut infused", "Cozy cafe vibes"],
     gallery: [
       "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=80",
-      "https://lh3.googleusercontent.com/gps-cs-s/AHVAweqG0fLGWQAfQ-O2VdgvlBJMQfzdphJHryHXrXSALarRbcmVMhsav9r6Vzr5VN2DlJicOzob9Q8Eghy-tOeXQ9BTXbp0oJdsSmfVvmi1Da2b7jcwwDcqi8_B6jtXjYGsNO7cRpqqYNekE6he=s1360-w1360-h1020-rw",
       "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
       "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
     ],
