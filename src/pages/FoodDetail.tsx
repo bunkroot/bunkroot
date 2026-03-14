@@ -157,7 +157,8 @@ const FoodDetail = () => {
                           <img
                         src={img}
                         alt={`${food.dishName} - Image ${idx + 1}`}
-                        className="w-full h-48 md:h-64 object-cover rounded-lg border-2 border-border hover:border-accent/50 transition-colors" />
+                        className="w-full h-48 md:h-64 object-cover rounded-lg border-2 border-border hover:border-accent/50 transition-colors cursor-pointer"
+                        onClick={() => openLightbox(img, `${food.dishName} - Image ${idx + 1}`)} />
                       
                         </div>
                     )}
