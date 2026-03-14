@@ -15,7 +15,16 @@ const FoodDetail = () => {
   const { id } = useParams();
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [showReadMore, setShowReadMore] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxSrc, setLightboxSrc] = useState("");
+  const [lightboxAlt, setLightboxAlt] = useState("");
   const descriptionRef = useRef<HTMLParagraphElement>(null);
+
+  const openLightbox = (src: string, alt: string) => {
+    setLightboxSrc(src);
+    setLightboxAlt(alt);
+    setLightboxOpen(true);
+  };
 
   useEffect(() => {
     if (descriptionRef.current) {
