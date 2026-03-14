@@ -80,7 +80,7 @@ const Home = () => {
   const banners = getBanners();
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true
-  });
+  }, [Autoplay({ delay: 5000, stopOnInteraction: false })]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
