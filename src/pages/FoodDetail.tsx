@@ -8,13 +8,23 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, ChevronLeft, ChevronRight, Gift, MessageCircle, Camera, Receipt, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ImageLightbox from "@/components/ImageLightbox";
 import { getFoodById } from "@/data/foodData";
 
 const FoodDetail = () => {
   const { id } = useParams();
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [showReadMore, setShowReadMore] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxSrc, setLightboxSrc] = useState("");
+  const [lightboxAlt, setLightboxAlt] = useState("");
   const descriptionRef = useRef<HTMLParagraphElement>(null);
+
+  const openLightbox = (src: string, alt: string) => {
+    setLightboxSrc(src);
+    setLightboxAlt(alt);
+    setLightboxOpen(true);
+  };
 
   useEffect(() => {
     if (descriptionRef.current) {
@@ -62,7 +72,8 @@ const FoodDetail = () => {
           <img
             src={food.image}
             alt={food.dishName}
-            className="w-full h-full object-cover" />
+            className="w-full h-full object-cover cursor-pointer"
+            onClick={() => openLightbox(food.image, food.dishName)} />
           
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
@@ -146,7 +157,8 @@ const FoodDetail = () => {
                           <img
                         src={img}
                         alt={`${food.dishName} - Image ${idx + 1}`}
-                        className="w-full h-48 md:h-64 object-cover rounded-lg border-2 border-border hover:border-accent/50 transition-colors" />
+                        className="w-full h-48 md:h-64 object-cover rounded-lg border-2 border-border hover:border-accent/50 transition-colors cursor-pointer"
+                        onClick={() => openLightbox(img, `${food.dishName} - Image ${idx + 1}`)} />
                       
                         </div>
                     )}
@@ -225,6 +237,7 @@ const FoodDetail = () => {
         </div>
       </div>
 
+      <ImageLightbox src={lightboxSrc} alt={lightboxAlt} open={lightboxOpen} onOpenChange={setLightboxOpen} />
       <Footer />
     </div>);
 
