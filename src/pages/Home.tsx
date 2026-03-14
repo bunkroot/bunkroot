@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getFeaturedExperiences, experiences } from "@/data/experiencesData";
-import { getTrendingFood } from "@/data/foodData";
+import { getTrendingFood, foodSpots } from "@/data/foodData";
 import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -268,7 +268,13 @@ const Home = () => {
     </div>;
 };
 const FoodTeaser = () => {
-  const trendingFood = getTrendingFood();
+  const allCategories = [...new Set(foodSpots.map(f => f.category))];
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  const displayedFood = activeCategory
+    ? foodSpots.filter(f => f.category === activeCategory)
+    : getTrendingFood();
+
   const [foodEmblaRef, foodEmblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -278,6 +284,14 @@ const FoodTeaser = () => {
       "(min-width: 1024px)": { slidesToScroll: 3 },
     },
   });
+
+  // Re-init carousel when category changes
+  useEffect(() => {
+    if (foodEmblaApi) {
+      foodEmblaApi.reInit();
+      foodEmblaApi.scrollTo(0);
+    }
+  }, [activeCategory, foodEmblaApi]);
 
   const scrollFoodPrev = useCallback(() => foodEmblaApi?.scrollPrev(), [foodEmblaApi]);
   const scrollFoodNext = useCallback(() => foodEmblaApi?.scrollNext(), [foodEmblaApi]);
@@ -291,7 +305,7 @@ const FoodTeaser = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex justify-between items-end mb-6 md:mb-10">
+          <div className="flex justify-between items-end mb-4 md:mb-6">
             <div>
               <h2 className="text-4xl md:text-7xl font-display font-bold mb-2 md:mb-3">
                 WHAT'S <span className="text-primary">TRENDING</span>
@@ -311,10 +325,37 @@ const FoodTeaser = () => {
             </Link>
           </div>
 
+          {/* Category Filters */}
+          <div className="flex gap-2 overflow-x-auto pb-4 mb-2 scrollbar-hide -mx-4 px-4">
+            <button
+              onClick={() => setActiveCategory(null)}
+              className={`flex-shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide border transition-all ${
+                activeCategory === null
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-transparent text-muted-foreground border-border hover:border-primary hover:text-primary"
+              }`}
+            >
+              Trending
+            </button>
+            {allCategories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`flex-shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide border transition-all ${
+                  activeCategory === cat
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-transparent text-muted-foreground border-border hover:border-primary hover:text-primary"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
           <div className="relative">
             <div className="overflow-hidden -mx-4 px-4" ref={foodEmblaRef}>
               <div className="flex gap-3 md:gap-4">
-                {trendingFood.map((spot, index) => (
+                {displayedFood.map((spot, index) => (
                   <div
                     key={spot.id}
                     className="flex-[0_0_85%] min-w-0 md:flex-[0_0_30%] lg:flex-[0_0_22%]"
