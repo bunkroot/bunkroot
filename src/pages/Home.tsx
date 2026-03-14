@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getFeaturedExperiences, experiences } from "@/data/experiencesData";
-import { getTrendingFood } from "@/data/foodData";
+import { getTrendingFood, foodSpots } from "@/data/foodData";
 import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
