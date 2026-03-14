@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, ChevronLeft, ChevronRight, Gift, MessageCircle, Camera, Receipt, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ImageLightbox from "@/components/ImageLightbox";
 import { getFoodById } from "@/data/foodData";
 
 const FoodDetail = () => {
