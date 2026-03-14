@@ -72,7 +72,8 @@ const FoodDetail = () => {
           <img
             src={food.image}
             alt={food.dishName}
-            className="w-full h-full object-cover" />
+            className="w-full h-full object-cover cursor-pointer"
+            onClick={() => openLightbox(food.image, food.dishName)} />
           
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
