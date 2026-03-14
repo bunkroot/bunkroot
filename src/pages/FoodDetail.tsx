@@ -237,6 +237,7 @@ const FoodDetail = () => {
         </div>
       </div>
 
+      <ImageLightbox src={lightboxSrc} alt={lightboxAlt} open={lightboxOpen} onOpenChange={setLightboxOpen} />
       <Footer />
     </div>);
 
