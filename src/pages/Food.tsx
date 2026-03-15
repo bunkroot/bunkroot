@@ -38,8 +38,8 @@ const Food = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-7xl font-display font-bold mb-2 md:mb-4">
-              <span className="text-foreground">CRAVE </span>
-              <span className="text-primary">WORTHY</span>
+              <span className="text-foreground">FEED YOUR </span>
+              <span className="text-primary">CURIOSITY</span>
             </h1>
             <p className="text-sm md:text-xl text-muted-foreground mb-6 md:mb-10">
               Discover what's trending in the city — best dishes, best spots.
