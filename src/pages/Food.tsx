@@ -141,8 +141,8 @@ const FoodCard = ({ spot, index }: { spot: FoodSpot; index: number }) => (
           {spot.category}
         </Badge>
 
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <h3 className="text-2xl font-display font-bold mb-1 leading-tight group-hover:text-primary transition-colors">
+        <div className="absolute bottom-0 left-0 right-0 p-5">
+          <h3 className="text-xl font-display font-bold mb-1 leading-tight group-hover:text-primary transition-colors">
             {spot.dishName}
           </h3>
           <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">
@@ -150,12 +150,12 @@ const FoodCard = ({ spot, index }: { spot: FoodSpot; index: number }) => (
           </p>
           <div className="flex justify-between items-end">
             <div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">From</div>
-              <div className="text-2xl font-bold text-primary">{spot.pricePerPerson}/person</div>
+              <div className="text-xs text-muted-foreground uppercase tracking-wide mb-0.5">From</div>
+              <div className="text-lg font-bold text-primary">{spot.pricePerPerson}/person</div>
             </div>
-            <span className="text-sm text-muted-foreground flex items-center gap-1">
-              <MapPin className="h-3.5 w-3.5" />
-              {spot.location}
+            <span className="text-xs text-muted-foreground flex items-center gap-1 max-w-[120px] truncate">
+              <MapPin className="h-3 w-3 shrink-0" />
+              <span className="truncate">{spot.location}</span>
             </span>
           </div>
         </div>
