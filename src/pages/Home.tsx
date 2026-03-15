@@ -14,6 +14,7 @@ import Autoplay from "embla-carousel-autoplay";
 import banner1Liveincalicut from "@/assets/banner-1-liveincalicut.png";
 import banner2Hitthewater from "@/assets/banner-2-hitthewater.png";
 import banner3Rematch from "@/assets/banner-3-rematch.png";
+import banner4Food from "@/assets/banner-4-food.png";
 
 // Category illustration imports
 import catWellness from "@/assets/cat-wellness.png";
@@ -32,6 +33,9 @@ const getBanners = () => {
   return [{
     image: banner1Liveincalicut || "",
     link: "/explore"
+  }, {
+    image: banner4Food || "",
+    link: "/food"
   }, {
     image: banner2Hitthewater || "",
     link: "/explore?category=water%20activity"
