@@ -312,7 +312,7 @@ const FoodTeaser = () => {
           <div className="flex justify-between items-end mb-4 md:mb-6">
             <div>
               <h2 className="text-4xl md:text-7xl font-display font-bold mb-2 md:mb-3">
-                WHAT'S <span className="text-primary">TRENDING</span>
+                CRAVE <span className="text-primary">WORTHY</span>
               </h2>
               <p className="text-sm md:text-xl text-muted-foreground">
                 Best food spots the city can't stop talking about.
